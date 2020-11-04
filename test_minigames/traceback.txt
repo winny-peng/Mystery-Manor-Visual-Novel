@@ -1,0 +1,60 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/minigames/clicker_v1/cliker_v1.rpy", line 214, in script
+    python:
+  File "game/minigames/clicker_v1/cliker_v1.rpy", line 216, in <module>
+    ui.interact(suppress_overlay = True, suppress_underlay = True)
+  File "game/minigames/clicker_v1/cliker_v1.rpy", line 165, in render
+    self.Dog.render( renderer, shownTimebase, animationTimebase )
+AttributeError: 'ClickerGame' object has no attribute 'Dog'
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/minigames/clicker_v1/cliker_v1.rpy", line 214, in script
+    python:
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/minigames/clicker_v1/cliker_v1.rpy", line 216, in <module>
+    ui.interact(suppress_overlay = True, suppress_underlay = True)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ui.py", line 297, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 3194, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 2094, in draw_screen
+    renpy.config.screen_height,
+  File "renpy/display/render.pyx", line 490, in renpy.display.render.render_screen (gen\renpy.display.render.c:6805)
+    rv = render(root, width, height, st, st)
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "game/minigames/clicker_v1/cliker_v1.rpy", line 165, in render
+    self.Dog.render( renderer, shownTimebase, animationTimebase )
+AttributeError: 'ClickerGame' object has no attribute 'Dog'
+
+Windows-8-6.2.9200
+Ren'Py 7.3.5.606
+test_minigames 1.0
+Wed Sep 09 19:26:18 2020
