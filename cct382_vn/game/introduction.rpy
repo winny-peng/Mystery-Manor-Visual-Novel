@@ -18,6 +18,8 @@ init:
 
 label introduction:
 
+    # TODO (REMOVE THIS PART LATER)
+    show screen ui_gamebuttons
     scene bg mansion
     with flash
 

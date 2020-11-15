@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/introduction.rpy", line 11: expected 'simple_expression' not found.
-    color = "#0099cc"
-          ^
+File "game/custom_screens.rpy", line 1: screen expects a non-empty block.
+    screen ui_():
+                 ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sat Nov 14 18:33:26 2020
+Sun Nov 15 15:33:47 2020
