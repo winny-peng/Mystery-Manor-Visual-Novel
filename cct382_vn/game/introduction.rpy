@@ -5,6 +5,8 @@ init:
     image bg mansion = "images/backgrounds/bg_mansion.jpg"
 
     # === CHARACTERS ===
+    define maid = Character("Maid")
+    image maid = "images/characters/maid_neutral.png"
 
     # === TEXT STYLING ===
     style txt_thoughts:
@@ -19,6 +21,7 @@ label introduction:
     scene bg mansion
     with flash
 
+    show maid
     "ME" "{=txt_thoughts}(...)"
     "ME" "{=txt_thoughts}(What the...{w}where am I?)"
     "ME" "{=txt_thoughts}(These are...{w}not my hands...{w}WHAT'S HAPPENING???)"
