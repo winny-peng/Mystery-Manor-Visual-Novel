@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/custom_screens.rpy", line 1: screen expects a non-empty block.
-    screen ui_():
-                 ^
+File "game/scenes/introduction.rpy", line 16: style property i is not known.
+    i
+     ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sun Nov 15 15:33:47 2020
+Mon Nov 16 15:50:34 2020
