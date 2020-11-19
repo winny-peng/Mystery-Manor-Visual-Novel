@@ -3,6 +3,8 @@ screen ui_gamebuttons():
         yalign 1.0
         ground "images/ui/ui_gamebuttons.jpg"
 
+        # TODO change these from scenes to screens
+        # TODO decide if we should put all screens here or in different files
         # MAP BUTTON
         hotspot (959, 0, 107, 99) action Jump("map")
 
@@ -14,3 +16,14 @@ screen ui_gamebuttons():
 
         # ARREST BUTTON
         hotspot (35, 0, 119, 99) action Jump("arrest")
+
+screen ui_map():
+    imagemap:
+        # TODO uncomment these and fill them out
+        # position screen in center
+        # xalign
+        # yalign
+        # image location
+        # ground ""
+
+        # need a button to display other floor (new screen?)

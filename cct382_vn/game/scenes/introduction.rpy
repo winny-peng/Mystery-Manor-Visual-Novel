@@ -23,6 +23,8 @@ init:
 
 label introduction:
 
+    # TODO REMOVE
+    show screen ui_gamebuttons
     # TODO PROOFREAD + GROUP CONFIRMATION
     # Comments: not sure if "guard" is the appropriate description
     scene bg mansion

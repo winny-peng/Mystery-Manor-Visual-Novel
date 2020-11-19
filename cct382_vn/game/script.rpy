@@ -11,7 +11,6 @@ define e = Character("Eileen")
 label start:
 
     # introduction scene
-
     jump introduction
 
     # Show a background. This uses a placeholder by default, but you can
