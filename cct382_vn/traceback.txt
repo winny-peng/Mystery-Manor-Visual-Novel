@@ -1,10 +1,10 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scenes/introduction.rpy", line 34, in script call
-    narrator "{i}You see a tall, golden gate, and behind it, a grand, white manor.{/i}"
-  File "game/scenes/introduction.rpy", line 34, in script call
-    narrator "{i}You see a tall, golden gate, and behind it, a grand, white manor.{/i}"
+  File "game/scenes/introduction.rpy", line 32, in script call
+    narrator "{i}You see a sudden flash and it takes you awhile before your surroundings come into focus.{/i}"
+  File "game/scenes/introduction.rpy", line 32, in script call
+    narrator "{i}You see a sudden flash and it takes you awhile before your surroundings come into focus.{/i}"
 ScriptError: could not find label 'ui_map'.
 
 -- Full Traceback ------------------------------------------------------------
@@ -18,10 +18,10 @@ Full traceback:
     renpy.execution.run_context(True)
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\execution.py", line 908, in run_context
     context.run()
-  File "game/scenes/introduction.rpy", line 34, in script call
-    narrator "{i}You see a tall, golden gate, and behind it, a grand, white manor.{/i}"
-  File "game/scenes/introduction.rpy", line 34, in script call
-    narrator "{i}You see a tall, golden gate, and behind it, a grand, white manor.{/i}"
+  File "game/scenes/introduction.rpy", line 32, in script call
+    narrator "{i}You see a sudden flash and it takes you awhile before your surroundings come into focus.{/i}"
+  File "game/scenes/introduction.rpy", line 32, in script call
+    narrator "{i}You see a sudden flash and it takes you awhile before your surroundings come into focus.{/i}"
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\script.py", line 898, in lookup
     raise ScriptError("could not find label '%s'." % str(original))
 ScriptError: could not find label 'ui_map'.
@@ -29,4 +29,4 @@ ScriptError: could not find label 'ui_map'.
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 cct382_vn 1.0
-Fri Nov 20 19:30:54 2020
+Fri Nov 20 19:57:07 2020

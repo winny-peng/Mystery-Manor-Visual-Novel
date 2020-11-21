@@ -27,15 +27,13 @@ label map:
 screen ui_map():
     imagemap:
         # TODO uncomment these and fill them out
-        # position screen in center
-        # xalign
-        # yalign
-        ground "images/ui/ui_map_1.jpg"
-
         # TODO MAKE THIS LOOK BETTER
         # return/close button
-        button:
-            text "close"
-            action Return()
+        hotspot (452, 0, 37, 30) action Return()
+
+        # position screen in center
+        xalign 0.5
+        yalign 0.5
+        ground "images/ui/ui_map_1.jpg"
 
         # need a button to display other floor (new screen?)
