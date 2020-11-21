@@ -1,49 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00library.rpy", line 268, in say
-    who(what, interact=interact, *args, **kwargs)
-  File "renpy/common/00director.rpy", line 293, in interact
-    show_director = interact_base()
-  File "renpy/common/00director.rpy", line 257, in interact_base
-    text = renpy.scriptedit.get_line_text(filename, line)
-UnicodeDecodeError: 'utf8' codec can't decode byte 0x9e in position 26: invalid start byte
+  File "game/scenes/introduction.rpy", line 34, in script call
+    narrator "{i}You see a tall, golden gate, and behind it, a grand, white manor.{/i}"
+  File "game/scenes/introduction.rpy", line 34, in script call
+    narrator "{i}You see a tall, golden gate, and behind it, a grand, white manor.{/i}"
+ScriptError: could not find label 'ui_map'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scenes/introduction.rpyc", line 27, in script
-    ?Y�W0��Я��/+^vQ����⅊{��>Qn[�(Q�l"��E_��/�	e���%�}3���'��K}z���t�`/�}*`�5�Ň����k^0�7�&&��M�C��1v�h��2�BD�I�z]�WA�!�5xUg�����(q�xr;5�L&3H��wp�*ł��:-�fL��e�s�;���_��X�ޠ�p�PF7zho��Ww���M�A|�U�|�ޤr;�����jZ_{�.%x�V�ڠ�5��J��j��.� ~�O"F�.Px�*�zO��*jq���>�'G������,��az���~.x?�N�(����6��a���_�m�r�2Y��Ã�h�?VѤ�/����y��$w�E��}�AQbݠ��X>���1���*X>�_��ɥXv��2t��Ѝ%�L�X>b�:}V`k��,g@����j]�:�>���9{�y|djjL�Po��E�b�M��b_XNlgb_lЗ�e%�b�A�+Ib_���)	����חr�Վ��
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 708, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\exports.py", line 1343, in say
-    renpy.store.say(who, what, *args, **kwargs)
-  File "renpy/common/00library.rpy", line 268, in say
-    who(what, interact=interact, *args, **kwargs)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\character.py", line 1142, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, **display_args)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\character.py", line 842, in do_display
-    **display_args)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\character.py", line 591, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ui.py", line 297, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 2695, in interact
-    i()
-  File "renpy/common/00director.rpy", line 293, in interact
-    show_director = interact_base()
-  File "renpy/common/00director.rpy", line 257, in interact_base
-    text = renpy.scriptedit.get_line_text(filename, line)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\scriptedit.py", line 97, in get_line_text
-    ensure_loaded(filename)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\scriptedit.py", line 86, in ensure_loaded
-    renpy.parser.list_logical_lines(fn, add_lines=True)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\parser.py", line 215, in list_logical_lines
-    data = f.read().decode("utf-8")
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/encodings/utf_8.py", line 16, in decode
-UnicodeDecodeError: 'utf8' codec can't decode byte 0x9e in position 26: invalid start byte
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\bootstrap.py", line 316, in bootstrap
+    renpy.main.main()
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\main.py", line 578, in main
+    run(restart)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\main.py", line 143, in run
+    renpy.execution.run_context(True)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\execution.py", line 908, in run_context
+    context.run()
+  File "game/scenes/introduction.rpy", line 34, in script call
+    narrator "{i}You see a tall, golden gate, and behind it, a grand, white manor.{/i}"
+  File "game/scenes/introduction.rpy", line 34, in script call
+    narrator "{i}You see a tall, golden gate, and behind it, a grand, white manor.{/i}"
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\script.py", line 898, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'ui_map'.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 cct382_vn 1.0
-Sun Nov 15 16:02:09 2020
+Fri Nov 20 19:30:54 2020

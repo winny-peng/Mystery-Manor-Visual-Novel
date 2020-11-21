@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scenes/introduction.rpy", line 16: style property i is not known.
-    i
-     ^
+File "game/custom_screens.rpy", line 23: expected statement.
+    Return()
+            ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Mon Nov 16 15:50:34 2020
+Fri Nov 20 19:46:49 2020
