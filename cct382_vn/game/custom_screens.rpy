@@ -45,7 +45,6 @@ screen ui_map():
     imagebutton:
         xalign 0.5
         yalign 0.5
-        idle "images/ui/map_study.png"
-        hover "images/ui/map_studyH.png"
+        auto "images/ui/map_study_%s.png"
         focus_mask True
         action Null()
