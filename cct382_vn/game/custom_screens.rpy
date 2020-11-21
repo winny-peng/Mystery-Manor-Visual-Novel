@@ -34,6 +34,18 @@ screen ui_map():
         yalign 0.5
 
         # image
-        ground "images/ui/ui_map_1.jpg"
+        ground "images/ui/map_1.jpg"
 
-        
+    # === ROOMS ===
+    # Unvisited rooms are greyed out; visited rooms are displayed. If
+    # players hover over each room, the selectedr room will be highlighted
+    # and displays its name.
+
+    # STUDY
+    imagebutton:
+        xalign 0.5
+        yalign 0.5
+        idle "images/ui/map_study.png"
+        hover "images/ui/map_studyH.png"
+        focus_mask True
+        action Null()

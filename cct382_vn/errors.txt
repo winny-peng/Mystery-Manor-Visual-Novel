@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/custom_screens.rpy", line 23: expected statement.
-    Return()
-            ^
+File "game/custom_screens.rpy", line 28: u'zorder' is not a keyword argument or valid child for the add statement.
+    add img xalign 0.5 yalign 0.5 zorder 9
+                                        ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Fri Nov 20 19:46:49 2020
+Sat Nov 21 14:46:39 2020
