@@ -1,27 +1,29 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scenes/introduction.rpy", line 32, in script call
-    narrator "{i}You see a sudden flash and it takes you awhile before your surroundings come into focus.{/i}"
-  File "game/custom_screens.rpy", line 23, in script
-    call screen ui_map
+  File "game/scenes/introduction.rpy", line 34, in script call
+    "YOU HAVE NOT UNLOCKED THE STUDY"
+  File "game/screens/journal.rpy", line 36, in script
+    call screen ui_journal
   File "renpy/common/000statements.rpy", line 531, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/custom_screens.rpy", line 27, in execute
-    screen ui_map():
-  File "game/custom_screens.rpy", line 27, in execute
-    screen ui_map():
-  File "game/custom_screens.rpy", line 45, in execute
-    imagebutton:
-Exception: Imagebutton does not have a idle image. (auto=u'images/ui/map_study_%s.png').
+  File "game/screens/journal.rpy", line 40, in execute
+    screen ui_journal():
+  File "game/screens/journal.rpy", line 40, in execute
+    screen ui_journal():
+  File "game/screens/journal.rpy", line 42, in execute
+    imagemap:
+  File "game/screens/journal.rpy", line 54, in execute
+    text suspect_maid._name
+NameError: name 'suspect_maid' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scenes/introduction.rpy", line 32, in script call
-    narrator "{i}You see a sudden flash and it takes you awhile before your surroundings come into focus.{/i}"
-  File "game/custom_screens.rpy", line 23, in script
-    call screen ui_map
+  File "game/scenes/introduction.rpy", line 34, in script call
+    "YOU HAVE NOT UNLOCKED THE STUDY"
+  File "game/screens/journal.rpy", line 36, in script
+    call screen ui_journal
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 1949, in execute
     self.call("execute")
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 1937, in call
@@ -52,19 +54,18 @@ Full traceback:
     self.update()
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 625, in update
     self.screen.function(**self.scope)
-  File "game/custom_screens.rpy", line 27, in execute
-    screen ui_map():
-  File "game/custom_screens.rpy", line 27, in execute
-    screen ui_map():
-  File "game/custom_screens.rpy", line 45, in execute
-    imagebutton:
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ui.py", line 946, in _imagebutton
-    idle = choice(idle, idle_image, "idle", required=True)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ui.py", line 940, in choice
-    raise Exception("Imagebutton does not have a %s image. (auto=%r)." % (name, auto))
-Exception: Imagebutton does not have a idle image. (auto=u'images/ui/map_study_%s.png').
+  File "game/screens/journal.rpy", line 40, in execute
+    screen ui_journal():
+  File "game/screens/journal.rpy", line 40, in execute
+    screen ui_journal():
+  File "game/screens/journal.rpy", line 42, in execute
+    imagemap:
+  File "game/screens/journal.rpy", line 54, in execute
+    text suspect_maid._name
+  File "<screen language>", line 54, in <module>
+NameError: name 'suspect_maid' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 cct382_vn 1.0
-Sat Nov 21 16:05:23 2020
+Sun Nov 22 18:14:42 2020

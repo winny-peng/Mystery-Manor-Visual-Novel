@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-The label map is defined twice, at
-  File "game/screens/journal.rpy", line 19 and
-  File "game/screens/map.rpy", line 18.
+File "game/screens/journal.rpy", line 14: invalid syntax
+        define suspect_maid = Suspect("Maid", "images/characters/maid_neutral.png", "This is a maid")
+                           ^
+    
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sun Nov 22 14:16:03 2020
+Sun Nov 22 18:10:59 2020

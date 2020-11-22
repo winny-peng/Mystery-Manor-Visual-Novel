@@ -3,6 +3,34 @@
 # information, clues, and testimonies the player has collected.
 
 # === GLOBAL VARIABLES ===
+define suspect_maid = Suspect("Maid", "images/characters/maid_neutral.png", "This is a maid")
+
+# === SUSPECT CLASS ===
+init -1 python:
+    def load_Suspects():
+        """
+        This function loads all information into the Suspect class.
+        """
+        # === MAID ===
+        suspect_maid = Suspect("Maid", "images/characters/maid_neutral.png", "This is a maid")
+
+    class Suspect:
+        """
+        The Suspect class stores the information for each suspect.
+
+        === Public Attributes ===
+
+        === Representation Invariants ===
+        """
+        # === Private Attributes ===
+        # _name: suspect's name
+        # _image: path to suspect's profile picture
+        # _description: suspect's description
+
+        def __init__(self, name, image_path, description):
+            self._name = name
+            self._image = image_path
+            self._description = description
 
 label journal:
     hide screen ui_gamebuttons
@@ -21,3 +49,6 @@ screen ui_journal():
 
         # image
         ground "images/ui/journal.png"
+
+    # TODO REMOVE
+    text suspect_maid._name size 40 color "#0099cc"
