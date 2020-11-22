@@ -1,6 +1,20 @@
 # === MAP ===
 # This is the code for the map of the mansion.
 
+# === GLOBAL VARIABLES ===
+
+# === ROOM VARIABLES ===
+# These variables keeps track of which rooms (inside the house), the player has
+# visited.
+
+define shed_visited = False
+define study_visited = False
+define kitchen_visited = False
+define bathroom_visited = False
+define sittingroom_visited = False
+define diningroom_visited = False
+define hallway = False
+
 label map:
     hide screen ui_gamebuttons
     call screen ui_map
@@ -25,9 +39,10 @@ screen ui_map():
     # and displays its name.
 
     # STUDY
-    imagebutton:
-        xalign 0.5
-        yalign 0.5
-        auto "images/ui/map_study_%s.png"
-        focus_mask True
-        action Null()
+    if study_visited:
+        imagebutton:
+            xalign 0.5
+            yalign 0.5
+            auto "images/ui/map_study_%s.png"
+            focus_mask True
+            action Null()

@@ -5,7 +5,6 @@
 
 define e = Character("Eileen")
 
-
 # The game starts here.
 
 label start:
