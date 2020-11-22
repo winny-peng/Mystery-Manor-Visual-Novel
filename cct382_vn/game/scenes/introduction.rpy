@@ -31,7 +31,7 @@ label introduction:
     with flash
 
     # ===== # TODO MAP TESTING CODE =====
-    "YOU HAVE NO UNLOCKED THE STUDY"
+    "YOU HAVE NOT UNLOCKED THE STUDY"
     $ study_visited = True
     "YOU HAVE UNLOCKED THE STUDY"
     # ===================================
