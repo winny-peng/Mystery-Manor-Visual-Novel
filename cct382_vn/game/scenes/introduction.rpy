@@ -29,6 +29,13 @@ label introduction:
     # Comments: not sure if "guard" is the appropriate description
     scene bg mansion
     with flash
+
+    # ===== # TODO MAP TESTING CODE =====
+    "YOU HAVE NO UNLOCKED THE STUDY"
+    $ study_visited = True
+    "YOU HAVE UNLOCKED THE STUDY"
+    # ===================================
+
     narrator "{i}You see a sudden flash and it takes you awhile before your surroundings come into focus.{/i}"
     "ME" "{=txt_thoughts}(...)"
     narrator "{i}You see a tall, golden gate, and behind it, a grand, white manor.{/i}"
