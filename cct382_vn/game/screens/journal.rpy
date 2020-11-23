@@ -3,6 +3,7 @@
 # information, clues, and testimonies the player has collected.
 
 # === GLOBAL VARIABLES ===
+# TODO ALL SUSPECTS START WITH A GENERIC PROFIL PIC UNLESS THEY HAVE MET PLAYER
 define suspect_maid = Suspect("Maid", "images/characters/maid_neutral.png", "This is a maid")
 
 # === SUSPECT CLASS ===
@@ -20,17 +21,17 @@ init -1 python:
 
         === Public Attributes ===
         # testimonies: a list of testimonies given by the Suspect
+        # img: path to suspect's profile picture
 
         === Representation Invariants ===
         """
         # === Private Attributes ===
         # _name: suspect's name
-        # _image: path to suspect's profile picture
         # _description: suspect's description
 
-        def __init__(self, name, image_path, description):
+        def __init__(self, name, img, description):
             self._name = name
-            self._image = image_path
+            self.img = img
             self._description = description
             self.testimonies = []
 
@@ -63,12 +64,12 @@ init -1 python:
         """
         # === Private Attributes ===
         # _title: display name for the clue (e.g. Winny's Knife)
-        # _image: path to the clue's image
+        # _img: path to the clue's image
         # _description: description about the clue
 
-        def __init__(self, title, image_path, description):
+        def __init__(self, title, img, description):
             self._title = title
-            self._image = image_path
+            self._img = img
             self._description = description
 
 label journal:
