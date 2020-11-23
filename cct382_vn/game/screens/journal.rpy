@@ -3,18 +3,20 @@
 # information, clues, and testimonies the player has collected.
 
 # === GLOBAL VARIABLES ===
+# === SUSPECT
 # TODO ALL SUSPECTS START WITH A GENERIC PROFIL PIC UNLESS THEY HAVE MET PLAYER
-define suspect_maid = Suspect("Maid", "images/characters/maid_neutral.png", "This is a maid")
+define suspect_maid = Suspect("Maid", "images/characters/maid_neutral.png", "This is the maid")
+define suspect_mayor = Suspect("Mayor", "images/characters/maid_neutral.png", "This is the dead mayor")
+define suspect_brother = Suspect("Brother", "images/characters/maid_neutral.png", "This is the bro")
+define suspect_wife = Suspect("Wife", "images/characters/maid_neutral.png", "This is the wifey")
+define suspect_son = Suspect("Son", "images/characters/maid_neutral.png", "This is the kid")
+define suspect_lover = Suspect("Lover", "images/characters/maid_neutral.png", "This is the lover")
+define suspect_secretary = Suspect("Secretary", "images/characters/maid_neutral.png", "This is the secretary")
+define suspect_guard = Suspect("Guard", "images/characters/maid_neutral.png", "This is the guard")
+define suspect_current = suspect_maid
 
 # === SUSPECT CLASS ===
 init -1 python:
-    def load_Suspects():
-        """
-        This function loads all information into the Suspect class.
-        """
-        # === MAID ===
-        suspect_maid = Suspect("Maid", "images/characters/maid_neutral.png", "This is a maid")
-
     class Suspect:
         """
         The Suspect class stores the information for each suspect.
@@ -22,17 +24,17 @@ init -1 python:
         === Public Attributes ===
         # testimonies: a list of testimonies given by the Suspect
         # img: path to suspect's profile picture
+        # name: suspect's name
+        # description: suspect's description
 
         === Representation Invariants ===
         """
         # === Private Attributes ===
-        # _name: suspect's name
-        # _description: suspect's description
 
         def __init__(self, name, img, description):
-            self._name = name
+            self.name = name
             self.img = img
-            self._description = description
+            self.description = description
             self.testimonies = []
 
     class Testimony:
@@ -81,11 +83,25 @@ label journal:
 screen ui_journal():
     imagemap:
         # return/close map
-        hotspot (1171, 48, 47, 45) action Return()
+        hotspot (1060, 26, 73, 66) action Return()
 
         # position
         xalign 0.5
         yalign 0.5
 
         # image
-        ground "images/ui/journal_suspect.png"
+        ground "images/ui/journal_suspects.png"
+
+        # suspect information
+        default suspect_name = "Name of Suspect"
+        text suspect_name color "#000" xpos 861 ypos 111
+
+        # profile pictures
+        hotspot (272, 30, 136, 146) action SetScreenVariable("suspect_name", "Maid")
+        hotspot (451, 31, 133, 143) action SetScreenVariable("suspect_name", "Mayor")
+        hotspot (273, 203, 134, 141) action SetScreenVariable("suspect_name","Brother")
+        hotspot (451, 203, 132, 143) action SetScreenVariable("suspect_name", "Wife")
+        hotspot (273, 371, 134, 144) action SetScreenVariable("suspect_name", "Son")
+        hotspot (452, 372, 131, 142) action SetScreenVariable("suspect_name", "Lover")
+        hotspot (274, 535, 133, 143) action SetScreenVariable("suspect_name", "Guard")
+        hotspot (451, 535, 134, 143) action SetScreenVariable("suspect_name", "Secretary")

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/journal.rpy", line 54: expected a keyword argument, colon, or end of line.
-    image selector  = Image("images/ui/journal_selector.png")
-                    ^
+File "game/screens/journal.rpy", line 99: expected a keyword argument, colon, or end of line.
+    hotspot (272, 30, 136, 146) action SetVariable("suspect_current", suspect_maid), $ renpy.restart_interaction()
+                                                                                     ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sun Nov 22 22:01:31 2020
+Mon Nov 23 00:16:37 2020

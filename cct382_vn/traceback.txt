@@ -3,26 +3,28 @@
 While running game code:
   File "game/scenes/introduction.rpy", line 34, in script call
     "YOU HAVE NOT UNLOCKED THE STUDY"
-  File "game/screens/journal.rpy", line 36, in script
+  File "game/screens/journal.rpy", line 79, in script
     call screen ui_journal
   File "renpy/common/000statements.rpy", line 531, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/screens/journal.rpy", line 40, in execute
+  File "game/screens/journal.rpy", line 83, in execute
     screen ui_journal():
-  File "game/screens/journal.rpy", line 40, in execute
+  File "game/screens/journal.rpy", line 83, in execute
     screen ui_journal():
-  File "game/screens/journal.rpy", line 42, in execute
+  File "game/screens/journal.rpy", line 84, in execute
     imagemap:
-  File "game/screens/journal.rpy", line 54, in execute
-    text suspect_maid._name
-NameError: name 'suspect_maid' is not defined
+  File "game/screens/journal.rpy", line 107, in execute
+    hotspot (451, 535, 134, 143) action SetSreenVariable("suspect_name", "Secretary")
+  File "game/screens/journal.rpy", line 107, in keywords
+    hotspot (451, 535, 134, 143) action SetSreenVariable("suspect_name", "Secretary")
+NameError: name 'SetSreenVariable' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "game/scenes/introduction.rpy", line 34, in script call
     "YOU HAVE NOT UNLOCKED THE STUDY"
-  File "game/screens/journal.rpy", line 36, in script
+  File "game/screens/journal.rpy", line 79, in script
     call screen ui_journal
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 1949, in execute
     self.call("execute")
@@ -54,18 +56,20 @@ Full traceback:
     self.update()
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 625, in update
     self.screen.function(**self.scope)
-  File "game/screens/journal.rpy", line 40, in execute
+  File "game/screens/journal.rpy", line 83, in execute
     screen ui_journal():
-  File "game/screens/journal.rpy", line 40, in execute
+  File "game/screens/journal.rpy", line 83, in execute
     screen ui_journal():
-  File "game/screens/journal.rpy", line 42, in execute
+  File "game/screens/journal.rpy", line 84, in execute
     imagemap:
-  File "game/screens/journal.rpy", line 54, in execute
-    text suspect_maid._name
-  File "<screen language>", line 54, in <module>
-NameError: name 'suspect_maid' is not defined
+  File "game/screens/journal.rpy", line 107, in execute
+    hotspot (451, 535, 134, 143) action SetSreenVariable("suspect_name", "Secretary")
+  File "game/screens/journal.rpy", line 107, in keywords
+    hotspot (451, 535, 134, 143) action SetSreenVariable("suspect_name", "Secretary")
+  File "<screen language>", line 107, in <module>
+NameError: name 'SetSreenVariable' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 cct382_vn 1.0
-Sun Nov 22 18:14:42 2020
+Mon Nov 23 00:21:51 2020
