@@ -48,10 +48,28 @@ init -1 python:
 
         def __init__(self, testimony, validity):
             """
-            Create a new Testimony. Each new Testimony created is True. 
+            Create a new Testimony. Each new Testimony created is True.
             """
             self.testimony = testimony
             self.validity = True
+
+    class Clue:
+        """
+        The Clue class stores the information for each clue.
+
+        === Public Attributes ===
+
+        === Representation Invariants ===
+        """
+        # === Private Attributes ===
+        # _title: display name for the clue (e.g. Winny's Knife)
+        # _image: path to the clue's image
+        # _description: description about the clue
+
+        def __init__(self, title, image_path, description):
+            self._title = title
+            self._image = image_path
+            self._description = description
 
 label journal:
     hide screen ui_gamebuttons
