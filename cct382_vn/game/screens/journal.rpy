@@ -19,6 +19,7 @@ init -1 python:
         The Suspect class stores the information for each suspect.
 
         === Public Attributes ===
+        # testimonies: a list of testimonies given by the Suspect
 
         === Representation Invariants ===
         """
@@ -31,6 +32,26 @@ init -1 python:
             self._name = name
             self._image = image_path
             self._description = description
+            self.testimonies = []
+
+    class Testimony:
+        """
+        A Testimony given by a character.
+
+        === Public Attributes ===
+        # testimony: the testimony given by a character
+        # validity: whether the testimony is true or false
+
+        === Representation Invariants ===
+        """
+        # === Private Attributes ===
+
+        def __init__(self, testimony, validity):
+            """
+            Create a new Testimony. Each new Testimony created is True. 
+            """
+            self.testimony = testimony
+            self.validity = True
 
 label journal:
     hide screen ui_gamebuttons
