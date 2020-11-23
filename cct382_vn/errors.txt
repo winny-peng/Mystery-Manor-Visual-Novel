@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/journal.rpy", line 14: invalid syntax
-        define suspect_maid = Suspect("Maid", "images/characters/maid_neutral.png", "This is a maid")
-                           ^
-    
+File "game/screens/journal.rpy", line 54: expected a keyword argument, colon, or end of line.
+    image selector  = Image("images/ui/journal_selector.png")
+                    ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sun Nov 22 18:10:59 2020
+Sun Nov 22 22:01:31 2020

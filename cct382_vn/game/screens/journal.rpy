@@ -48,7 +48,4 @@ screen ui_journal():
         yalign 0.5
 
         # image
-        ground "images/ui/journal.png"
-
-    # TODO REMOVE
-    text suspect_maid._name size 40 color "#0099cc"
+        ground "images/ui/journal_suspect.png"
