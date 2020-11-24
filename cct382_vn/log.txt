@@ -1,4 +1,4 @@
-Mon Nov 23 00:23:51 2020
+Mon Nov 23 19:17:38 2020
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
@@ -27,10 +27,10 @@ Init translation took 0.02s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
-Save screen analysis took 0.07s
-Prepare screens took 0.05s
+Save screen analysis took 0.08s
+Prepare screens took 0.06s
 Save pyanalysis. took 0.09s
-Save bytecode. took 0.09s
+Save bytecode. took 0.07s
 Running _start took 0.00s
 Performance test:
 Interface start took 0.02s
@@ -286,11 +286,20 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 1.69400000572s
+Total time until interface ready: 1.60800004005s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
 - Frame drawn at 0.017667 seconds.
-- Frame drawn at 0.034667 seconds.
+- Frame drawn at 0.033667 seconds.
 - Frame drawn at 0.050667 seconds.
-- Frame drawn at 0.069667 seconds.
-- 0.069667 seconds to render 5 frames.
+- Frame drawn at 0.067667 seconds.
+- 0.067667 seconds to render 5 frames.
+The window was minimized.
+The window was restored.
+
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Screen sizes: virtual=(1280, 720) physical=(1555, 875) drawable=(1555, 875)
+Root FBO is: 0
+FBO Maximum Texture Size: 2048

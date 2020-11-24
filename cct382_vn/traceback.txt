@@ -13,11 +13,7 @@ While running game code:
     screen ui_journal():
   File "game/screens/journal.rpy", line 84, in execute
     imagemap:
-  File "game/screens/journal.rpy", line 107, in execute
-    hotspot (451, 535, 134, 143) action SetSreenVariable("suspect_name", "Secretary")
-  File "game/screens/journal.rpy", line 107, in keywords
-    hotspot (451, 535, 134, 143) action SetSreenVariable("suspect_name", "Secretary")
-NameError: name 'SetSreenVariable' is not defined
+Exception: Could not find a ground image for imagemap.
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -62,14 +58,13 @@ Full traceback:
     screen ui_journal():
   File "game/screens/journal.rpy", line 84, in execute
     imagemap:
-  File "game/screens/journal.rpy", line 107, in execute
-    hotspot (451, 535, 134, 143) action SetSreenVariable("suspect_name", "Secretary")
-  File "game/screens/journal.rpy", line 107, in keywords
-    hotspot (451, 535, 134, 143) action SetSreenVariable("suspect_name", "Secretary")
-  File "<screen language>", line 107, in <module>
-NameError: name 'SetSreenVariable' is not defined
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ui.py", line 1246, in _imagemap
+    ground = pick(ground, ( "ground", "idle" ), idle)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ui.py", line 1244, in pick
+    raise Exception("Could not find a %s image for imagemap." % name[0])
+Exception: Could not find a ground image for imagemap.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 cct382_vn 1.0
-Mon Nov 23 00:21:51 2020
+Mon Nov 23 19:07:31 2020
