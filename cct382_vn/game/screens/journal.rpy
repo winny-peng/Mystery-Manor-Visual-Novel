@@ -84,6 +84,8 @@ screen ui_journal():
     imagemap:
         # === VARIABLES (DEFUALT) ===
         default page = "suspect"
+        default suspect_name = "Maid"
+        default clue_name = "Blood on the ground"
 
         text page color "#000" xpos 860 ypos 50
 
@@ -104,7 +106,6 @@ screen ui_journal():
         # === SUSPECT PAGE ===
         if page == "suspect":
             # suspect information
-            default suspect_name = "Name of Suspect"
             text suspect_name color "#000" xpos 861 ypos 111
 
             # profile pictures
@@ -116,3 +117,18 @@ screen ui_journal():
             hotspot (452, 372, 131, 142) action SetScreenVariable("suspect_name", "Lover")
             hotspot (274, 535, 133, 143) action SetScreenVariable("suspect_name", "Guard")
             hotspot (451, 535, 134, 143) action SetScreenVariable("suspect_name", "Secretary")
+
+        # === CLUE PAGE ===
+        if page == "clue":
+            # clue information
+            text clue_name color "#000" xpos 861 ypos 111
+
+            # profile pictures
+            hotspot (272, 30, 136, 146) action SetScreenVariable("clue_name", "Blood")
+            hotspot (451, 31, 133, 143) action SetScreenVariable("clue_name", "More blood on ground")
+            hotspot (273, 203, 134, 141) action SetScreenVariable("clue_name","Cup of tea")
+            hotspot (451, 203, 132, 143) action SetScreenVariable("clue_name", "Knife")
+            hotspot (273, 371, 134, 144) action SetScreenVariable("clue_name", "Random Clue")
+            hotspot (452, 372, 131, 142) action SetScreenVariable("clue_name", "Open window")
+            hotspot (274, 535, 133, 143) action SetScreenVariable("clue_name", "More random clue")
+            hotspot (451, 535, 134, 143) action SetScreenVariable("clue_name", "Hello darkness my old friend")
