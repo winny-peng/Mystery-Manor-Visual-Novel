@@ -1,6 +1,6 @@
 # === JOURNAL ===
 # This is the code for the player's journal. The journal keeps track of suspect
-# information, clues, and testimonies the player has collected.
+# information and their testimonies.
 
 # === GLOBAL VARIABLES ===
 # === SUSPECT
@@ -56,24 +56,6 @@ init -1 python:
             self.testimony = testimony
             self.validity = True
 
-    class Clue:
-        """
-        The Clue class stores the information for each clue.
-
-        === Public Attributes ===
-
-        === Representation Invariants ===
-        """
-        # === Private Attributes ===
-        # _title: display name for the clue (e.g. Winny's Knife)
-        # _img: path to the clue's image
-        # _description: description about the clue
-
-        def __init__(self, title, img, description):
-            self._title = title
-            self._img = img
-            self._description = description
-
 label journal:
     hide screen ui_gamebuttons
     call screen ui_journal
@@ -83,11 +65,7 @@ label journal:
 screen ui_journal():
     imagemap:
         # === VARIABLES (DEFUALT) ===
-        default page = "suspect"
         default suspect_name = "Maid"
-        default clue_name = "Blood on the ground"
-
-        text page color "#000" xpos 860 ypos 50
 
         # return/close map
         hotspot (1060, 26, 73, 66) action Return()
@@ -99,36 +77,15 @@ screen ui_journal():
         # image
         ground "images/ui/journal_suspects.png"
 
-        # === PAGE NAVIGATION ===
-        hotspot (65, 36, 133, 47) action SetScreenVariable("page", "suspect")
-        hotspot (64, 99, 134, 48) action SetScreenVariable("page", "clue")
-
         # === SUSPECT PAGE ===
-        if page == "suspect":
-            # suspect information
-            text suspect_name color "#000" xpos 861 ypos 111
+        text suspect_name color "#000" xpos 861 ypos 111
 
-            # profile pictures
-            hotspot (272, 30, 136, 146) action SetScreenVariable("suspect_name", "Maid")
-            hotspot (451, 31, 133, 143) action SetScreenVariable("suspect_name", "Mayor")
-            hotspot (273, 203, 134, 141) action SetScreenVariable("suspect_name","Brother")
-            hotspot (451, 203, 132, 143) action SetScreenVariable("suspect_name", "Wife")
-            hotspot (273, 371, 134, 144) action SetScreenVariable("suspect_name", "Son")
-            hotspot (452, 372, 131, 142) action SetScreenVariable("suspect_name", "Lover")
-            hotspot (274, 535, 133, 143) action SetScreenVariable("suspect_name", "Guard")
-            hotspot (451, 535, 134, 143) action SetScreenVariable("suspect_name", "Secretary")
-
-        # === CLUE PAGE ===
-        if page == "clue":
-            # clue information
-            text clue_name color "#000" xpos 861 ypos 111
-
-            # profile pictures
-            hotspot (272, 30, 136, 146) action SetScreenVariable("clue_name", "Blood")
-            hotspot (451, 31, 133, 143) action SetScreenVariable("clue_name", "More blood on ground")
-            hotspot (273, 203, 134, 141) action SetScreenVariable("clue_name","Cup of tea")
-            hotspot (451, 203, 132, 143) action SetScreenVariable("clue_name", "Knife")
-            hotspot (273, 371, 134, 144) action SetScreenVariable("clue_name", "Random Clue")
-            hotspot (452, 372, 131, 142) action SetScreenVariable("clue_name", "Open window")
-            hotspot (274, 535, 133, 143) action SetScreenVariable("clue_name", "More random clue")
-            hotspot (451, 535, 134, 143) action SetScreenVariable("clue_name", "Hello darkness my old friend")
+        # profile pictures
+        hotspot (272, 30, 136, 146) action SetScreenVariable("suspect_name", "Maid")
+        hotspot (451, 31, 133, 143) action SetScreenVariable("suspect_name", "Mayor")
+        hotspot (273, 203, 134, 141) action SetScreenVariable("suspect_name","Brother")
+        hotspot (451, 203, 132, 143) action SetScreenVariable("suspect_name", "Wife")
+        hotspot (273, 371, 134, 144) action SetScreenVariable("suspect_name", "Son")
+        hotspot (452, 372, 131, 142) action SetScreenVariable("suspect_name", "Lover")
+        hotspot (274, 535, 133, 143) action SetScreenVariable("suspect_name", "Guard")
+        hotspot (451, 535, 134, 143) action SetScreenVariable("suspect_name", "Secretary")
