@@ -26,7 +26,7 @@ screen ui_arrest():
         hotspot (895, 0, 58, 55) action Return()
 
         # === ARREST BUTTON (CONFIRM SELECTION) ===
-        hotspot (374, 545, 235, 49) action Return(True)
+        hotspot (374, 545, 235, 49) action Jump("ending")
 
         # position
         xalign 0.5

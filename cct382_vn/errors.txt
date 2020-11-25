@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scenes/introduction.rpy", line 47: is not terminated with a newline. (Check strings and parenthesis.)
-        $ suspect_maid.testimonies["I AM A MAID]" = True
+File "game/scenes/ending.rpy", line 2: expected statement.
+    pop_call()
+              ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Tue Nov 24 22:32:13 2020
+Wed Nov 25 18:30:29 2020

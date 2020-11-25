@@ -1,49 +1,67 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "game/custom_screens.rpy", line 1, in prepare_screen
+While running game code:
+  File "game/scenes/introduction.rpy", line 31, in script
+    with flash
+  File "game/custom_screens.rpy", line 1, in execute
     screen ui_gamebuttons():
-  File "game/custom_screens.rpy", line 1, in prepare
+  File "game/custom_screens.rpy", line 1, in execute
     screen ui_gamebuttons():
-  File "game/custom_screens.rpy", line 2, in prepare
+  File "game/custom_screens.rpy", line 2, in execute
     imagemap:
-  File "game/custom_screens.rpy", line 2, in prepare
-    imagemap:
-  File "game/custom_screens.rpy", line 18, in prepare
-    hotspot (35, 0, 119, 99) action If [Call("arrest"), Jump("ending"), None]
-  File "game/custom_screens.rpy", line 18, in prepare
-    hotspot (35, 0, 119, 99) action If [Call("arrest"), Jump("ending"), None]
-TypeError: 'function' object has no attribute '__getitem__'
+  File "game/custom_screens.rpy", line 18, in execute
+    hotspot (35, 0, 119, 99) action Call("arrest"), If (arrest, Jump("ending"), None)
+  File "game/custom_screens.rpy", line 18, in keywords
+    hotspot (35, 0, 119, 99) action Call("arrest"), If (arrest, Jump("ending"), None)
+NameError: name 'arrest' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\bootstrap.py", line 316, in bootstrap
-    renpy.main.main()
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\main.py", line 578, in main
-    run(restart)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\main.py", line 94, in run
-    renpy.display.screen.prepare_screens()
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 931, in prepare_screens
-    s.ast.prepare_screen()
-  File "game/custom_screens.rpy", line 1, in prepare_screen
+  File "game/scenes/introduction.rpy", line 31, in script
+    with flash
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 1389, in execute
+    renpy.exports.with_statement(trans, paired)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\exports.py", line 1601, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 2251, in do_with
+    clear=clear)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 430, in visit_all
+    callback(self)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 440, in per_interact
+    self.update()
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 625, in update
+    self.screen.function(**self.scope)
+  File "game/custom_screens.rpy", line 1, in execute
     screen ui_gamebuttons():
-  File "game/custom_screens.rpy", line 1, in prepare
+  File "game/custom_screens.rpy", line 1, in execute
     screen ui_gamebuttons():
-  File "game/custom_screens.rpy", line 2, in prepare
+  File "game/custom_screens.rpy", line 2, in execute
     imagemap:
-  File "game/custom_screens.rpy", line 2, in prepare
-    imagemap:
-  File "game/custom_screens.rpy", line 18, in prepare
-    hotspot (35, 0, 119, 99) action If [Call("arrest"), Jump("ending"), None]
-  File "game/custom_screens.rpy", line 18, in prepare
-    hotspot (35, 0, 119, 99) action If [Call("arrest"), Jump("ending"), None]
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\python.py", line 2052, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
+  File "game/custom_screens.rpy", line 18, in execute
+    hotspot (35, 0, 119, 99) action Call("arrest"), If (arrest, Jump("ending"), None)
+  File "game/custom_screens.rpy", line 18, in keywords
+    hotspot (35, 0, 119, 99) action Call("arrest"), If (arrest, Jump("ending"), None)
   File "<screen language>", line 18, in <module>
-TypeError: 'function' object has no attribute '__getitem__'
+NameError: name 'arrest' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 cct382_vn 1.0
-Wed Nov 25 17:28:49 2020
+Wed Nov 25 17:52:10 2020
