@@ -3,17 +3,15 @@
 # information and their testimonies.
 
 # === GLOBAL VARIABLES ===
-# === SUSPECT
-# TODO ALL SUSPECTS START WITH A GENERIC PROFIL PIC UNLESS THEY HAVE MET PLAYER
-define suspect_maid = Suspect("Maid", "images/characters/maid_neutral.png", "This is the maid")
-define suspect_mayor = Suspect("Mayor", "images/characters/maid_neutral.png", "This is the dead mayor")
-define suspect_brother = Suspect("Brother", "images/characters/maid_neutral.png", "This is the bro")
-define suspect_wife = Suspect("Wife", "images/characters/maid_neutral.png", "This is the wifey")
-define suspect_son = Suspect("Son", "images/characters/maid_neutral.png", "This is the kid")
-define suspect_lover = Suspect("Lover", "images/characters/maid_neutral.png", "This is the lover")
-define suspect_secretary = Suspect("Secretary", "images/characters/maid_neutral.png", "This is the secretary")
-define suspect_guard = Suspect("Guard", "images/characters/maid_neutral.png", "This is the guard")
-define suspect_current = suspect_maid
+# === SUSPECTS ===
+define suspect_maid = Suspect("Maid", "images/ui/journal_unknown_%s.jpg", "This is the maid")
+define suspect_mayor = Suspect("Mayor", "images/ui/journal_unknown_%s.jpg", "This is the dead mayor")
+define suspect_brother = Suspect("Brother", "images/ui/journal_unknown_%s.jpg", "This is the bro")
+define suspect_wife = Suspect("Wife", "images/ui/journal_unknown_%s.jpg", "This is the wifey")
+define suspect_son = Suspect("Son", "images/ui/journal_unknown_%s.jpg", "This is the kid")
+define suspect_lover = Suspect("Lover", "images/ui/journal_unknown_%s.jpg", "This is the lover")
+define suspect_secretary = Suspect("Secretary", "images/ui/journal_unknown_%s.jpg", "This is the secretary")
+define suspect_guard = Suspect("Guard", "images/ui/journal_unknown_%s.jpg", "This is the guard")
 
 # === SUSPECT CLASS ===
 init -1 python:
@@ -63,10 +61,10 @@ label journal:
     return
 
 screen ui_journal():
-    imagemap:
-        # === VARIABLES (DEFUALT) ===
-        default suspect_name = "Maid"
+    # === VARIABLES (DEFUALT) ===
+    default suspect_current = suspect_maid
 
+    imagemap:
         # return/close map
         hotspot (1060, 26, 73, 66) action Return()
 
@@ -77,15 +75,48 @@ screen ui_journal():
         # image
         ground "images/ui/journal_suspects.png"
 
-        # === SUSPECT PAGE ===
-        text suspect_name color "#000" xpos 861 ypos 111
+        # === SUSPECT INFORMATION PAGE ===
+        text suspect_current.name color "#000" xpos 861 ypos 111
+        text suspect_current.description color "#000" xpos 700 ypos 500
 
-        # profile pictures
-        hotspot (272, 30, 136, 146) action SetScreenVariable("suspect_name", "Maid")
-        hotspot (451, 31, 133, 143) action SetScreenVariable("suspect_name", "Mayor")
-        hotspot (273, 203, 134, 141) action SetScreenVariable("suspect_name","Brother")
-        hotspot (451, 203, 132, 143) action SetScreenVariable("suspect_name", "Wife")
-        hotspot (273, 371, 134, 144) action SetScreenVariable("suspect_name", "Son")
-        hotspot (452, 372, 131, 142) action SetScreenVariable("suspect_name", "Lover")
-        hotspot (274, 535, 133, 143) action SetScreenVariable("suspect_name", "Guard")
-        hotspot (451, 535, 134, 143) action SetScreenVariable("suspect_name", "Secretary")
+    # === SUSPECT NAVIGATION ===
+    # 1
+    imagebutton:
+        pos (275, 32)
+        auto suspect_maid.img
+        action SetScreenVariable("suspect_current", suspect_maid)
+    # 2
+    imagebutton:
+        pos (451, 34)
+        auto suspect_mayor.img
+        action SetScreenVariable("suspect_current", suspect_mayor)
+    # 3
+    imagebutton:
+        pos (272, 203)
+        auto suspect_brother.img
+        action SetScreenVariable("suspect_current", suspect_brother)
+    # 4
+    imagebutton:
+        pos (454, 203)
+        auto suspect_wife.img
+        action SetScreenVariable("suspect_current", suspect_wife)
+    # 5
+    imagebutton:
+        pos (272, 372)
+        auto suspect_son.img
+        action SetScreenVariable("suspect_current", suspect_son)
+    # 6
+    imagebutton:
+        pos (451, 369)
+        auto suspect_lover.img
+        action SetScreenVariable("suspect_current", suspect_lover)
+    # 7
+    imagebutton:
+        pos (273, 535)
+        auto suspect_guard.img
+        action SetScreenVariable("suspect_current", suspect_guard)
+    # 8
+    imagebutton:
+        pos (451, 534)
+        auto suspect_secretary.img
+        action SetScreenVariable("suspect_current", suspect_secretary)

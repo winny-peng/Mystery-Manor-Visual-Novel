@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/journal.rpy", line 99: expected a keyword argument, colon, or end of line.
-    hotspot (272, 30, 136, 146) action SetVariable("suspect_current", suspect_maid), $ renpy.restart_interaction()
-                                                                                     ^
+File "game/screens/journal.rpy", line 89: Line is indented, but the preceding action statement does not expect a block. Please check this line's indentation.
+    SetScreenVariable("suspect_description", suspect_maid.description)
+    ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Mon Nov 23 00:16:37 2020
+Tue Nov 24 20:24:03 2020
