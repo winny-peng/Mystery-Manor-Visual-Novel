@@ -42,6 +42,16 @@ label introduction:
     "YOU HAVE MET THE MAID"
     # ===================================
 
+    # ===== # TODO TESTIMONY TESTING CODE =====
+    "MAID'S TESTIMONY: I AM A MAID"
+    $ suspect_maid.testimonies["I AM A MAID"] = True
+    "SYKE"
+    "MAID IS NOT THE MAID"
+    "REVISED TESTIMONY: I AM A COW"
+    $ suspect_maid.testimonies["I AM A MAID"] = False
+    $ suspect_maid.testimonies["I AM A COW"] = True
+    # ===================================
+
     narrator "{i}You see a sudden flash and it takes you awhile before your surroundings come into focus.{/i}"
     "ME" "{=txt_thoughts}(...)"
     narrator "{i}You see a tall, golden gate, and behind it, a grand, white manor.{/i}"

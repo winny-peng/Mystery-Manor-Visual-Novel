@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/screens/arrest.rpy", line 10: screen expects a non-empty block.
-    screen ui_arrest():
-                       ^
+File "game/scenes/introduction.rpy", line 47: is not terminated with a newline. (Check strings and parenthesis.)
+        $ suspect_maid.testimonies["I AM A MAID]" = True
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Tue Nov 24 21:53:09 2020
+Tue Nov 24 22:32:13 2020

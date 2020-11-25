@@ -33,32 +33,13 @@ init -1 python:
             self.name = name
             self.img = img
             self.description = description
-            self.testimonies = []
+            self.testimonies = {}
 
         def visit(self):
             """
             "Visiting" the suspect unlocks their profile picture.
             """
             self.img = "images/ui/journal_" + self.name + "_%s.jpg"
-
-    class Testimony:
-        """
-        A Testimony given by a character.
-
-        === Public Attributes ===
-        # testimony: the testimony given by a character
-        # validity: whether the testimony is true or false
-
-        === Representation Invariants ===
-        """
-        # === Private Attributes ===
-
-        def __init__(self, testimony, validity):
-            """
-            Create a new Testimony. Each new Testimony created is True.
-            """
-            self.testimony = testimony
-            self.validity = True
 
 label journal:
     hide screen ui_gamebuttons
@@ -88,8 +69,8 @@ screen ui_journal():
 
         # === TESTIMONY INFORMATION ===
         for testimony in suspect_current.testimonies:
-            if testimony.validity == True:
-                text testimony.testimony color "#000" xpos 700 ypos 300
+            if suspect_current.testimonies[testimony] == True:
+                text testimony color "#000" xpos 700 ypos 400
 
     # === SUSPECT NAVIGATION ===
     # 1
