@@ -3,15 +3,14 @@
 # information and their testimonies.
 
 # === GLOBAL VARIABLES ===
-# === SUSPECTS ===
-default suspect_maid = Suspect("maid", "images/ui/journal_unknown_%s.jpg", "This is the maid")
-default suspect_mayor = Suspect("mayor", "images/ui/journal_unknown_%s.jpg", "This is the dead mayor")
-default suspect_brother = Suspect("brother", "images/ui/journal_unknown_%s.jpg", "This is the bro")
-default suspect_wife = Suspect("wife", "images/ui/journal_unknown_%s.jpg", "This is the wifey")
-default suspect_son = Suspect("son", "images/ui/journal_unknown_%s.jpg", "This is the kid")
-default suspect_lover = Suspect("lover", "images/ui/journal_unknown_%s.jpg", "This is the lover")
-default suspect_secretary = Suspect("secretary", "images/ui/journal_unknown_%s.jpg", "This is the secretary")
-default suspect_guard = Suspect("guard", "images/ui/journal_unknown_%s.jpg", "This is the guard")
+default suspect_maid = Suspect("maid", "images/ui/pp_unknown_%s.jpg", "This is the maid")
+default suspect_mayor = Suspect("mayor", "images/ui/pp_unknown_%s.jpg", "This is the dead mayor")
+default suspect_brother = Suspect("brother", "images/ui/pp_unknown_%s.jpg", "This is the bro")
+default suspect_wife = Suspect("wife", "images/ui/pp_unknown_%s.jpg", "This is the wifey")
+default suspect_son = Suspect("son", "images/ui/pp_unknown_%s.jpg", "This is the kid")
+default suspect_lover = Suspect("lover", "images/ui/pp_unknown_%s.jpg", "This is the lover")
+default suspect_secretary = Suspect("secretary", "images/ui/pp_unknown_%s.jpg", "This is the secretary")
+default suspect_guard = Suspect("guard", "images/ui/pp_unknown_%s.jpg", "This is the guard")
 
 # === SUSPECT CLASS ===
 init -1 python:
@@ -22,6 +21,7 @@ init -1 python:
         === Public Attributes ===
         # testimonies: a list of testimonies given by the Suspect
         # img: path to suspect's profile picture
+        # img_arrested: path to suspect's arrested profile picture
         # name: suspect's name
         # description: suspect's description
 
@@ -32,14 +32,16 @@ init -1 python:
         def __init__(self, name, img, description):
             self.name = name
             self.img = img
+            self.img_arrested = img %("selected_idle")
             self.description = description
             self.testimonies = {}
 
         def visit(self):
             """
-            "Visiting" the suspect unlocks their profile picture.
+            "Visiting" the suspect updates their profile picture.
             """
-            self.img = "images/ui/journal_" + self.name + "_%s.jpg"
+            self.img = "images/ui/pp_" + self.name + "_%s.jpg"
+            self.img_arrested = "images/ui/pp_" + self.name + "_selected_idle.jpg"
 
 label journal:
     hide screen ui_gamebuttons
