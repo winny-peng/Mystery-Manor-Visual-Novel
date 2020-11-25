@@ -3,26 +3,26 @@
 While running game code:
   File "game/scenes/introduction.rpy", line 34, in script call
     "YOU HAVE NOT UNLOCKED THE STUDY"
-  File "game/screens/journal.rpy", line 59, in script
+  File "game/screens/journal.rpy", line 65, in script
     call screen ui_journal
   File "renpy/common/000statements.rpy", line 531, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/screens/journal.rpy", line 63, in execute
+  File "game/screens/journal.rpy", line 69, in execute
     screen ui_journal():
-  File "game/screens/journal.rpy", line 63, in execute
+  File "game/screens/journal.rpy", line 69, in execute
     screen ui_journal():
-  File "game/screens/journal.rpy", line 68, in execute
+  File "game/screens/journal.rpy", line 73, in execute
     imagemap:
-  File "game/screens/journal.rpy", line 81, in execute
-    text suspect
-NameError: name 'suspect' is not defined
+  File "game/screens/journal.rpy", line 87, in execute
+    text suspect_currrent.img color "#000" xpos 700 ypos 300
+NameError: name 'suspect_currrent' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "game/scenes/introduction.rpy", line 34, in script call
     "YOU HAVE NOT UNLOCKED THE STUDY"
-  File "game/screens/journal.rpy", line 59, in script
+  File "game/screens/journal.rpy", line 65, in script
     call screen ui_journal
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 1949, in execute
     self.call("execute")
@@ -54,18 +54,18 @@ Full traceback:
     self.update()
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 625, in update
     self.screen.function(**self.scope)
-  File "game/screens/journal.rpy", line 63, in execute
+  File "game/screens/journal.rpy", line 69, in execute
     screen ui_journal():
-  File "game/screens/journal.rpy", line 63, in execute
+  File "game/screens/journal.rpy", line 69, in execute
     screen ui_journal():
-  File "game/screens/journal.rpy", line 68, in execute
+  File "game/screens/journal.rpy", line 73, in execute
     imagemap:
-  File "game/screens/journal.rpy", line 81, in execute
-    text suspect
-  File "<screen language>", line 81, in <module>
-NameError: name 'suspect' is not defined
+  File "game/screens/journal.rpy", line 87, in execute
+    text suspect_currrent.img color "#000" xpos 700 ypos 300
+  File "<screen language>", line 87, in <module>
+NameError: name 'suspect_currrent' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 cct382_vn 1.0
-Tue Nov 24 20:20:31 2020
+Tue Nov 24 21:44:52 2020

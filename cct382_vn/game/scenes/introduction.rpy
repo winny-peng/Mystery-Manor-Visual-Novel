@@ -36,6 +36,12 @@ label introduction:
     "YOU HAVE UNLOCKED THE STUDY"
     # ===================================
 
+    # ===== # TODO SUSPECT TESTING CODE =====
+    "YOU HAVE NOT MET THE MAID"
+    $ suspect_maid.visit()
+    "YOU HAVE MET THE MAID"
+    # ===================================
+
     narrator "{i}You see a sudden flash and it takes you awhile before your surroundings come into focus.{/i}"
     "ME" "{=txt_thoughts}(...)"
     narrator "{i}You see a tall, golden gate, and behind it, a grand, white manor.{/i}"

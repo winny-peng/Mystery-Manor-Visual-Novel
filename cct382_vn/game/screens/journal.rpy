@@ -4,14 +4,14 @@
 
 # === GLOBAL VARIABLES ===
 # === SUSPECTS ===
-define suspect_maid = Suspect("Maid", "images/ui/journal_unknown_%s.jpg", "This is the maid")
-define suspect_mayor = Suspect("Mayor", "images/ui/journal_unknown_%s.jpg", "This is the dead mayor")
-define suspect_brother = Suspect("Brother", "images/ui/journal_unknown_%s.jpg", "This is the bro")
-define suspect_wife = Suspect("Wife", "images/ui/journal_unknown_%s.jpg", "This is the wifey")
-define suspect_son = Suspect("Son", "images/ui/journal_unknown_%s.jpg", "This is the kid")
-define suspect_lover = Suspect("Lover", "images/ui/journal_unknown_%s.jpg", "This is the lover")
-define suspect_secretary = Suspect("Secretary", "images/ui/journal_unknown_%s.jpg", "This is the secretary")
-define suspect_guard = Suspect("Guard", "images/ui/journal_unknown_%s.jpg", "This is the guard")
+default suspect_maid = Suspect("maid", "images/ui/journal_unknown_%s.jpg", "This is the maid")
+default suspect_mayor = Suspect("mayor", "images/ui/journal_unknown_%s.jpg", "This is the dead mayor")
+default suspect_brother = Suspect("brother", "images/ui/journal_unknown_%s.jpg", "This is the bro")
+default suspect_wife = Suspect("wife", "images/ui/journal_unknown_%s.jpg", "This is the wifey")
+default suspect_son = Suspect("son", "images/ui/journal_unknown_%s.jpg", "This is the kid")
+default suspect_lover = Suspect("lover", "images/ui/journal_unknown_%s.jpg", "This is the lover")
+default suspect_secretary = Suspect("secretary", "images/ui/journal_unknown_%s.jpg", "This is the secretary")
+default suspect_guard = Suspect("guard", "images/ui/journal_unknown_%s.jpg", "This is the guard")
 
 # === SUSPECT CLASS ===
 init -1 python:
@@ -34,6 +34,12 @@ init -1 python:
             self.img = img
             self.description = description
             self.testimonies = []
+
+        def visit(self):
+            """
+            "Visiting" the suspect unlocks their profile picture.
+            """
+            self.img = "images/ui/journal_" + self.name + "_%s.jpg"
 
     class Testimony:
         """
@@ -75,9 +81,15 @@ screen ui_journal():
         # image
         ground "images/ui/journal_suspects.png"
 
-        # === SUSPECT INFORMATION PAGE ===
+        # === SUSPECT INFORMATION ===
         text suspect_current.name color "#000" xpos 861 ypos 111
         text suspect_current.description color "#000" xpos 700 ypos 500
+        text suspect_current.img color "#000" xpos 700 ypos 300
+
+        # === TESTIMONY INFORMATION ===
+        for testimony in suspect_current.testimonies:
+            if testimony.validity == True:
+                text testimony.testimony color "#000" xpos 700 ypos 300
 
     # === SUSPECT NAVIGATION ===
     # 1
