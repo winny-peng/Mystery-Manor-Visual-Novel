@@ -2,45 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/journal.rpy", line 62: invalid syntax
-    define suspect_maid = Suspect("maid", "images/ui/journal_unknown_%s.jpg", "This is the maid")
+File "game/screens/arrest.rpy", line 10: screen expects a non-empty block.
+    screen ui_arrest():
                        ^
-    
-
-File "game/screens/journal.rpy", line 63: invalid syntax
-    define suspect_mayor = Suspect("mayor", "images/ui/journal_unknown_%s.jpg", "This is the dead mayor")
-                        ^
-    
-
-File "game/screens/journal.rpy", line 64: invalid syntax
-    define suspect_brother = Suspect("brother", "images/ui/journal_unknown_%s.jpg", "This is the bro")
-                          ^
-    
-
-File "game/screens/journal.rpy", line 65: invalid syntax
-    define suspect_wife = Suspect("wife", "images/ui/journal_unknown_%s.jpg", "This is the wifey")
-                       ^
-    
-
-File "game/screens/journal.rpy", line 66: invalid syntax
-    define suspect_son = Suspect("son", "images/ui/journal_unknown_%s.jpg", "This is the kid")
-                      ^
-    
-
-File "game/screens/journal.rpy", line 67: invalid syntax
-    define suspect_lover = Suspect("lover", "images/ui/journal_unknown_%s.jpg", "This is the lover")
-                        ^
-    
-
-File "game/screens/journal.rpy", line 68: invalid syntax
-    define suspect_secretary = Suspect("secretary", "images/ui/journal_unknown_%s.jpg", "This is the secretary")
-                            ^
-    
-
-File "game/screens/journal.rpy", line 69: invalid syntax
-    define suspect_guard = Suspect("guard", "images/ui/journal_unknown_%s.jpg", "This is the guard")
-                        ^
-    
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Tue Nov 24 21:39:24 2020
+Tue Nov 24 21:53:09 2020

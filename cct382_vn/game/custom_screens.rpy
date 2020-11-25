@@ -15,4 +15,4 @@ screen ui_gamebuttons():
         hotspot (1172, 0, 107, 100) action Call("journal")
 
         # ARREST BUTTON
-        hotspot (35, 0, 119, 99) action Jump("arrest")
+        hotspot (35, 0, 119, 99) action Call("arrest")

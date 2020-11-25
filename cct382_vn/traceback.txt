@@ -3,27 +3,20 @@
 While running game code:
   File "game/scenes/introduction.rpy", line 34, in script call
     "YOU HAVE NOT UNLOCKED THE STUDY"
-  File "game/screens/journal.rpy", line 65, in script
-    call screen ui_journal
+  File "game/screens/arrest.rpy", line 6, in script
+    call screen ui_arrest
   File "renpy/common/000statements.rpy", line 531, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/screens/journal.rpy", line 69, in execute
-    screen ui_journal():
-  File "game/screens/journal.rpy", line 69, in execute
-    screen ui_journal():
-  File "game/screens/journal.rpy", line 73, in execute
-    imagemap:
-  File "game/screens/journal.rpy", line 87, in execute
-    text suspect_currrent.img color "#000" xpos 700 ypos 300
-NameError: name 'suspect_currrent' is not defined
+Exception: Screen ui_arrest is not known.
+
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "game/scenes/introduction.rpy", line 34, in script call
     "YOU HAVE NOT UNLOCKED THE STUDY"
-  File "game/screens/journal.rpy", line 65, in script
-    call screen ui_journal
+  File "game/screens/arrest.rpy", line 6, in script
+    call screen ui_arrest
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 1949, in execute
     self.call("execute")
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 1937, in call
@@ -32,40 +25,14 @@ Full traceback:
     return method(parsed, *args, **kwargs)
   File "renpy/common/000statements.rpy", line 531, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\exports.py", line 2905, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ui.py", line 297, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 430, in visit_all
-    callback(self)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 440, in per_interact
-    self.update()
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 625, in update
-    self.screen.function(**self.scope)
-  File "game/screens/journal.rpy", line 69, in execute
-    screen ui_journal():
-  File "game/screens/journal.rpy", line 69, in execute
-    screen ui_journal():
-  File "game/screens/journal.rpy", line 73, in execute
-    imagemap:
-  File "game/screens/journal.rpy", line 87, in execute
-    text suspect_currrent.img color "#000" xpos 700 ypos 300
-  File "<screen language>", line 87, in <module>
-NameError: name 'suspect_currrent' is not defined
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\exports.py", line 2900, in call_screen
+    show_screen(_screen_name, _transient=True, *args, **kwargs)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 1107, in show_screen
+    raise Exception("Screen %s is not known.\n" % (name[0],))
+Exception: Screen ui_arrest is not known.
+
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 cct382_vn 1.0
-Tue Nov 24 21:44:52 2020
+Tue Nov 24 22:01:37 2020

@@ -67,7 +67,7 @@ label journal:
     return
 
 screen ui_journal():
-    # === VARIABLES (DEFUALT) ===
+    # === VARIABLES ===
     default suspect_current = suspect_maid
 
     imagemap:
