@@ -24,14 +24,14 @@ label map:
 screen ui_map():
     imagemap:
         # return/close map
-        hotspot (452, 0, 37, 30) action Return()
+        hotspot (900, 2, 24, 31) action Return()
 
         # position
         xalign 0.5
         yalign 0.5
 
         # image
-        ground "images/ui/map_1.jpg"
+        ground "images/ui/map.png"
 
     # === ROOMS ===
     # Unvisited rooms are greyed out; visited rooms are displayed. If
