@@ -5,6 +5,10 @@
 
 define e = Character("Eileen")
 
+# Inventory
+
+default playerInventory = Inventory()
+
 # The game starts here.
 
 label start:

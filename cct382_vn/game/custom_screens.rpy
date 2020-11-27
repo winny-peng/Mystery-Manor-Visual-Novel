@@ -9,7 +9,7 @@ screen ui_gamebuttons():
         hotspot (959, 0, 107, 99) action Call("map")
 
         # BAG BUTTON
-        hotspot (1066, 0, 106, 100) action Jump("inventory")
+        hotspot (1066, 0, 106, 100) action Call("inventory")
 
         # JOURNAL BUTTON
         hotspot (1172, 0, 107, 100) action Call("journal")
