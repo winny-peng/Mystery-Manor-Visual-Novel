@@ -30,6 +30,16 @@ label introduction:
     scene bg mansion
     with flash
 
+    # ===== # TODO INVENTORY TESTING CODE =====
+    "YOU HAVE NOT PICKED UP THE CAP"
+    $ cap = Clue("cap", "images/ui/pp_unknown_idle.jpg", "this is a cap", "cap")
+    $ playerInventory.add(cap)
+    $ test_2 = playerInventory.hasItem(cap)
+    "Do I have the cap? [test_2]"
+    "Clue name: [cap.name]"
+    "YOU HAVE PICKED UP THE CAP"
+    # ===================================
+
     # ===== # TODO MAP TESTING CODE =====
     "YOU HAVE NOT UNLOCKED THE STUDY"
     $ study_visited = True

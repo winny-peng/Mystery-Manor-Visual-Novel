@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/scenes/ending.rpy", line 2: expected statement.
-    pop_call()
-              ^
+File "game/scenes/introduction.rpy", line 35: is not terminated with a newline. (Check strings and parenthesis.)
+        $ test = Clue(("cap", "images/ui/pp_unknown_idle.jpg", "this is a cap", "cap")
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Wed Nov 25 18:30:29 2020
+Thu Nov 26 22:34:40 2020
