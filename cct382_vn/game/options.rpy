@@ -4,6 +4,11 @@
 ## them. Lines beginning with a single '#' mark are commented-out code, and you
 ## may want to uncomment them when appropriate.
 
+# ===== CUSTOM CHANGES =====
+
+# Players may no longer use the scroll to access previous dialogue.
+define config.rollback_enabled = False
+
 
 ## Basics ######################################################################
 

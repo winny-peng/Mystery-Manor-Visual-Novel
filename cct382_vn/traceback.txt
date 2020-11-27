@@ -1,30 +1,67 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scenes/introduction.rpy", line 37, in script
-    $ test_2 = playerInventory.hasItem(Clue)
-  File "game/scenes/introduction.rpy", line 37, in <module>
-    $ test_2 = playerInventory.hasItem(Clue)
-  File "game/screens/inventory.rpy", line 52, in hasItem
-    if item == Clue.name:
-AttributeError: type object 'Clue' has no attribute 'name'
+  File "game/scenes/introduction.rpy", line 31, in script
+    with flash
+  File "game/custom_screens.rpy", line 1, in execute
+    screen ui_gamebuttons():
+  File "game/custom_screens.rpy", line 1, in execute
+    screen ui_gamebuttons():
+  File "game/custom_screens.rpy", line 2, in execute
+    imagemap:
+  File "game/custom_screens.rpy", line 18, in execute
+    hotspot (35, 0, 119, 99) action Call("arrest"), {w}
+  File "game/custom_screens.rpy", line 18, in keywords
+    hotspot (35, 0, 119, 99) action Call("arrest"), {w}
+NameError: name 'w' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scenes/introduction.rpy", line 37, in script
-    $ test_2 = playerInventory.hasItem(Clue)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/scenes/introduction.rpy", line 37, in <module>
-    $ test_2 = playerInventory.hasItem(Clue)
-  File "game/screens/inventory.rpy", line 52, in hasItem
-    if item == Clue.name:
-AttributeError: type object 'Clue' has no attribute 'name'
+  File "game/scenes/introduction.rpy", line 31, in script
+    with flash
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 1389, in execute
+    renpy.exports.with_statement(trans, paired)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\exports.py", line 1601, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 2251, in do_with
+    clear=clear)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 430, in visit_all
+    callback(self)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 440, in per_interact
+    self.update()
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 625, in update
+    self.screen.function(**self.scope)
+  File "game/custom_screens.rpy", line 1, in execute
+    screen ui_gamebuttons():
+  File "game/custom_screens.rpy", line 1, in execute
+    screen ui_gamebuttons():
+  File "game/custom_screens.rpy", line 2, in execute
+    imagemap:
+  File "game/custom_screens.rpy", line 18, in execute
+    hotspot (35, 0, 119, 99) action Call("arrest"), {w}
+  File "game/custom_screens.rpy", line 18, in keywords
+    hotspot (35, 0, 119, 99) action Call("arrest"), {w}
+  File "<screen language>", line 18, in <module>
+NameError: name 'w' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 cct382_vn 1.0
-Thu Nov 26 22:36:39 2020
+Fri Nov 27 13:04:35 2020

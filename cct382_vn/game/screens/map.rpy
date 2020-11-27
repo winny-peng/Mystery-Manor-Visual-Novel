@@ -19,6 +19,7 @@ label map:
     hide screen ui_gamebuttons
     call screen ui_map
     show screen ui_gamebuttons
+    "{w}"
     return
 
 screen ui_map():
