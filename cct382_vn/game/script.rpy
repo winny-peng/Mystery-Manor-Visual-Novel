@@ -3,18 +3,43 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
+define player = Character("ME")
 
 # Inventory
 
 default playerInventory = Inventory()
 
-# The game starts here.
+# === ROOM CLASSES ===
+init -1 python:
+    class Room:
+        """
+        The Room class stores the information for each room.
+
+        === Public Attributes ===
+        # img: path to the background image for the room
+
+        === Representation Invariants ===
+        """
+        # === Private Attributes ===
+
+        def __init__(self, img):
+            self.img = img
+
+        def update(self, new_img):
+            """
+            Update the Room's background image to <new_img>.
+            """
+            self.img = new_img
 
 label start:
-
-    # introduction scene
+    # === INTRODUCTION ===
+    # The game's introduction.
     jump introduction
+
+    # === TUTORIAL ===
+    # The tutorial explains all the basic controls and available features the
+    # player can use (e.g. click to interact, how to use inventory/map/journal)
+    jump tutorial
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
