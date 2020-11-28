@@ -3,7 +3,14 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
+# === CHARACTERS ===
 define player = Character("ME")
+define detective = Character("Detective")
+define maid = Character("Maid")
+
+# === CHARACTERS IMAGES ===
+# MAID
+image maid_neutral= "images/characters/maid_neutral.png"
 
 # Inventory
 
@@ -34,7 +41,8 @@ init -1 python:
 label start:
     # === INTRODUCTION ===
     # The game's introduction.
-    jump introduction
+    # TODO UNCOMMENT
+    # jump introduction
 
     # === TUTORIAL ===
     # The tutorial explains all the basic controls and available features the

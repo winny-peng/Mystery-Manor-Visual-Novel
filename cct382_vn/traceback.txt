@@ -1,26 +1,20 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scenes/introduction.rpy", line 27, in script
-    image bg study = room_study.img
-  File "game/scenes/introduction.rpy", line 27, in <module>
-    image bg study = room_study.img
-NameError: name 'room_study' is not defined
+  File "game/scenes/introduction.rpy", line 148, in script
+    while not maid_visited:
+Exception: Possible infinite loop.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scenes/introduction.rpy", line 27, in script
-    image bg study = room_study.img
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 1013, in execute
-    img = renpy.python.py_eval_bytecode(self.code.bytecode)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\python.py", line 2052, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/scenes/introduction.rpy", line 27, in <module>
-    image bg study = room_study.img
-NameError: name 'room_study' is not defined
+  File "game/scenes/introduction.rpy", line 148, in script
+    while not maid_visited:
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\execution.py", line 59, in check_infinite_loop
+    raise Exception("Possible infinite loop.")
+Exception: Possible infinite loop.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 cct382_vn 1.0
-Sat Nov 28 13:58:03 2020
+Sat Nov 28 18:10:47 2020

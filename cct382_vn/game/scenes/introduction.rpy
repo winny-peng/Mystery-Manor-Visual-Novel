@@ -6,11 +6,7 @@ init:
 
     # === BACKGROUNDS ===
     image bg mansion = "images/backgrounds/bg_mansion.jpg"
-    image bg study = "[room_study.img]"
-
-    # === CHARACTERS ===
-    define maid = Character("Maid")
-    image maid = "images/characters/maid_neutral.png"
+    image bg tutorial = "images/backgrounds/tutorial.png"
 
     define guard = Character("Guard")
     image guard = "images/characters/guard_neutral.png"
@@ -111,7 +107,7 @@ label introduction:
     "{i}The guard turns to the left, stopping in front of a closed door.{/i}"
     "Guard" "We've arrived, Detective Watson."
     "You can feel it. The source of that looming feeling of dread is definitely on the other side."
-    scene bg study
+    scene bg tutorial
     "Your new reality hits you like a wrecking ball."
     player "(H-hey old man...what exactly do you do for a living...?)"
     "Ghost?" "Isn’t it obvious by now? I’m a PRIVATE DETECTIVE for crying out loud!"
@@ -127,3 +123,47 @@ label introduction:
     "{i}Again, left with no other choice, you follow the detective's words{/i}"
     jump tutorial
     return
+
+label tutorial:
+    # === VARIABLES ===
+    default maid_visited = False
+
+    # === SCRIPT ===
+    scene bg tutorial
+    "Pay attention. You are thrust into the role of a detective and you have no experience whatsoever."
+    "Luckily, Detective Watson is going to quickly show you the ropes."
+    "Follow his instructions by clicking on the objects and people to interact with them."
+    "Good luck Detective!"
+    show text "How To Detective 101" with dissolve
+    with Pause(2)
+    hide text with dissolve
+    with Pause(1)
+    detective "HEY! I told you to stop meddling and GO TALK TO THE LADY ON YOUR RIGHT!"
+    show screen ui_gamebuttons
+    hide screen say
+    # === TUTORIAL - CHARACTER INTERACTION ===
+    while not maid_visited:
+        call screen tutorial_interactions("tutorial_maid")
+        if _return:
+            $ maid_visited = True
+    show maid_neutral
+    maid "Detective Watson, we're so glad you're finally here..."
+    maid "Th-this is so horrible...{w}S-Sir Henri’s been m-murdered in cold blood..."
+    maid "Sir Henri was c-completely fine this afternoon, w-who could have done this!?"
+    detective "She may seem innocent, but the number one rule for a detective is that everyone’s a suspect."
+    hide maid_neutral
+
+screen tutorial_interactions(tutorial):
+    # === FOCUS OBJECT ===
+    # Guides the player by adding a dark overlay over the objects they're not
+    # supposed to interact with.
+    frame:
+        background ("#00000095")
+
+    # === TUTORIAL - CHARACTER INTERACTION ===
+    # The player learns to click on characters to interact with them.
+    if tutorial == "tutorial_maid":
+        imagebutton:
+            focus_mask True
+            idle "images/objects/study_maid.png"
+            action Return(True)
