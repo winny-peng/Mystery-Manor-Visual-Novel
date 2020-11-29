@@ -16,6 +16,8 @@ init:
         color "#0099cc"
     style txt_small:
         size 12
+    style txt_popup:
+        size 60
 
     # === EFFECTS ===
     # Camera flash - quickly fades to white, then back to the scene.
@@ -125,10 +127,12 @@ label tutorial:
     "Luckily, Detective Watson is going to quickly show you the ropes."
     "Follow his instructions by clicking on the objects and people to interact with them."
     "Good luck Detective!"
-    show text "How To Detective 101" with dissolve
-    with Pause(2)
+    window hide
+    show text "{=txt_popup}How To Detective 101" with dissolve
+    with Pause(1)
     hide text with dissolve
     with Pause(1)
+    window show
     # === TUTORIAL - CHARACTER INTERACTION ===
     detective "HEY! I told you to stop meddling and GO TALK TO THE LADY ON YOUR RIGHT!"
     hide screen say
@@ -176,6 +180,7 @@ label tutorial:
     # === TUTORIAL - SHOW CHARACTER OBJECTS ===
     # TODO NEED WORKING INVENTORY
     # === TUTORIAL - JOURNAL(SUSPECT)
+    # TODO NEED WORKING INVENTORY (SHOW SUSPECT OBJECT TO OBTAIN TESTIMONY)
     # === TUTORIAL - MAP ===
     detective "You can look for more clues, but when you’re ready to investigate further, the map of the manor will come in handy."
     detective "Why don't you take a quick peek? I worked really hard on it."
