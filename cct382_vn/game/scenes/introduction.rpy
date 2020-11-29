@@ -37,18 +37,6 @@ label introduction:
     "YOU HAVE PICKED UP THE CAP"
     # ===================================
 
-    # ===== # TODO MAP TESTING CODE =====
-    "YOU HAVE NOT UNLOCKED THE STUDY"
-    $ study_visited = True
-    "YOU HAVE UNLOCKED THE STUDY"
-    # ===================================
-
-    # ===== # TODO SUSPECT TESTING CODE =====
-    "YOU HAVE NOT MET THE MAID"
-    $ suspect_maid.visit()
-    "YOU HAVE MET THE MAID"
-    # ===================================
-
     # ===== # TODO TESTIMONY TESTING CODE =====
     "MAID'S TESTIMONY: I AM A MAID"
     $ suspect_maid.testimonies["I AM A MAID"] = True
@@ -129,6 +117,7 @@ label tutorial:
     default character_visited = False
     default object_visited = False
     default journal_visited = False
+    default map_visited = False
 
     # === SCRIPT ===
     scene bg tutorial
@@ -153,7 +142,7 @@ label tutorial:
     maid "Sir Henri was c-completely fine this afternoon, w-who could have done this!?"
     detective "She may seem innocent, but the number one rule for a detective is that everyone’s a suspect."
     hide maid_neutral
-    # === TUTORIAL - JOURNAL ===
+    # === TUTORIAL - JOURNAL (SUSPECT) ===
     # TODO ADD IMAGE INSTEAD SO JOURNAL IS NOT CLICKABLE
     detective "You should keep a note of all the suspects."
     detective "I usually write everything down in my journal."
@@ -167,6 +156,10 @@ label tutorial:
     detective "I'm sure you'll find my notes very handy since I'm VERY thorough."
     detective "Anyways, I haven't met all the suspects yet so there aren't any pictures for them."
     detective "Hopefully we can find all of them later during our investigation."
+    detective "For now, let's put in a picture of the maid we just met."
+    $ suspect_maid.visit()
+    detective "Woot! This is great! Now we can remember everyone's names AND faces."
+    detective "{=txt_small}I always forget what people look like."
     hide screen ui_journal
     # === TUTORIAL - OBJECT INTERACTION ===
     detective "Anyways, you can question her later. Right now, you need to figure out how the Mayor was murdered."
@@ -182,8 +175,25 @@ label tutorial:
     detective "Go on, what are you waiting for? Open your bag to see if you put it in properly."
     # === TUTORIAL - SHOW CHARACTER OBJECTS ===
     # TODO NEED WORKING INVENTORY
+    # === TUTORIAL - JOURNAL(SUSPECT)
     # === TUTORIAL - MAP ===
-    
+    detective "You can look for more clues, but when you’re ready to investigate further, the map of the manor will come in handy."
+    detective "Why don't you take a quick peek? I worked really hard on it."
+    while not map_visited:
+        call screen tutorial_interactions("tutorial_map")
+        if _return:
+            $ map_visited = True
+    show screen ui_map
+    detective "Oh."
+    detective "I guess I accidentally spilled a bit of coffee over it."
+    detective "Well I guess you can add the rooms in youself."
+    detective "I'm sure you'll enjoy filling it out. It'll be like a fun puzzle!"
+    $ study_visited = True
+    detective "See, that wasn't so bad! We can write in the rest later when we explore the manor."
+    # === SCRIPT ===
+    detective "Welp. That's about it! Everything's pretty easy right? I'm sure you'll get the hang of it."
+    detective "{=txt_small}Wow this is exciting! My very first student!"
+    detective "Okay! Let's go! Time to solve the mystery!"
 
 screen tutorial_interactions(tutorial):
     # === FOCUS OBJECT ===
@@ -211,4 +221,11 @@ screen tutorial_interactions(tutorial):
         imagebutton:
             focus_mask True
             idle "images/objects/study_body.png"
+            action Return(True)
+
+    # === TUTORIAL - MAP ===
+    if tutorial == "tutorial_map":
+        imagebutton:
+            focus_mask True
+            idle "images/ui/ui_map_button.png"
             action Return(True)

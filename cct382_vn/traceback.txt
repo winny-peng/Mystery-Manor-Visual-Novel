@@ -1,38 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scenes/introduction.rpy", line 161, in script
-    show screen tutorial_interactions(tutorial_journal)
-  File "renpy/common/000statements.rpy", line 501, in execute_show_screen
-    args, kwargs = a.evaluate()
-  File "game/scenes/introduction.rpy", line 161, in <module>
-    show screen tutorial_interactions(tutorial_journal)
-NameError: name 'tutorial_journal' is not defined
+  File "game/scenes/introduction.rpy", line 198, in script
+    dtective "Okay! Let's go! Time to solve the mystery!"
+Exception: Sayer 'dtective' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scenes/introduction.rpy", line 161, in script
-    show screen tutorial_interactions(tutorial_journal)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 1949, in execute
-    self.call("execute")
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 1937, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\statements.py", line 277, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 501, in execute_show_screen
-    args, kwargs = a.evaluate()
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 190, in evaluate
-    args.append(renpy.python.py_eval(v, locals=scope))
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\python.py", line 2059, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\python.py", line 2052, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/scenes/introduction.rpy", line 161, in <module>
-    show screen tutorial_interactions(tutorial_journal)
-NameError: name 'tutorial_journal' is not defined
+  File "game/scenes/introduction.rpy", line 198, in script
+    dtective "Okay! Let's go! Time to solve the mystery!"
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 678, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 576, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who.encode("utf-8"))
+Exception: Sayer 'dtective' is not defined.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 cct382_vn 1.0
-Sat Nov 28 21:40:32 2020
+Sat Nov 28 22:20:12 2020

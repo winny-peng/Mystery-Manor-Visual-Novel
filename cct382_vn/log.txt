@@ -1,4 +1,4 @@
-Sat Nov 28 21:43:21 2020
+Sat Nov 28 22:26:06 2020
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
@@ -7,16 +7,16 @@ Bootstrap to the start of init.init took 0.08s
 Early init took 0.00s
 Loader init took 0.02s
 Loading error handling took 0.03s
-Loading script took 0.20s
+Loading script took 0.15s
 Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.10s
-Loading analysis data took 0.05s
+Running init code took 0.08s
+Loading analysis data took 0.06s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\False\\AppData\\Roaming/RenPy/backups\\cct382_vn':
-Dump and make backups. took 0.08s
+Dump and make backups. took 0.07s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.02s
@@ -33,7 +33,7 @@ Save pyanalysis. took 0.00s
 Save bytecode. took 0.07s
 Running _start took 0.00s
 Performance test:
-Interface start took 0.02s
+Interface start took 0.03s
 
 primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
@@ -286,11 +286,19 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 1.84599995613s
+Total time until interface ready: 2.64999985695s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
 - Frame drawn at 0.019667 seconds.
-- Frame drawn at 0.063667 seconds.
-- Frame drawn at 0.158667 seconds.
-- Frame drawn at 0.266667 seconds.
-- 0.266667 seconds to render 5 frames.
+- Frame drawn at 0.115667 seconds.
+- Frame drawn at 0.177667 seconds.
+- Frame drawn at 0.349667 seconds.
+- 0.349667 seconds to render 5 frames.
+- Frame drawn at 0.451667 seconds.
+- 0.432000 seconds to render 5 frames.
+- Frame drawn at 0.507667 seconds.
+- 0.392000 seconds to render 5 frames.
+- Frame drawn at 0.616667 seconds.
+- 0.439000 seconds to render 5 frames.
+- Frame drawn at 0.621667 seconds.
+- 0.272000 seconds to render 5 frames.
