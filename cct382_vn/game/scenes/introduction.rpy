@@ -126,7 +126,9 @@ label introduction:
 
 label tutorial:
     # === VARIABLES ===
-    default maid_visited = False
+    default character_visited = False
+    default object_visited = False
+    default journal_visited = False
 
     # === SCRIPT ===
     scene bg tutorial
@@ -138,20 +140,38 @@ label tutorial:
     with Pause(2)
     hide text with dissolve
     with Pause(1)
-    detective "HEY! I told you to stop meddling and GO TALK TO THE LADY ON YOUR RIGHT!"
-    show screen ui_gamebuttons
-    hide screen say
     # === TUTORIAL - CHARACTER INTERACTION ===
-    while not maid_visited:
-        call screen tutorial_interactions("tutorial_maid")
+    detective "HEY! I told you to stop meddling and GO TALK TO THE LADY ON YOUR RIGHT!"
+    hide screen say
+    while not character_visited:
+        call screen tutorial_interactions("tutorial_character")
         if _return:
-            $ maid_visited = True
+            $ character_visited = True
     show maid_neutral
     maid "Detective Watson, we're so glad you're finally here..."
     maid "Th-this is so horrible...{w}S-Sir Henri’s been m-murdered in cold blood..."
     maid "Sir Henri was c-completely fine this afternoon, w-who could have done this!?"
     detective "She may seem innocent, but the number one rule for a detective is that everyone’s a suspect."
     hide maid_neutral
+    # === TUTORIAL - JOURNAL ===
+    #
+    #detective "You should keep a note of all the suspects."
+    #detective "I usually write everything down in my journal."
+    #while not journal_visited:
+    #    call screen tutorial_interactions(tutorial_journal)
+    #    if _return:
+    #        $ journal_visited = True
+    # === TUTORIAL - OBJECT INTERACTION ===
+    detective "Anyways, you can question her later. Right now, you need to figure out how the Mayor was murdered."
+    while not object_visited:
+        call screen tutorial_interactions("tutorial_object")
+        if _return:
+            $ object_visited = True
+    detective "He was pierced right through his heart...{w}but we can’t rule out the possibility of a suicide."
+    # === TUTORIAL - INVENTORY ===
+    detective "Now before you investigate further, a smart detective always keeps track of his gathered clues!"
+    detective "Once you pick up an item, make sure to put it into your bag so you can look at it later."
+    detective "Go on, what are you waiting for? Open your bag to see if you put it in properly"
 
 screen tutorial_interactions(tutorial):
     # === FOCUS OBJECT ===
@@ -161,9 +181,15 @@ screen tutorial_interactions(tutorial):
         background ("#00000095")
 
     # === TUTORIAL - CHARACTER INTERACTION ===
-    # The player learns to click on characters to interact with them.
-    if tutorial == "tutorial_maid":
+    if tutorial == "tutorial_character":
         imagebutton:
             focus_mask True
             idle "images/objects/study_maid.png"
+            action Return(True)
+
+    # === TUTORIAL - OBJECT INTERACTION ===
+    if tutorial == "tutorial_object":
+        imagebutton:
+            focus_mask True
+            idle "images/objects/study_body.png"
             action Return(True)
