@@ -190,6 +190,10 @@ label tutorial:
     detective "I'm sure you'll enjoy filling it out. It'll be like a fun puzzle!"
     $ study_visited = True
     detective "See, that wasn't so bad! We can write in the rest later when we explore the manor."
+    # === TUTORIAL - ARREST ===
+    detective "Once you think we found the suspect, you can arrest them at anytime!"
+    detective "Although I don't suggest you arrest anyone randomly though."
+    detective "Once you make an arrest, there's no turning back. So choose wisely!"
     # === SCRIPT ===
     detective "Welp. That's about it! Everything's pretty easy right? I'm sure you'll get the hang of it."
     detective "{=txt_small}Wow this is exciting! My very first student!"
