@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scenes/introduction.rpy", line 151: expected statement.
-    maid_visited = True
-                 ^
+File "game/scenes/introduction.rpy", line 198: u'True' is not a keyword argument or valid child for the imagebutton statement.
+    focus mask True
+                   ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sat Nov 28 18:10:04 2020
+Sat Nov 28 21:35:41 2020

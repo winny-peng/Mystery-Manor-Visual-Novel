@@ -154,13 +154,20 @@ label tutorial:
     detective "She may seem innocent, but the number one rule for a detective is that everyone’s a suspect."
     hide maid_neutral
     # === TUTORIAL - JOURNAL ===
-    #
-    #detective "You should keep a note of all the suspects."
-    #detective "I usually write everything down in my journal."
-    #while not journal_visited:
-    #    call screen tutorial_interactions(tutorial_journal)
-    #    if _return:
-    #        $ journal_visited = True
+    # TODO ADD IMAGE INSTEAD SO JOURNAL IS NOT CLICKABLE
+    detective "You should keep a note of all the suspects."
+    detective "I usually write everything down in my journal."
+    detective "Why don't you check the journal right now? It's near the bottom to your right."
+    while not journal_visited:
+        call screen tutorial_interactions("tutorial_journal")
+        if _return:
+            $ journal_visited = True
+    show screen ui_journal
+    detective "I already wrote down all the information for the household before this body switching shenanigans happened."
+    detective "I'm sure you'll find my notes very handy since I'm VERY thorough."
+    detective "Anyways, I haven't met all the suspects yet so there aren't any pictures for them."
+    detective "Hopefully we can find all of them later during our investigation."
+    hide screen ui_journal
     # === TUTORIAL - OBJECT INTERACTION ===
     detective "Anyways, you can question her later. Right now, you need to figure out how the Mayor was murdered."
     while not object_visited:
@@ -169,9 +176,14 @@ label tutorial:
             $ object_visited = True
     detective "He was pierced right through his heart...{w}but we can’t rule out the possibility of a suicide."
     # === TUTORIAL - INVENTORY ===
+    # TODO NEED WORKING INVENTORY
     detective "Now before you investigate further, a smart detective always keeps track of his gathered clues!"
     detective "Once you pick up an item, make sure to put it into your bag so you can look at it later."
-    detective "Go on, what are you waiting for? Open your bag to see if you put it in properly"
+    detective "Go on, what are you waiting for? Open your bag to see if you put it in properly."
+    # === TUTORIAL - SHOW CHARACTER OBJECTS ===
+    # TODO NEED WORKING INVENTORY
+    # === TUTORIAL - MAP ===
+    
 
 screen tutorial_interactions(tutorial):
     # === FOCUS OBJECT ===
@@ -185,6 +197,13 @@ screen tutorial_interactions(tutorial):
         imagebutton:
             focus_mask True
             idle "images/objects/study_maid.png"
+            action Return(True)
+
+    # === TUTORIAL - JOURNAL ===
+    if tutorial == "tutorial_journal":
+        imagebutton:
+            focus_mask True
+            idle "images/ui/ui_journal_button.png"
             action Return(True)
 
     # === TUTORIAL - OBJECT INTERACTION ===
