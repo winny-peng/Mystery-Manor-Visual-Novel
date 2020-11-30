@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-The label tutorial is defined twice, at
-  File "game/scenes/introduction.rpyc", line 26 and
-  File "game/scenes/tutorial.rpy", line 26.
+File "game/script.rpy", line 155: expected 'image_name_component' not found.
+    scene [room_study.img]
+          ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sun Nov 29 18:38:24 2020
+Sun Nov 29 22:08:46 2020

@@ -3,14 +3,24 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
+# === GAME STATE VARIABLES ===
+default game_room = "study"
+
 # === CHARACTERS ===
 define player = Character("ME")
 define detective = Character("Detective")
 define maid = Character("Maid")
 
 # === CHARACTERS IMAGES ===
-# MAID
 image maid_neutral= "images/characters/maid_neutral.png"
+
+# === CLUES ===
+
+
+# === BACKGROUNDS ===
+image bg mansion = "images/backgrounds/bg_mansion.jpg"
+image bg tutorial = "images/backgrounds/tutorial.png"
+image bg study = "images/backgrounds/study_initial.png"
 
 # Inventory
 
@@ -23,20 +33,16 @@ init -1 python:
         The Room class stores the information for each room.
 
         === Public Attributes ===
-        # img: path to the background image for the room
+        # state: the state of the room; this determines which background to use
+        # clues: a dictionary of all clues in the room and their state
 
         === Representation Invariants ===
         """
         # === Private Attributes ===
 
-        def __init__(self, img):
-            self.img = img
-
-        def update(self, new_img):
-            """
-            Update the Room's background image to <new_img>.
-            """
-            self.img = new_img
+        def __init__(self, state, clues):
+            self.state = state
+            self.clues = clues
 
 label start:
     # === INTRODUCTION ===
@@ -135,9 +141,21 @@ label start:
     # === TUTORIAL ===
     # The tutorial explains all the basic controls and available features the
     # player can use (e.g. click to interact, how to use inventory/map/journal)
-    call tutorial
+    # call tutorial
 
     # === GAME ===
-    # The game loops from here.
-
+    # The game loops from here. Until the player makes an arrest, the player
+    # can explore the game however they like.
+    "GAME STARTS"
+    while True:
+        show screen ui_gamebuttons
+        # window hide
+        # === STUDY ===
+        while game_room == "study":
+            scene bg study
+            call screen study
+            if _return == "maid":
+                "You talked to the maid"
+        # === FRONT HALL ===
+    jump ending
     return

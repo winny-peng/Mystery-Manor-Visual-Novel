@@ -1,13 +1,6 @@
 # This is the introduction scene.
 
 init:
-    # === GLOBAL VARIABLES ===
-    default room_study = Room("images/backgrounds/study_initial.png")
-
-    # === BACKGROUNDS ===
-    image bg mansion = "images/backgrounds/bg_mansion.jpg"
-    image bg tutorial = "images/backgrounds/tutorial.png"
-
     define guard = Character("Guard")
     image guard = "images/characters/guard_neutral.png"
 
@@ -22,7 +15,7 @@ init:
     # === EFFECTS ===
     # Camera flash - quickly fades to white, then back to the scene.
     define flash = Fade(0.1, 0.0, 3.0, color="#fff")
-    
+
 label tutorial:
     # === VARIABLES ===
     default character_visited = False
@@ -44,12 +37,13 @@ label tutorial:
     window show
     # === TUTORIAL - CHARACTER INTERACTION ===
     detective "HEY! I told you to stop meddling and GO TALK TO THE LADY ON YOUR RIGHT!"
-    hide screen say
+    window hide
     while not character_visited:
         call screen tutorial_interactions("tutorial_character")
         if _return:
             $ character_visited = True
     show maid_neutral
+    window show
     maid "Detective Watson, we're so glad you're finally here..."
     maid "Th-this is so horrible...{w}S-Sir Henri’s been m-murdered in cold blood..."
     maid "Sir Henri was c-completely fine this afternoon, w-who could have done this!?"
@@ -60,10 +54,12 @@ label tutorial:
     detective "You should keep a note of all the suspects."
     detective "I usually write everything down in my journal."
     detective "Why don't you check the journal right now? It's near the bottom to your right."
+    window hide
     while not journal_visited:
         call screen tutorial_interactions("tutorial_journal")
         if _return:
             $ journal_visited = True
+    window show
     show screen ui_journal
     detective "I already wrote down all the information for the household before this body switching shenanigans happened."
     detective "I'm sure you'll find my notes very handy since I'm VERY thorough."
@@ -76,10 +72,12 @@ label tutorial:
     hide screen ui_journal
     # === TUTORIAL - OBJECT INTERACTION ===
     detective "Anyways, you can question her later. Right now, you need to figure out how the Mayor was murdered."
+    window hide
     while not object_visited:
         call screen tutorial_interactions("tutorial_object")
         if _return:
             $ object_visited = True
+    window show
     detective "He was pierced right through his heart...{w}but we can’t rule out the possibility of a suicide."
     # === TUTORIAL - INVENTORY ===
     # TODO NEED WORKING INVENTORY
@@ -93,10 +91,12 @@ label tutorial:
     # === TUTORIAL - MAP ===
     detective "You can look for more clues, but when you’re ready to investigate further, the map of the manor will come in handy."
     detective "Why don't you take a quick peek? I worked really hard on it."
+    window hide
     while not map_visited:
         call screen tutorial_interactions("tutorial_map")
         if _return:
             $ map_visited = True
+    window show
     show screen ui_map
     detective "Oh."
     detective "I guess I accidentally spilled a bit of coffee over it."
@@ -104,6 +104,7 @@ label tutorial:
     detective "I'm sure you'll enjoy filling it out. It'll be like a fun puzzle!"
     $ study_visited = True
     detective "See, that wasn't so bad! We can write in the rest later when we explore the manor."
+    hide screen ui_map
     # === TUTORIAL - ARREST ===
     detective "Once you think we found the suspect, you can arrest them at anytime!"
     detective "Although I don't suggest you arrest anyone randomly though."
@@ -112,6 +113,7 @@ label tutorial:
     detective "Welp. That's about it! Everything's pretty easy right? I'm sure you'll get the hang of it."
     detective "{=txt_small}Wow this is exciting! My very first student!"
     detective "Okay! Let's go! Time to solve the mystery!"
+    return
 
 screen tutorial_interactions(tutorial):
     # === FOCUS OBJECT ===
