@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 164: expected menuitem
-    show maid neutral at right
-    ^
+File "game/script.rpy", line 163: Say menuitems and captions may not exist in the same menu.
+    maid "My name’s Narberal Tamura, but you can call me Nabe."
+                                                               ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Mon Nov 30 01:00:17 2020
+Sun Nov 29 22:59:31 2020

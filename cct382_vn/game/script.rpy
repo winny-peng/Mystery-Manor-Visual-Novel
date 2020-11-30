@@ -1,5 +1,30 @@
 ﻿# The script of the game goes in this file.
 
+<<<<<<< HEAD
+=======
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+
+# === GAME STATE VARIABLES ===
+default game_room = "study"
+
+# === CHARACTERS ===
+define player = Character("ME")
+define detective = Character("Detective")
+define maid = Character("Maid")
+
+# === CHARACTERS IMAGES ===
+image maid_neutral= "images/characters/maid_neutral.png"
+
+# === CLUES ===
+
+
+# === BACKGROUNDS ===
+image bg mansion = "images/backgrounds/bg_mansion.jpg"
+image bg tutorial = "images/backgrounds/tutorial.png"
+image bg study = "images/backgrounds/study_initial.png"
+
+>>>>>>> parent of be27e17... added maid expressions and transitions
 # Inventory
 
 default playerInventory = Inventory()
@@ -116,27 +141,27 @@ label start:
         show screen study
         # === MAID ===
         if _return == "maid":
-            hide screen study
-            show maid neutral
-            maid @ talking "Nabe, at your service."
-            show maid neutral at left
+            maid "Nabe, at your service."
             menu:
                 "Who are you and what's your role at the manor?":
-                    show maid neutral at center
-                    maid @ talking "My name’s Narberal Tamura, but you can call me Nabe."
-                    maid @ annoyed "I used to live in an orphanage until Sir Henri hired me to be his maid."
-                    maid @ talking "Since then, I’ve been serving Sir Henri for as long as I can remember."
-                    maid @ talking "I’m in charge of all the chores, from cleaning to cooking and serving food for the household."
-                    maid @ talking "In return, Sir Henri provided me with a roof over my head. I’m very grateful for his charity..."
+                    maid "My name’s Narberal Tamura, but you can call me Nabe."
+                    maid "I used to live in an orphanage until Sir Henri hired me to be his maid."
+                    maid "Since then, I’ve been serving Sir Henri for as long as I can remember."
+                    maid "I’m in charge of all the chores, from cleaning to cooking and serving food for the household."
+                    maid "In return, Sir Henri provided me with a roof over my head. I’m very grateful for his charity..."
                 "What was your relationship with Sir Henri?":
+<<<<<<< HEAD
                     show maid neutral at center
                     maid @ annoyed "I was just Sir’s maid, nothing more."
+=======
+                    maid "I was just Sir’s maid, nothing more."
+>>>>>>> parent of be27e17... added maid expressions and transitions
                 "Where were you during the time of the murder?":
-                    show maid neutral at center
-                    maid @ annoyed "I don’t know exactly when Sir Henri was murdered, I didn’t hear anything!"
-                    maid @ thinking "Umm...{w}after serving Sir Henri and Jeanne, I left to clean the upstairs of the manor."
-                    maid @ annoyed "W-when I walked in to his s-study, Sir was...{w}he was dead."
-                    maid @ annoyed "If only I checked on him earlier...Sir might still be with us."
+                    maid "I don’t know exactly when Sir Henri was murdered, I didn’t hear anything!"
+                    maid "Umm...{w}after serving Sir Henri and Jeanne, I left to clean the upstairs of the manor."
+                    maid "W-when I walked in to his s-study, Sir was...{w}he was dead."
+                    maid "If only I checked on him earlier...Sir might still be with us."
+
         # === DEAD BODY ===
         if _return == "body":
             "This is the body of the mayor"

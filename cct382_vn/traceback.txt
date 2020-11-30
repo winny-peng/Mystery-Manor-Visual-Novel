@@ -1,28 +1,50 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 162, in script
-    maid talking "Nabe, at your service."
-Exception: Say has image attributes (u'talking',), but there's no image tag associated with the speaking character.
+  File "game/script.rpy", line 141, in script call
+    call tutorial
+  File "game/scenes/tutorial.rpy", line 54, in script
+    maid "Detective Watson, we're so glad you're finally here..."
+Exception: Required parameter who has no value.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 162, in script
-    maid talking "Nabe, at your service."
+  File "game/script.rpy", line 141, in script call
+    call tutorial
+  File "game/scenes/tutorial.rpy", line 54, in script
+    maid "Detective Watson, we're so glad you're finally here..."
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 708, in execute
     renpy.exports.say(who, what, *args, **kwargs)
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\exports.py", line 1345, in say
     who(what, *args, **kwargs)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\character.py", line 1073, in __call__
-    old_attr_state = self.handle_say_attributes(False, interact)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\character.py", line 942, in handle_say_attributes
-    if self.resolve_say_attributes(predicting, attrs):
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\character.py", line 868, in resolve_say_attributes
-    raise Exception("Say has image attributes %r, but there's no image tag associated with the speaking character." % (attrs,))
-Exception: Say has image attributes (u'talking',), but there's no image tag associated with the speaking character.
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\character.py", line 1142, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\character.py", line 842, in do_display
+    **display_args)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\character.py", line 547, in display_say
+    what_text = show_function(who, what_string)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\character.py", line 826, in do_show
+    **self.show_args)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\character.py", line 300, in show_display_say
+    **kwargs)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 1140, in show_screen
+    sls.add(_layer, d, _tag, zorder=_zorder, transient=_transient, keep_st=True, name=name)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 1087, in add
+    self.hide_or_replace(layer, remove_index, "replaced")
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 1108, in hide_or_replace
+    if not oldsle.displayable._handles_event(prefix):
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 473, in _handles_event
+    self.update()
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 625, in update
+    self.screen.function(**self.scope)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 158, in apply_arguments
+    return parameters.apply(args, kwargs, ignore_errors)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 122, in apply
+    raise Exception("Required parameter %s has no value." % name)
+Exception: Required parameter who has no value.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 cct382_vn 1.0
-Mon Nov 30 00:43:01 2020
+Sun Nov 29 21:25:51 2020
