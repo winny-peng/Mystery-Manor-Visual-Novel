@@ -1,13 +1,13 @@
-Sun Nov 29 22:52:30 2020
+Sun Nov 29 23:07:04 2020
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
 
-Bootstrap to the start of init.init took 0.06s
+Bootstrap to the start of init.init took 0.07s
 Early init took 0.00s
 Loader init took 0.02s
 Loading error handling took 0.02s
-Loading script took 0.17s
+Loading script took 0.16s
 Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
@@ -16,7 +16,7 @@ Loading analysis data took 0.05s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\False\\AppData\\Roaming/RenPy/backups\\cct382_vn':
-Dump and make backups. took 0.07s
+Dump and make backups. took 0.06s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.02s
@@ -286,11 +286,11 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 1.68699979782s
+Total time until interface ready: 1.99799990654s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.018667 seconds.
-- Frame drawn at 0.100667 seconds.
-- Frame drawn at 0.155667 seconds.
-- Frame drawn at 0.296667 seconds.
-- 0.296667 seconds to render 5 frames.
+- Frame drawn at 0.019667 seconds.
+- Frame drawn at 0.107667 seconds.
+- Frame drawn at 0.162667 seconds.
+- Frame drawn at 0.312667 seconds.
+- 0.312667 seconds to render 5 frames.

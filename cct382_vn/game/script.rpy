@@ -147,35 +147,48 @@ label start:
     # The game loops from here. Until the player makes an arrest, the player
     # can explore the game however they like.
     "GAME STARTS"
-    while True:
+    # === STUDY ===
+    while game_room == "study":
         show screen ui_gamebuttons
-        # window hide
-        # === STUDY ===
-        while game_room == "study":
-            scene bg study
-            call screen study
-            show screen study
-            # === MAID ===
-            if _return == "maid":
-                "You talked to the maid"
-            # === DEAD BODY ===
-            if _return == "body":
-                "This is the body of the mayor"
-            # === BLOOD ===
-            if _return == "blood":
-                "Cool! You found blood!"
-            # === CUP ===
-            if _return == "cup":
-                "A cup."
-            # === DAGGER ===
-            if _return == "dagger":
-                "Nice pokey thing."
-            # === KEY ===
-            if _return == "key":
-                "A KEY! WE CAN LEAVE!"
-            # === WILL ===
-            if _return == "will":
-                "Cool piece of scrap paper."
+        scene bg study
+        call screen study
+        show screen study
+        # === MAID ===
+        if _return == "maid":
+            maid "Nabe, at your service."
+            menu:
+                "Who are you and what's your role at the manor?":
+                    maid "My name’s Narberal Tamura, but you can call me Nabe."
+                    maid "I used to live in an orphanage until Sir Henri hired me to be his maid."
+                    maid "Since then, I’ve been serving Sir Henri for as long as I can remember."
+                    maid "I’m in charge of all the chores, from cleaning to cooking and serving food for the household."
+                    maid "In return, Sir Henri provided me with a roof over my head. I’m very grateful for his charity..."
+                "What was your relationship with Sir Henri?":
+                    maid "I was just Sir’s maid, nothing more."
+                "Where were you during the time of the murder?":
+                    maid "I don’t know exactly when Sir Henri was murdered, I didn’t hear anything!"
+                    maid "Umm...{w}after serving Sir Henri and Jeanne, I left to clean the upstairs of the manor."
+                    maid "W-when I walked in to his s-study, Sir was...{w}he was dead."
+                    maid "If only I checked on him earlier...Sir might still be with us."
+
+        # === DEAD BODY ===
+        if _return == "body":
+            "This is the body of the mayor"
+        # === BLOOD ===
+        if _return == "blood":
+            "Cool! You found blood!"
+        # === CUP ===
+        if _return == "cup":
+            "A cup."
+        # === DAGGER ===
+        if _return == "dagger":
+            "Nice pokey thing."
+        # === KEY ===
+        if _return == "key":
+            "A KEY! WE CAN LEAVE!"
+        # === WILL ===
+        if _return == "will":
+            "Cool piece of scrap paper."
         # === FRONT HALL ===
     jump ending
     return
