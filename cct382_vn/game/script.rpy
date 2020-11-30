@@ -26,8 +26,8 @@ image bg tutorial = "images/backgrounds/tutorial.png"
 image bg study = "images/backgrounds/study_initial.png"
 
 # Inventory
-
 default playerInventory = Inventory()
+default itemDescription = None
 
 # === ROOM CLASSES ===
 init -1 python:

@@ -74,22 +74,29 @@ screen ui_inventory():
         action Return()
 
     grid 8 3:
-        for i in playerInventory.itemList:
+        xalign 0.5
+        yalign 0.1
+        spacing 3
+        for item in playerInventory.itemList:
             frame:
                 minimum(120, 120)
                 maximum(120, 120)
-                xalign(0.5)
-        for i in range(24):
+                background("#00000050")
+                imagebutton idle item.image action SetVariable("itemDescription", item.description)
+
+
+        for i in range(len(playerInventory.itemList), 24):
             frame:
                 minimum(120, 120)
                 maximum(120, 120)
                 background("#FFFFFF75")
-        xalign 0.5
-        yalign 0.1
+
 
     frame:
         xalign(0.5)
         yalign(0.9)
-        minimum(1000, 250)
-        maximum(1000, 250)
+        minimum(980, 250)
+        maximum(980, 250)
         background("#00000099")
+        if (itemDescription != None):
+            text itemDescription
