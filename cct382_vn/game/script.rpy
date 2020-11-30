@@ -1,7 +1,5 @@
 ﻿# The script of the game goes in this file.
 
-<<<<<<< HEAD
-=======
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
@@ -11,10 +9,13 @@ default game_room = "study"
 # === CHARACTERS ===
 define player = Character("ME")
 define detective = Character("Detective")
-define maid = Character("Maid")
+define maid = Character("Maid", image = "maid")
 
 # === CHARACTERS IMAGES ===
-image maid_neutral= "images/characters/maid_neutral.png"
+image maid neutral = "images/characters/maid_neutral.png"
+image maid annoyed = "images/characters/maid_annoyed.png"
+image maid talking = "images/characters/maid_talking.png"
+image maid thinking = "images/characters/maid_thinking.png"
 
 # === CLUES ===
 
@@ -24,11 +25,27 @@ image bg mansion = "images/backgrounds/bg_mansion.jpg"
 image bg tutorial = "images/backgrounds/tutorial.png"
 image bg study = "images/backgrounds/study_initial.png"
 
->>>>>>> parent of be27e17... added maid expressions and transitions
 # Inventory
 
 default playerInventory = Inventory()
-default itemDescription = None
+
+# === ROOM CLASSES ===
+init -1 python:
+    class Room:
+        """
+        The Room class stores the information for each room.
+
+        === Public Attributes ===
+        # state: the state of the room; this determines which background to use
+        # clues: a dictionary of all clues in the room and their state
+
+        === Representation Invariants ===
+        """
+        # === Private Attributes ===
+
+        def __init__(self, state, clues):
+            self.state = state
+            self.clues = clues
 
 label start:
     # === INTRODUCTION ===
@@ -141,27 +158,27 @@ label start:
         show screen study
         # === MAID ===
         if _return == "maid":
-            maid "Nabe, at your service."
+            hide screen study
+            show maid neutral
+            maid @ talking "Nabe, at your service."
+            show maid neutral at left
             menu:
                 "Who are you and what's your role at the manor?":
-                    maid "My name’s Narberal Tamura, but you can call me Nabe."
-                    maid "I used to live in an orphanage until Sir Henri hired me to be his maid."
-                    maid "Since then, I’ve been serving Sir Henri for as long as I can remember."
-                    maid "I’m in charge of all the chores, from cleaning to cooking and serving food for the household."
-                    maid "In return, Sir Henri provided me with a roof over my head. I’m very grateful for his charity..."
-                "What was your relationship with Sir Henri?":
-<<<<<<< HEAD
                     show maid neutral at center
-                    maid @ annoyed "I was just Sir’s maid, nothing more."
-=======
-                    maid "I was just Sir’s maid, nothing more."
->>>>>>> parent of be27e17... added maid expressions and transitions
+                    maid @ talking "My name’s Narberal Tamura, but you can call me Nabe."
+                    maid @ annoyed "I used to live in an orphanage until Sir Henri hired me to be his maid."
+                    maid @ talking "Since then, I’ve been serving Sir Henri for as long as I can remember."
+                    maid @ talking "I’m in charge of all the chores, from cleaning to cooking and serving food for the household."
+                    maid @ talking "In return, Sir Henri provided me with a roof over my head. I’m very grateful for his charity..."
+                "What was your relationship with Sir Henri?":
+                    show maid neutral at center
+                    maid @ annoyed"I was just Sir’s maid, nothing more."
                 "Where were you during the time of the murder?":
-                    maid "I don’t know exactly when Sir Henri was murdered, I didn’t hear anything!"
-                    maid "Umm...{w}after serving Sir Henri and Jeanne, I left to clean the upstairs of the manor."
-                    maid "W-when I walked in to his s-study, Sir was...{w}he was dead."
-                    maid "If only I checked on him earlier...Sir might still be with us."
-
+                    show maid neutral at center
+                    maid @ annoyed "I don’t know exactly when Sir Henri was murdered, I didn’t hear anything!"
+                    maid @ thinking "Umm...{w}after serving Sir Henri and Jeanne, I left to clean the upstairs of the manor."
+                    maid @ annoyed "W-when I walked in to his s-study, Sir was...{w}he was dead."
+                    maid @ annoyed "If only I checked on him earlier...Sir might still be with us."
         # === DEAD BODY ===
         if _return == "body":
             "This is the body of the mayor"
@@ -181,6 +198,5 @@ label start:
         if _return == "will":
             "Cool piece of scrap paper."
         # === FRONT HALL ===
-        jump frontHall
     jump ending
     return
