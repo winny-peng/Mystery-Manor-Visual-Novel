@@ -154,8 +154,28 @@ label start:
         while game_room == "study":
             scene bg study
             call screen study
+            show screen study
+            # === MAID ===
             if _return == "maid":
                 "You talked to the maid"
+            # === DEAD BODY ===
+            if _return == "body":
+                "This is the body of the mayor"
+            # === BLOOD ===
+            if _return == "blood":
+                "Cool! You found blood!"
+            # === CUP ===
+            if _return == "cup":
+                "A cup."
+            # === DAGGER ===
+            if _return == "dagger":
+                "Nice pokey thing."
+            # === KEY ===
+            if _return == "key":
+                "A KEY! WE CAN LEAVE!"
+            # === WILL ===
+            if _return == "will":
+                "Cool piece of scrap paper."
         # === FRONT HALL ===
     jump ending
     return
