@@ -9,10 +9,13 @@ default game_room = "study"
 # === CHARACTERS ===
 define player = Character("ME")
 define detective = Character("Detective")
-define maid = Character("Maid")
+define maid = Character("Maid", image = "maid")
 
 # === CHARACTERS IMAGES ===
-image maid_neutral= "images/characters/maid_neutral.png"
+image maid neutral = "images/characters/maid_neutral.png"
+image maid annoyed = "images/characters/maid_annoyed.png"
+image maid talking = "images/characters/maid_talking.png"
+image maid thinking = "images/characters/maid_thinking.png"
 
 # === CLUES ===
 
@@ -155,22 +158,27 @@ label start:
         show screen study
         # === MAID ===
         if _return == "maid":
-            maid "Nabe, at your service."
+            hide screen study
+            show maid neutral
+            maid @ talking "Nabe, at your service."
+            show maid neutral at left
             menu:
                 "Who are you and what's your role at the manor?":
-                    maid "My name’s Narberal Tamura, but you can call me Nabe."
-                    maid "I used to live in an orphanage until Sir Henri hired me to be his maid."
-                    maid "Since then, I’ve been serving Sir Henri for as long as I can remember."
-                    maid "I’m in charge of all the chores, from cleaning to cooking and serving food for the household."
-                    maid "In return, Sir Henri provided me with a roof over my head. I’m very grateful for his charity..."
+                    show maid neutral at center
+                    maid @ talking "My name’s Narberal Tamura, but you can call me Nabe."
+                    maid @ annoyed "I used to live in an orphanage until Sir Henri hired me to be his maid."
+                    maid @ talking "Since then, I’ve been serving Sir Henri for as long as I can remember."
+                    maid @ talking "I’m in charge of all the chores, from cleaning to cooking and serving food for the household."
+                    maid @ talking "In return, Sir Henri provided me with a roof over my head. I’m very grateful for his charity..."
                 "What was your relationship with Sir Henri?":
-                    maid "I was just Sir’s maid, nothing more."
+                    show maid neutral at center
+                    maid @ annoyed"I was just Sir’s maid, nothing more."
                 "Where were you during the time of the murder?":
-                    maid "I don’t know exactly when Sir Henri was murdered, I didn’t hear anything!"
-                    maid "Umm...{w}after serving Sir Henri and Jeanne, I left to clean the upstairs of the manor."
-                    maid "W-when I walked in to his s-study, Sir was...{w}he was dead."
-                    maid "If only I checked on him earlier...Sir might still be with us."
-
+                    show maid neutral at center
+                    maid @ annoyed "I don’t know exactly when Sir Henri was murdered, I didn’t hear anything!"
+                    maid @ thinking "Umm...{w}after serving Sir Henri and Jeanne, I left to clean the upstairs of the manor."
+                    maid @ annoyed "W-when I walked in to his s-study, Sir was...{w}he was dead."
+                    maid @ annoyed "If only I checked on him earlier...Sir might still be with us."
         # === DEAD BODY ===
         if _return == "body":
             "This is the body of the mayor"
