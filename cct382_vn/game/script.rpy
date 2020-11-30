@@ -144,7 +144,7 @@ label start:
     # === TUTORIAL ===
     # The tutorial explains all the basic controls and available features the
     # player can use (e.g. click to interact, how to use inventory/map/journal)
-    # call tutorial
+    call tutorial
 
     # === GAME ===
     # The game loops from here. Until the player makes an arrest, the player

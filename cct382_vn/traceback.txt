@@ -1,28 +1,69 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 162, in script
-    maid talking "Nabe, at your service."
-Exception: Say has image attributes (u'talking',), but there's no image tag associated with the speaking character.
+  File "game/script.rpy", line 147, in script call
+    call tutorial
+  File "game/scenes/tutorial.rpy", line 94, in script
+    detective "Ah perfect! Our first clue!"
+  File "game/screens/inventory.rpy", line 66, in execute
+    screen ui_inventory():
+  File "game/screens/inventory.rpy", line 66, in execute
+    screen ui_inventory():
+  File "game/screens/inventory.rpy", line 76, in execute
+    grid 8 3:
+  File "game/screens/inventory.rpy", line 80, in execute
+    for item in playerInventory.itemList:
+NameError: name 'playerInventory' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 162, in script
-    maid talking "Nabe, at your service."
+  File "game/script.rpy", line 147, in script call
+    call tutorial
+  File "game/scenes/tutorial.rpy", line 94, in script
+    detective "Ah perfect! Our first clue!"
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 708, in execute
     renpy.exports.say(who, what, *args, **kwargs)
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\exports.py", line 1345, in say
     who(what, *args, **kwargs)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\character.py", line 1073, in __call__
-    old_attr_state = self.handle_say_attributes(False, interact)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\character.py", line 942, in handle_say_attributes
-    if self.resolve_say_attributes(predicting, attrs):
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\character.py", line 868, in resolve_say_attributes
-    raise Exception("Say has image attributes %r, but there's no image tag associated with the speaking character." % (attrs,))
-Exception: Say has image attributes (u'talking',), but there's no image tag associated with the speaking character.
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\character.py", line 1142, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\character.py", line 842, in do_display
+    **display_args)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\character.py", line 591, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ui.py", line 297, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 430, in visit_all
+    callback(self)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 440, in per_interact
+    self.update()
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 625, in update
+    self.screen.function(**self.scope)
+  File "game/screens/inventory.rpy", line 66, in execute
+    screen ui_inventory():
+  File "game/screens/inventory.rpy", line 66, in execute
+    screen ui_inventory():
+  File "game/screens/inventory.rpy", line 76, in execute
+    grid 8 3:
+  File "game/screens/inventory.rpy", line 80, in execute
+    for item in playerInventory.itemList:
+  File "<screen language>", line 80, in <module>
+NameError: name 'playerInventory' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 cct382_vn 1.0
-Mon Nov 30 00:43:01 2020
+Mon Nov 30 14:27:48 2020

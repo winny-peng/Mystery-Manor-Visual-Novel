@@ -22,6 +22,7 @@ label tutorial:
     default object_visited = False
     default journal_visited = False
     default map_visited = False
+    default inventory_visited = False
 
     # === SCRIPT ===
     scene bg tutorial
@@ -77,13 +78,21 @@ label tutorial:
         call screen tutorial_interactions("tutorial_object")
         if _return:
             $ object_visited = True
+    $ playerInventory.add(Clue("Dagger", "images/objects/clue_dagger.png", "Looks like a very old dagger, but long enough to pierce all the way through his body.", None))
     window show
     detective "He was pierced right through his heart...{w}but we can’t rule out the possibility of a suicide."
     # === TUTORIAL - INVENTORY ===
-    # TODO NEED WORKING INVENTORY
     detective "Now before you investigate further, a smart detective always keeps track of his gathered clues!"
     detective "Once you pick up an item, make sure to put it into your bag so you can look at it later."
     detective "Go on, what are you waiting for? Open your bag to see if you put it in properly."
+    window hide
+    while not inventory_visited:
+        call screen tutorial_interactions("tutorial_inventory")
+        if _return:
+            $ inventory_visited = True
+    show screen ui_inventory
+    detective "Ah perfect! Our first clue!"
+    hide screen ui_inventory
     # === TUTORIAL - SHOW CHARACTER OBJECTS ===
     # TODO NEED WORKING INVENTORY
     # === TUTORIAL - JOURNAL(SUSPECT)
@@ -140,7 +149,14 @@ screen tutorial_interactions(tutorial):
     if tutorial == "tutorial_object":
         imagebutton:
             focus_mask True
-            idle "images/objects/study_body.png"
+            idle "images/objects/study_dagger.png"
+            action Return(True)
+
+    # === TUTORIAL - INVENTORY ===
+    if tutorial == "tutorial_inventory":
+        imagebutton:
+            focus_mask True
+            idle "images/ui/ui_inventory_button.png"
             action Return(True)
 
     # === TUTORIAL - MAP ===
