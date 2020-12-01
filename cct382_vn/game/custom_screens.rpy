@@ -1,18 +1,31 @@
+# === GAMEBUTTONS ===
+# This is the code for gamebuttons.
+
 screen ui_gamebuttons():
-    imagemap:
+    # === ARREST BUTTON ===
+    imagebutton:
         yalign 1.0
-        ground "images/ui/ui_gamebuttons.jpg"
+        focus_mask True
+        auto "images/ui/arrest_%s.png"
+        action Call("arrest")
 
-        # TODO change these from scenes to screens
-        # TODO decide if we should put all screens here or in different files
-        # MAP BUTTON
-        hotspot (959, 0, 107, 99) action Call("map")
+    # === MAP BUTTON ===
+    imagebutton:
+        yalign 1.0
+        focus_mask True
+        auto "images/ui/map_%s.png"
+        action Call("map")
 
-        # BAG BUTTON
-        hotspot (1066, 0, 106, 100) action Call("inventory")
+    # === INVENTORY BUTTON ===
+    imagebutton:
+        yalign 1.0
+        focus_mask True
+        auto "images/ui/inventory_%s.png"
+        action Call("inventory")
 
-        # JOURNAL BUTTON
-        hotspot (1172, 0, 107, 100) action Call("journal")
-
-        # ARREST BUTTON
-        hotspot (35, 0, 119, 99) action Call("arrest")
+    # === JOURNAL BUTTON ===
+    imagebutton:
+        yalign 1.0
+        focus_mask True
+        auto "images/ui/journal_%s.png"
+        action Call("journal")
