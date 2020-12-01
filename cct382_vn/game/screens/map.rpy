@@ -1,9 +1,6 @@
 # === MAP ===
 # This is the code for the map of the mansion.
 
-# === GLOBAL VARIABLES ===
-# BUG ERROR WHEN CLICK ON ROOM
-
 # === ROOM VARIABLES ===
 # These variables keeps track of which rooms (inside the house), the player has
 # visited.
@@ -46,4 +43,4 @@ screen ui_map():
             yalign 0.5
             auto "images/ui/map_study_%s.png"
             focus_mask True
-            action Null()
+            action NullAction()

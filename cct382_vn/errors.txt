@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 65: python block expects a non-empty block.
-    python:
-           ^
+File "game/screens/map.rpy", line 49: u'NullAction' is not a keyword argument or valid child for the imagebutton statement.
+    NullAction()
+              ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Mon Nov 30 23:09:26 2020
+Tue Dec 01 16:48:29 2020

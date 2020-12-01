@@ -2,6 +2,7 @@
 # This is the code for gamebuttons.
 
 screen ui_gamebuttons():
+    zorder 100
     # === ARREST BUTTON ===
     imagebutton:
         yalign 1.0
