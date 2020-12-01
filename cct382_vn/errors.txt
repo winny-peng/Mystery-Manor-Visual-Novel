@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scenes/tutorial.rpy", line 134: expected statement.
-    journal_visited = False
+File "game/script.rpy", line 208: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "Antique Dagger"
                     ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Mon Nov 30 21:34:35 2020
+Mon Nov 30 22:43:45 2020

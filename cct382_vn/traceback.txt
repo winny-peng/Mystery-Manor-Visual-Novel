@@ -1,29 +1,31 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <'Image' u'images/characters/sentry_neutral.png'>:
-  File "game/script.rpy", line 96, in script
-    "???" "Ah! You must be Detective Watson, please follow me."
-  File "renpy/common/00library.rpy", line 268, in say
-    who(what, interact=interact, *args, **kwargs)
-IOError: Couldn't find file 'images/characters/sentry_neutral.png'.
+While loading <'Image' u'images/objects/clue_will.png'>:
+  File "game/script.rpy", line 152, in script call
+    call screen study
+  File "game/screens/inventory.rpy", line 62, in script
+    call screen ui_inventory
+  File "renpy/common/000statements.rpy", line 531, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+IOError: Couldn't find file 'images/objects/clue_will.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 96, in script
-    "???" "Ah! You must be Detective Watson, please follow me."
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 708, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\exports.py", line 1343, in say
-    renpy.store.say(who, what, *args, **kwargs)
-  File "renpy/common/00library.rpy", line 268, in say
-    who(what, interact=interact, *args, **kwargs)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\character.py", line 1142, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, **display_args)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\character.py", line 842, in do_display
-    **display_args)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\character.py", line 591, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "game/script.rpy", line 152, in script call
+    call screen study
+  File "game/screens/inventory.rpy", line 62, in script
+    call screen ui_inventory
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 1949, in execute
+    self.call("execute")
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 1937, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\statements.py", line 277, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 531, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\exports.py", line 2905, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ui.py", line 297, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
@@ -54,13 +56,34 @@ Full traceback:
     cpdef render(d, object widtho, object heighto, double st, double at):
   File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
     rv = d.render(widtho, heighto, st, at)
-  File "accelerator.pyx", line 110, in renpy.display.accelerator.transform_render
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 675, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
   File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
     rv = d.render(widtho, heighto, st, at)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\image.py", line 500, in render
-    return wrap_render(self.target, width, height, st, at)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\image.py", line 306, in wrap_render
-    rend = render(child, w, h, st, at)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\layout.py", line 455, in render
+    renders = [ render(i, renwidth, renheight, st, at) for i in children ]
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\layout.py", line 1127, in render
+    st, at)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\behavior.py", line 774, in render
+    rv = super(Button, self).render(width, height, st, at)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\layout.py", line 1127, in render
+    st, at)
   File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
     cpdef render(d, object widtho, object heighto, double st, double at):
   File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
@@ -73,9 +96,9 @@ Full traceback:
     surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\loader.py", line 576, in load
     raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'images/characters/sentry_neutral.png'.
+IOError: Couldn't find file 'images/objects/clue_will.png'.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 cct382_vn 1.0
-Mon Nov 30 19:56:07 2020
+Mon Nov 30 23:05:15 2020

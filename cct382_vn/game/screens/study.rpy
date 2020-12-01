@@ -3,7 +3,7 @@
 # managed through here. The screen returns a string that lets the game know
 # which object the player clicked on.
 
-screen study:
+screen study():
     # === MAID ===
     imagebutton:
         focus_mask True
@@ -35,7 +35,8 @@ screen study:
         idle "images/objects/study_key.png"
         action Return("key")
     # === WILL ===
-    imagebutton:
-        focus_mask True
-        idle "images/objects/study_will.png"
-        action Return("will")
+    if not playerInventory.hasItem("Mayor's Will"):
+        imagebutton:
+            focus_mask True
+            idle "images/objects/study_will.png"
+            action Return("will")

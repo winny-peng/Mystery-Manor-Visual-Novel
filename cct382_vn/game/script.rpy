@@ -64,25 +64,6 @@ label start:
     scene bg manor_gate
     python:
         """
-    # ===== # TODO INVENTORY TESTING CODE =====
-    "YOU HAVE NOT PICKED UP THE CAP"
-    $ cap = Clue("cap", "images/ui/pp_unknown_idle.jpg", "this is a cap", "cap")
-    $ playerInventory.add(cap)
-    $ test_2 = playerInventory.hasItem(cap)
-    "Do I have the cap? [test_2]"
-    "Clue name: [cap.name]"
-    "YOU HAVE PICKED UP THE CAP"
-    # ===================================
-
-    # ===== # TODO TESTIMONY TESTING CODE =====
-    "MAID'S TESTIMONY: I AM A MAID"
-    $ suspect_maid.testimonies["I AM A MAID"] = True
-    "SYKE"
-    "MAID IS NOT THE MAID"
-    "REVISED TESTIMONY: I AM A COW"
-    $ suspect_maid.testimonies["I AM A MAID"] = False
-    $ suspect_maid.testimonies["I AM A COW"] = True
-    # ===================================
     "{i}You see a sudden flash and it takes you awhile before your surroundings come into focus.{/i}"
     player "{=txt_thoughts}(...)"
     "{i}You see a tall, dark gate, and behind it, a grand, white manor.{/i}"
@@ -224,7 +205,7 @@ label start:
                             maid @ thinking "I feel like she’s jealous of me..."
                 "Do you know anything about this?":
                     menu:
-                        "Antique Dagger"
+                        "Antique Dagger":
                             window show
                             show maid neutral at center
                             maid @ thinking "Sir Henri kept that dagger displayed on the bookshelf. He's very fond of it."
@@ -257,22 +238,66 @@ label start:
 
         # === DEAD BODY ===
         if _return == "body":
-            "This is the body of the mayor"
+            player "So this is the dead body."
+            show detective neutral
+            detective @ disgust "Your're kind of slow aren't you?"
+            detective @ angry "OF COURSE THAT'S A DEAD BODY!"
+            hide detective neutral
         # === BLOOD ===
         if _return == "blood":
-            "Cool! You found blood!"
+            if not playerInventory.hasItem("Blood"):
+                player "Is this...{w}blood?!"
+                show detective neutral
+                detective @ suspicious "Hmm...good catch."
+                detective @ judging "But why is the blood here if the body is all the way there?"
+                detective @ talking "Let's take a picture and add that to our clues."
+                $ playerInventory.add(Clue("Blood", "images/objects/clue_blood.png", "Why is the mayor’s body so far away from the blood pool?", None))
+            else:
+                show detective neutral
+                detective @ judging "Stop staring at the blood so much."
+                detective @ disgust "{=txt_small}Youngsters these days...so weird..."
+            hide detective neutral
         # === CUP ===
         if _return == "cup":
-            "A cup."
+            show detective angry
+            if not playerInventory.hasItem("Cup"):
+                detective @ surprise "Don't drink from that. That's obviously used."
+                player "I-I wasn't going to drink from that!"
+                detective @ judging "That's what they all say."
+                detective @ talking "It seems like a normal cup but let's add keep a note of it anyways."
+                $ playerInventory.add(Clue("Cup", "images/objects/clue_cup.png", "A regular cup. Nothing fancy about it.", None))
+            else:
+                detective "I TOLD YOU. DON'T DRINK FROM THAT CUP."
+            hide detective neutral
         # === DAGGER ===
         if _return == "dagger":
-            "Nice pokey thing."
+            if not playerInventory.hasItem("Dagger"):
+                player "Should I take it out?"
+                show detective neutral
+                detective @ angry "NO! ARE YOU CRAZY? YOU'RE NOT EVEN WEARING GLOVES"
+                detective @ disgust "Don't you know to never touch evidence with bare hands?"
+                detective @ judging "Hmmm...{w} it looks like a very old dagger."
+                detective @ suspicious "I don't think it's long enough to pierce all the way through his body though..."
+                player "I guess I'll add it to our clues then..."
+                $ playerInventory.add(Clue("Dagger", "images/objects/clue_dagger.png", "Looks like a very old dagger; long enough to pierce all the way through his body.", None))
+            else:
+                show detective natural
+                detective disgust "Don't even think about touching that without gloves."
+            hide detective natural
         # === KEY ===
         if _return == "key":
             "A KEY! WE CAN LEAVE!"
+            "THIS DOES NOT DO ANYTHING YET PLEASE BE PATIENT!"
         # === WILL ===
         if _return == "will":
-            "Cool piece of scrap paper."
+            player "Cool. I can use this a scrap paper to jot down notes!"
+            show detective neutral
+            detective @ surprise "HOLD IT!"
+            detective angry "THAT'S A WILL! YOU ALMOST DESTROYED IMPORTANT EVIDENCE!"
+            detective @ judging "Hmm...{w}The ink seems fresh..."
+            player "Maybe the Mayor wrote it before he was murdered?"
+            detective @ disgust "Hmm...why don't you put it away before you destroy it by accident."
+            $ playerInventory.add(Clue("Mayor's Will", "images/objects/clue_will.png", "The ink seems fresh… did the Mayor write it before he was murdered?", None))
         # === FRONT HALL ===
     jump ending
     return
