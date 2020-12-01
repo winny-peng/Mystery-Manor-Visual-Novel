@@ -119,6 +119,7 @@ label tutorial:
             menu:
                 "Antique Dagger":
                     window show
+                    show maid neutral at center
                     maid @ thinking "Sir Henri kept that dagger displayed on the bookshelf. He's very fond of it."
                     maid @ annoyed "I can't believe someone would use it to kill Sir Henri..."
                     maid @ thinking "Sir told me it’s an antique dagger dating back to the 13th century...{w}or was it the 14th?"

@@ -157,8 +157,7 @@ label start:
     # === TUTORIAL ===
     # The tutorial explains all the basic controls and available features the
     # player can use (e.g. click to interact, how to use inventory/map/journal)
-    call tutorial
-    window hide
+    # call tutorial
 
     # === GAME ===
     # The game loops from here. Until the player makes an arrest, the player
@@ -166,6 +165,7 @@ label start:
     "GAME STARTS"
     # === STUDY ===
     while game_room == "study":
+        window hide
         show screen ui_gamebuttons
         scene bg study
         call screen study
@@ -192,12 +192,69 @@ label start:
                     show maid neutral at center
                     maid @ annoyed"I was just Sir’s maid, nothing more."
                 "Where were you during the time of the murder?":
-                    show maid neutral at center
                     window show
+                    show maid neutral at center
                     maid @ annoyed "I don’t know exactly when Sir Henri was murdered, I didn’t hear anything!"
                     maid @ thinking "Umm...{w}after serving Sir Henri and Jeanne, I left to clean the upstairs of the manor."
                     maid @ annoyed "W-when I walked in to his s-study, Sir was...{w}he was dead."
                     maid @ annoyed "If only I checked on him earlier...Sir might still be with us."
+                "Can you tell me about...":
+                    menu:
+                        "Henri Auguste (Mayor)":
+                            window show
+                            show maid neutral at center
+                            maid @ talking "Sir Henri was a great man, he provided me with a home during the darkest times of my life."
+                            maid @ annoyed "I could never truly repay the debt I owed."
+                        "Isabelle Auguste (Mayor's wife)":
+                            window show
+                            show maid neutral at center
+                            maid @ talking "Lady Isabelle is a kind soul...{w}Sir recently married her, I think it's only been a few months."
+                            maid @ annoyed "I can’t even begin to imagine how Lady Isabelle is feeling...{w}she needs time to grieve, it’s only natural."
+                        "Fabien Auguste (Mayor's son)":
+                            window show
+                            show maid neutral at center
+                            maid @ thinking "With all due respect, Mister Fabien seems very troubled...Sir Henri wasn’t very proud of him since he never likes to study."
+                            maid @ annoyed "Mister’s room is usually locked, sometimes he’s not at the manor at all...{w}and his taste in clothing is very odd."
+                            maid @ thinking "Mister Fabien is a complete mystery to me."
+                        "Susanne Alberg (Mayor's secretary":
+                            window show
+                            show maid neutral at center
+                            maid @ talking "Susanne has been around since before I was here..."
+                            maid @ annoyed "She always questions how much work I do around the manor even though I work very hard!"
+                            maid @ thinking "I feel like she’s jealous of me..."
+                "Do you know anything about this?":
+                    menu:
+                        "Antique Dagger"
+                            window show
+                            show maid neutral at center
+                            maid @ thinking "Sir Henri kept that dagger displayed on the bookshelf. He's very fond of it."
+                            maid @ annoyed "I can't believe someone would use it to kill Sir Henri..."
+                            maid @ thinking "Sir told me it’s an antique dagger dating back to the 13th century...{w}or was it the 14th?"
+                        "Carpet Blood" if playerInventory.hasItem("Blood"):
+                            window show
+                            show maid neutral at center
+                            maid @ annoyed "Sorry, I don't know anything about that..."
+                        "Mayor's Will" if playerInventory.hasItem("Mayor's Will"):
+                            window show
+                            show maid neutral at center
+                            maid @ talking "You want me to read this?"
+                            maid @ thinking "Hmm..."
+                            maid @ annoyed "This doesn’t seem right...Sir Henri changed the beneficiary to Lady Isabelle a few weeks ago."
+                            maid @ thinking "Why would he change the beneficiary back to Mister Fabien?"
+                        "Key" if playerInventory.hasItem("Key"):
+                            window show
+                            show maid neutral at center
+                            maid @ annoyed "Sorry, I don't know anything about that..."
+                        "Suspicious Documents" if playerInventory.hasItem("Suspicious Documents"):
+                            window show
+                            show maid neutral at center
+                            maid @ thinking "I don’t want to speak ill of Sir Henri, but he was disliked by many in town."
+                            maid @ annoyed "I had no idea he kept all this hidden!"
+                        "Cup" if playerInventory.hasItem("Cup"):
+                            window show
+                            show maid neutral at center
+                            maid @ talking "This is Sir Henri’s personal cup. He uses it when he's in his study."
+
         # === DEAD BODY ===
         if _return == "body":
             "This is the body of the mayor"
