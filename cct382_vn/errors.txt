@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 208: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "Antique Dagger"
-                    ^
+File "game/script.rpy", line 65: python block expects a non-empty block.
+    python:
+           ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Mon Nov 30 22:43:45 2020
+Mon Nov 30 23:09:26 2020

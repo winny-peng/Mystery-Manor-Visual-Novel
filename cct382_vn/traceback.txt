@@ -1,21 +1,21 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <'Image' u'images/objects/clue_will.png'>:
-  File "game/script.rpy", line 152, in script call
+While running game code:
+  File "game/script.rpy", line 149, in script call
     call screen study
-  File "game/screens/inventory.rpy", line 62, in script
-    call screen ui_inventory
+  File "game/screens/map.rpy", line 20, in script
+    call screen ui_map
   File "renpy/common/000statements.rpy", line 531, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-IOError: Couldn't find file 'images/objects/clue_will.png'.
+TypeError: 'Null' object is not callable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 152, in script call
+  File "game/script.rpy", line 149, in script call
     call screen study
-  File "game/screens/inventory.rpy", line 62, in script
-    call screen ui_inventory
+  File "game/screens/map.rpy", line 20, in script
+    call screen ui_map
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 1949, in execute
     self.call("execute")
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 1937, in call
@@ -30,75 +30,27 @@ Full traceback:
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 3194, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 2094, in draw_screen
-    renpy.config.screen_height,
-  File "renpy/display/render.pyx", line 490, in renpy.display.render.render_screen (gen\renpy.display.render.c:6805)
-    rv = render(root, width, height, st, st)
-  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
-    surf = render(child, width, height, cst, cat)
-  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
-    cpdef render(d, object widtho, object heighto, double st, double at):
-  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
-    surf = render(child, width, height, cst, cat)
-  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
-    cpdef render(d, object widtho, object heighto, double st, double at):
-  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
-    surf = render(child, width, height, cst, cat)
-  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
-    cpdef render(d, object widtho, object heighto, double st, double at):
-  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 675, in render
-    child = renpy.display.render.render(self.child, w, h, st, at)
-  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
-    cpdef render(d, object widtho, object heighto, double st, double at):
-  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
-    surf = render(child, width, height, cst, cat)
-  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
-    cpdef render(d, object widtho, object heighto, double st, double at):
-  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\layout.py", line 455, in render
-    renders = [ render(i, renwidth, renheight, st, at) for i in children ]
-  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
-    cpdef render(d, object widtho, object heighto, double st, double at):
-  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\layout.py", line 1127, in render
-    st, at)
-  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
-    cpdef render(d, object widtho, object heighto, double st, double at):
-  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\behavior.py", line 774, in render
-    rv = super(Button, self).render(width, height, st, at)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\layout.py", line 1127, in render
-    st, at)
-  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
-    cpdef render(d, object widtho, object heighto, double st, double at):
-  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
-    rv = d.render(widtho, heighto, st, at)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\im.py", line 583, in render
-    return cache.get(self, render=True)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\im.py", line 266, in get
-    surf = image.load()
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\im.py", line 628, in load
-    surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\loader.py", line 576, in load
-    raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'images/objects/clue_will.png'.
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 3518, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\layout.py", line 998, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\layout.py", line 998, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\layout.py", line 998, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 714, in event
+    rv = self.child.event(ev, x, y, st)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\layout.py", line 998, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\behavior.py", line 962, in event
+    return handle_click(self.clicked)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\behavior.py", line 897, in handle_click
+    rv = run(action)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\behavior.py", line 320, in run
+    return action(*args, **kwargs)
+TypeError: 'Null' object is not callable
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 cct382_vn 1.0
-Mon Nov 30 23:05:15 2020
+Mon Nov 30 23:47:29 2020

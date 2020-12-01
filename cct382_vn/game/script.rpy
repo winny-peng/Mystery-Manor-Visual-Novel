@@ -62,8 +62,6 @@ label start:
     # The game's introduction.
     with flash
     scene bg manor_gate
-    python:
-        """
     "{i}You see a sudden flash and it takes you awhile before your surroundings come into focus.{/i}"
     player "{=txt_thoughts}(...)"
     "{i}You see a tall, dark gate, and behind it, a grand, white manor.{/i}"
@@ -81,13 +79,13 @@ label start:
     "???" "{=txt_small}Get...my...bo...who...you..."
     player "Sorry what did you say?"
     show sentry neutral
-    "{i}The guard turns around and looks at you in confusion.{/i}"
+    "{i}The sentry turns around and looks at you in confusion.{/i}"
     "???" "I didn't say anything Detective Watson."
     hide sentry neutral
-    "{i}The guard speeds up and the distance between the two of you widen.{/i}"
-    player "Did I freak him out? I should be the one freaked out."
+    "{i}The sentry speeds up and the distance between the two of you widen.{/i}"
+    player "{=txt_thoughts}Did I freak him out? I should be the one freaked out."
     "???" "{=txt_small}Man...deaf...ge...out..."
-    "{i}You look at the guard again but the voice doesn't appear to be coming from ahead.{/i}"
+    "{i}You look at the sentry again but the voice doesn't appear to be coming from ahead.{/i}"
     "???" "{=txt_small}No...look...excu...me...HERE!"
     "{i}The voice starts getting louder...and louder, until you realize the source.{/i}"
     show detective angry with dissolve
@@ -123,22 +121,21 @@ label start:
     "{i}Your new reality hits you like a wrecking ball.{/i}"
     player "(H-hey old man...who did you say again...?)"
     show detective neutral
-    detective @ shock "Isn’t it obvious by now? I’m a PRIVATE DETECTIVE for crying out loud! I EVEN TOLD YOU EARLIER!"
+    detective @ angry "Isn’t it obvious by now? I’m a PRIVATE DETECTIVE for crying out loud! I EVEN TOLD YOU EARLIER!"
     detective @ surprise "And this is a VERY important case. My reputation is on the line!"
     detective @ judging "Don’t worry kid, I’ll guide you along the entire way."
     detective @ disgust "{=txt_small}I don’t want you messing things up anyway..."
     detective @ disgust "Wait, you ARE a kid right?"
     player "Well actually I-"
-    detective @ shock "NOPE! You are NOT answering that! You called me an old man so that makes you a kid in my eyes."
+    detective @ angry "NOPE! You are NOT answering that! You called me an old man so that makes you a kid in my eyes."
     detective @ disgust "{=txt_small}I'm not even that old anyways."
-    "{i}Out of the corner of your eyes, you see the guard quietly leave and someone else entering the room.{/i}"
+    "{i}Out of the corner of your eyes, you see the sentry quietly leave and someone else entering the room.{/i}"
     "Detective" "Now enough meddling and go talk to the lady on your right."
     "{i}Again, left with no other choice, you follow the detective's words{/i}"
-        """
     # === TUTORIAL ===
     # The tutorial explains all the basic controls and available features the
     # player can use (e.g. click to interact, how to use inventory/map/journal)
-    # call tutorial
+    call tutorial from _call_tutorial
 
     # === GAME ===
     # The game loops from here. Until the player makes an arrest, the player
@@ -240,7 +237,7 @@ label start:
         if _return == "body":
             player "So this is the dead body."
             show detective neutral
-            detective @ disgust "Your're kind of slow aren't you?"
+            detective @ disgust "You're kind of slow aren't you?"
             detective @ angry "OF COURSE THAT'S A DEAD BODY!"
             hide detective neutral
         # === BLOOD ===
@@ -264,12 +261,13 @@ label start:
                 detective @ surprise "Don't drink from that. That's obviously used."
                 player "I-I wasn't going to drink from that!"
                 detective @ judging "That's what they all say."
-                detective @ talking "It seems like a normal cup but let's add keep a note of it anyways."
+                detective @ talking "It seems like a normal cup but let's keep a note of it anyways."
                 $ playerInventory.add(Clue("Cup", "images/objects/clue_cup.png", "A regular cup. Nothing fancy about it.", None))
             else:
                 detective "I TOLD YOU. DON'T DRINK FROM THAT CUP."
             hide detective neutral
         # === DAGGER ===
+        # TODO PLAYER ALREADY HAS DAGGER FROM TUTORIAL
         if _return == "dagger":
             if not playerInventory.hasItem("Dagger"):
                 player "Should I take it out?"

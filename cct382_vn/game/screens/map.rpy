@@ -2,6 +2,7 @@
 # This is the code for the map of the mansion.
 
 # === GLOBAL VARIABLES ===
+# BUG ERROR WHEN CLICK ON ROOM
 
 # === ROOM VARIABLES ===
 # These variables keeps track of which rooms (inside the house), the player has
