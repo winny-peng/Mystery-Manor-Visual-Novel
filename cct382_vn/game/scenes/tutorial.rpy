@@ -37,24 +37,27 @@ label tutorial:
     with Pause(1)
     window show
     # === TUTORIAL - CHARACTER INTERACTION ===
+    show detective angry
     detective "HEY! I told you to stop meddling and GO TALK TO THE LADY ON YOUR RIGHT!"
+    hide detective angry
     window hide
     while not character_visited:
         call screen tutorial_interactions("tutorial_character")
         if _return:
             $ character_visited = True
-    show maid_neutral
+    show maid neutral
     window show
-    maid "Detective Watson, we're so glad you're finally here..."
-    maid "Th-this is so horrible...{w}S-Sir Henri’s been m-murdered in cold blood..."
-    maid "Sir Henri was c-completely fine this afternoon, w-who could have done this!?"
+    maid @ talking "Detective Watson, we're so glad you're finally here..."
+    maid @ annoyed "Th-this is so horrible...{w}S-Sir Henri’s been m-murdered in cold blood..."
+    maid @ thinking "Sir Henri was c-completely fine this afternoon, w-who could have done this!?"
     detective "She may seem innocent, but the number one rule for a detective is that everyone’s a suspect."
-    hide maid_neutral
+    hide maid neutral
     # === TUTORIAL - JOURNAL (SUSPECT) ===
-    # TODO ADD IMAGE INSTEAD SO JOURNAL IS NOT CLICKABLE
-    detective "You should keep a note of all the suspects."
-    detective "I usually write everything down in my journal."
-    detective "Why don't you check the journal right now? It's near the bottom to your right."
+    show detective neutral
+    detective @ talking "You should keep a note of all the suspects."
+    detective @ talking "I usually write everything down in my journal."
+    detective @ talking "Why don't you check the journal right now? It's near the bottom to your right."
+    hide detective neutral
     window hide
     while not journal_visited:
         call screen tutorial_interactions("tutorial_journal")
@@ -72,7 +75,9 @@ label tutorial:
     detective "{=txt_small}I always forget what people look like."
     hide screen ui_journal
     # === TUTORIAL - OBJECT INTERACTION ===
+    show detective talking
     detective "Anyways, you can question her later. Right now, you need to figure out how the Mayor was murdered."
+    hide detective talking
     window hide
     while not object_visited:
         call screen tutorial_interactions("tutorial_object")
@@ -80,11 +85,14 @@ label tutorial:
             $ object_visited = True
     $ playerInventory.add(Clue("Dagger", "images/objects/clue_dagger.png", "Looks like a very old dagger, but long enough to pierce all the way through his body.", None))
     window show
-    detective "He was pierced right through his heart...{w}but we can’t rule out the possibility of a suicide."
+    show detective neutral
+    detective @ talking "Looks like a very old dagger, but long enough to pierce all the way through his body."
+    detective @ talking "He was pierced right through his heart...{w}but we can’t rule out the possibility of a suicide."
     # === TUTORIAL - INVENTORY ===
-    detective "Now before you investigate further, a smart detective always keeps track of his gathered clues!"
-    detective "Once you pick up an item, make sure to put it into your bag so you can look at it later."
-    detective "Go on, what are you waiting for? Open your bag to see if you put it in properly."
+    detective @ talking "Now before you investigate further, a smart detective always keeps track of his gathered clues!"
+    detective @ talking "Once you pick up an item, make sure to put it into your bag so you can look at it later."
+    detective @ disgust "Go on, what are you waiting for? Open your bag to see if you put it in properly."
+    hide detective neutral
     window hide
     while not inventory_visited:
         call screen tutorial_interactions("tutorial_inventory")
@@ -92,14 +100,53 @@ label tutorial:
             $ inventory_visited = True
     show screen ui_inventory
     detective "Ah perfect! Our first clue!"
+    detective "If we ever forget what clues we've found, we can always check back here."
     hide screen ui_inventory
     # === TUTORIAL - SHOW CHARACTER OBJECTS ===
-    # TODO NEED WORKING INVENTORY
-    # === TUTORIAL - JOURNAL(SUSPECT)
-    # TODO NEED WORKING INVENTORY (SHOW SUSPECT OBJECT TO OBTAIN TESTIMONY)
+    show detective neutral
+    detective @ suspicious "Hmm...{w}this dagger doesn't look too special."
+    detective @ talking "Let's go ask that lady again and see if she knows anything about the dagger."
+    hide detective neutral
+    window hide
+    $ character_visited = False
+    while not character_visited:
+        call screen tutorial_interactions("tutorial_character")
+        if _return:
+            $ character_visited = True
+    show maid neutral at left
+    menu:
+        "Do you know anything about this?":
+            menu:
+                "Antique Dagger":
+                    window show
+                    maid @ thinking "Sir Henri kept that dagger displayed on the bookshelf. He's very fond of it."
+                    maid @ annoyed "I can't believe someone would use it to kill Sir Henri..."
+                    maid @ thinking "Sir told me it’s an antique dagger dating back to the 13th century...{w}or was it the 14th?"
+    hide maid neutral
+    show detective neutral
+    detective @ suspicious "So it dates back to the middle ages? It must be a knightly dagger from the looks of it..."
+    # === TUTORIAL - JOURNAL(TESTIMONY)
+    detective @ judging "Hmm...{w}that might come in handy later."
+    detective @ talking "Let's write that down. You never know when a suspect's testimony will come in handy."
+    detective @ judging "I hope you remember where you put the journal."
+    hide detective neutral
+    window hide
+    $ journal_visited = False
+    while not journal_visited:
+        call screen tutorial_interactions("tutorial_journal")
+        if _return:
+            $ journal_visited = True
+    window show
+    show screen ui_journal
+    detective "Let's write down her testimony so we don't forget."
+    $ suspect_maid.testimonies["Sir Henri kept that dagger displayed on the bookshelf. He's very fond of it."] = True
+    detective "Ah that's better."
+    hide screen ui_journal
     # === TUTORIAL - MAP ===
-    detective "You can look for more clues, but when you’re ready to investigate further, the map of the manor will come in handy."
-    detective "Why don't you take a quick peek? I worked really hard on it."
+    show detective neutral
+    detective @ talking  "You can look for more clues, but when you’re ready to investigate further, the map of the manor will come in handy."
+    detective @ judging "Why don't you take a quick peek? I worked really hard on it."
+    hide detective neutral
     window hide
     while not map_visited:
         call screen tutorial_interactions("tutorial_map")
@@ -115,13 +162,14 @@ label tutorial:
     detective "See, that wasn't so bad! We can write in the rest later when we explore the manor."
     hide screen ui_map
     # === TUTORIAL - ARREST ===
-    detective "Once you think we found the suspect, you can arrest them at anytime!"
-    detective "Although I don't suggest you arrest anyone randomly though."
-    detective "Once you make an arrest, there's no turning back. So choose wisely!"
+    show detective neutral
+    detective @ talking "Once you think we found the suspect, you can arrest them at anytime!"
+    detective @ surprise "Although I don't suggest you arrest anyone randomly though."
+    detective @ judging "Once you make an arrest, there's no turning back. So choose wisely!"
     # === SCRIPT ===
-    detective "Welp. That's about it! Everything's pretty easy right? I'm sure you'll get the hang of it."
-    detective "{=txt_small}Wow this is exciting! My very first student!"
-    detective "Okay! Let's go! Time to solve the mystery!"
+    detective @ suspicious "Welp. That's about it! Everything's pretty easy right? I'm sure you'll get the hang of it."
+    detective @ talking "{=txt_small}Wow this is exciting! My very first student!"
+    detective @ angry "Okay! Let's go! Time to solve the mystery!"
     return
 
 screen tutorial_interactions(tutorial):

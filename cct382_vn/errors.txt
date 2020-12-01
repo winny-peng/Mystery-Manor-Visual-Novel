@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 164: expected menuitem
-    show maid neutral at right
-    ^
+File "game/scenes/tutorial.rpy", line 134: expected statement.
+    journal_visited = False
+                    ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Mon Nov 30 01:00:17 2020
+Mon Nov 30 21:34:35 2020

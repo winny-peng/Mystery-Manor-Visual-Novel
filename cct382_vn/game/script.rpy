@@ -83,7 +83,6 @@ label start:
     $ suspect_maid.testimonies["I AM A MAID"] = False
     $ suspect_maid.testimonies["I AM A COW"] = True
     # ===================================
-        """
     "{i}You see a sudden flash and it takes you awhile before your surroundings come into focus.{/i}"
     player "{=txt_thoughts}(...)"
     "{i}You see a tall, dark gate, and behind it, a grand, white manor.{/i}"
@@ -154,7 +153,7 @@ label start:
     "{i}Out of the corner of your eyes, you see the guard quietly leave and someone else entering the room.{/i}"
     "Detective" "Now enough meddling and go talk to the lady on your right."
     "{i}Again, left with no other choice, you follow the detective's words{/i}"
-
+        """
     # === TUTORIAL ===
     # The tutorial explains all the basic controls and available features the
     # player can use (e.g. click to interact, how to use inventory/map/journal)
@@ -178,19 +177,23 @@ label start:
             show maid neutral
             maid @ talking "Nabe, at your service."
             show maid neutral at left
+            window hide
             menu:
                 "Who are you and what's your role at the manor?":
                     show maid neutral at center
+                    window show
                     maid @ talking "My name’s Narberal Tamura, but you can call me Nabe."
                     maid @ annoyed "I used to live in an orphanage until Sir Henri hired me to be his maid."
                     maid @ talking "Since then, I’ve been serving Sir Henri for as long as I can remember."
                     maid @ talking "I’m in charge of all the chores, from cleaning to cooking and serving food for the household."
                     maid @ talking "In return, Sir Henri provided me with a roof over my head. I’m very grateful for his charity..."
                 "What was your relationship with Sir Henri?":
+                    window show
                     show maid neutral at center
                     maid @ annoyed"I was just Sir’s maid, nothing more."
                 "Where were you during the time of the murder?":
                     show maid neutral at center
+                    window show
                     maid @ annoyed "I don’t know exactly when Sir Henri was murdered, I didn’t hear anything!"
                     maid @ thinking "Umm...{w}after serving Sir Henri and Jeanne, I left to clean the upstairs of the manor."
                     maid @ annoyed "W-when I walked in to his s-study, Sir was...{w}he was dead."

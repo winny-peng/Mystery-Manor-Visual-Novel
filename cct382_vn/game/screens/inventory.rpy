@@ -46,10 +46,10 @@ init python:
 
         # Returns True if the player possesses the given Clue
         # from their Inventory.
-        def hasItem(self, Clue):
+        def hasItem(self, clue_name):
             flag = False;
             for item in self.itemList:
-                if item == Clue.name:
+                if item.name == clue_name:
                     flag = True;
             return flag;
 

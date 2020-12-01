@@ -66,12 +66,12 @@ screen ui_journal():
 
         # === SUSPECT INFORMATION ===
         text suspect_current.name color "#000" xpos 861 ypos 111
-        text suspect_current.description color "#000" xpos 700 ypos 500
+        text suspect_current.description color "#000" xpos 700 ypos 200
 
         # === TESTIMONY INFORMATION ===
         for testimony in suspect_current.testimonies:
             if suspect_current.testimonies[testimony] == True:
-                text testimony color "#000" xpos 700 ypos 400
+                text testimony color "#000" xpos 700 ypos 300
 
     # === SUSPECT NAVIGATION ===
     # 1
