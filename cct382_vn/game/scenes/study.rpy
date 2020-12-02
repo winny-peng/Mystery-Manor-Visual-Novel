@@ -264,8 +264,10 @@ label study:
                 $ game_room = "fronthall"
                 # TODO MOVE THIS TO FRONT HALL
                 $ hallway_visited = True
+                hide screen study
                 return
             # player using door regularly
             else:
                 $ game_room = "fronthall"
+                hide screen study
                 return

@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 155: elif clause expects a non-empty block.
-    elif game_room == "fronthall":
-                                  ^
+File "game/scenes/study.rpy", line 267: end of line expected.
+    hide screen study(state_study)
+                     ^
+
+File "game/scenes/study.rpy", line 272: end of line expected.
+    hide screen study(state_study)
+                     ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Tue Dec 01 21:37:37 2020
+Tue Dec 01 22:30:23 2020
