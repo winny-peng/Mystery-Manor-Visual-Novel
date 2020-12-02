@@ -33,7 +33,9 @@ image sentry neutral = "images/characters/sentry_neutral.png"
 image bg manor_gate = "images/backgrounds/manor_gate.png"
 image bg manor_door = "images/backgrounds/manor_door.png"
 image bg tutorial = "images/backgrounds/tutorial.png"
-image bg study = "images/backgrounds/study_initial.png"
+image bg study_initial = "images/backgrounds/study_initial.png"
+image bg study_trans_1 = "images/backgrounds/study_trans_1.png"
+image bg study_final = "images/backgrounds/study_final.png"
 
 # Inventory
 default playerInventory = Inventory()
@@ -138,22 +140,29 @@ label start:
     # === TUTORIAL ===
     # The tutorial explains all the basic controls and available features the
     # player can use (e.g. click to interact, how to use inventory/map/journal)
-    call tutorial from _call_tutorial
+    # call tutorial from _call_tutorial
 
     # === GAME ===
     # The game loops from here. Until the player makes an arrest, the player
     # can explore the game however they like.
+
     # === STUDY ===
+    default state_study = "initial"
     while game_room == "study":
+        # display proper background depending on state of the room
+        if state_study == "initial":
+            scene bg study_initial
+        elif state_study == "transition_1":
+            scene bg study_trans_1
+        else:
+            scene bg study_final
         window hide
         show screen ui_gamebuttons
-        scene bg study
-        call screen study
-        show screen study
+        call screen study(state_study)
+        show screen study(state_study)
         # === MAID ===
         if _return == "maid":
             window show
-            hide screen study
             show maid neutral
             maid @ talking "Nabe, at your service."
             show maid neutral at left
@@ -234,16 +243,17 @@ label start:
                             window show
                             show maid neutral at center
                             maid @ talking "This is Sir Henri’s personal cup. He uses it when he's in his study."
-
+                "Nevermind. I forgot what I was going to say.":
+                    pass
         # === DEAD BODY ===
-        if _return == "body":
+        elif _return == "body":
             player "So this is the dead body."
             show detective neutral
             detective @ disgust "You're kind of slow aren't you?"
             detective @ angry "OF COURSE THAT'S A DEAD BODY!"
             hide detective neutral
         # === BLOOD ===
-        if _return == "blood":
+        elif _return == "blood":
             if not playerInventory.hasItem("Blood"):
                 player "Is this...{w}blood?!"
                 show detective neutral
@@ -257,7 +267,7 @@ label start:
                 detective @ disgust "{=txt_small}Youngsters these days...so weird..."
             hide detective neutral
         # === CUP ===
-        if _return == "cup":
+        elif _return == "cup":
             show detective angry
             if not playerInventory.hasItem("Cup"):
                 detective @ surprise "Don't drink from that. That's obviously used."
@@ -269,28 +279,17 @@ label start:
                 detective "I TOLD YOU. DON'T DRINK FROM THAT CUP."
             hide detective neutral
         # === DAGGER ===
-        # TODO PLAYER ALREADY HAS DAGGER FROM TUTORIAL
-        if _return == "dagger":
-            if not playerInventory.hasItem("Dagger"):
-                player "Should I take it out?"
-                show detective neutral
-                detective @ angry "NO! ARE YOU CRAZY? YOU'RE NOT EVEN WEARING GLOVES"
-                detective @ disgust "Don't you know to never touch evidence with bare hands?"
-                detective @ judging "Hmmm...{w} it looks like a very old dagger."
-                detective @ suspicious "I don't think it's long enough to pierce all the way through his body though..."
-                player "I guess I'll add it to our clues then..."
-                $ playerInventory.add(Clue("Dagger", "images/objects/clue_dagger.png", "Looks like a very old dagger; long enough to pierce all the way through his body.", None))
-            else:
-                show detective natural
-                detective disgust "Don't even think about touching that without gloves."
+        elif _return == "dagger":
+            show detective natural
+            detective disgust "Don't even think about touching that without gloves."
             hide detective natural
         # === KEY ===
-        if _return == "key":
+        elif _return == "key":
             "A KEY! WE CAN LEAVE!"
             "THIS DOES NOT DO ANYTHING YET PLEASE BE PATIENT!"
         # === WILL ===
-        if _return == "will":
-            player "Cool. I can use this a scrap paper to jot down notes!"
+        elif _return == "will":
+            player "Cool. I can use this as scrap paper to jot down notes!"
             show detective neutral
             detective @ surprise "HOLD IT!"
             detective angry "THAT'S A WILL! YOU ALMOST DESTROYED IMPORTANT EVIDENCE!"
@@ -298,6 +297,67 @@ label start:
             player "Maybe the Mayor wrote it before he was murdered?"
             detective @ disgust "Hmm...why don't you put it away before you destroy it by accident."
             $ playerInventory.add(Clue("Mayor's Will", "images/objects/clue_will.png", "The ink seems fresh… did the Mayor write it before he was murdered?", None))
-        # === FRONT HALL ===
+        # === PAINTING ===
+        elif _return == "painting_initial":
+            player "This painting looks kind cool."
+            show detective neutral
+            detective @ disgust "Can you not touch random pieces of evidence without gloves?"
+            detective @ judging "Now look what you did."
+            detective @ disgust "It's crooked. Straighten it up before anyone notices."
+            hide detective neutral
+            player "Hmm...this painting is a bit hard to straighten..."
+            player "Woah!"
+            $ state_study = "transition_1"
+        elif _return == "painting_final":
+            player "Do we just leave this here?"
+            show detective neutral
+            detective @ talking "I'm sure someone will pick it up eventually."
+            hide detective neutral
+            show maid neutral
+            maid @ annoyed "..."
+            hide maid neutral
+        # === SAFE ===
+        elif _return == "safe":
+            show maid neutral
+            maid @ annoyed "..."
+            hide maid neutral
+            show detective neutral
+            detective @ surprise "A secret safe!"
+            detective @ angry "What are you waiting for?! Open it!"
+            player "Uh...{w}is this allowed?"
+            detective @ disgust "We're trying to solve a MURDER here. This is just part of the job."
+            hide detective neutral
+            show maid neutral
+            maid @ annoyed "..."
+            hide maid neutral
+            player "It's unlocked. I guess a quick peek is fine."
+            player "Oh what's this?"
+            $ state_study = "final"
+        # === DOCUMENTS ===
+        elif _return == "documents":
+            show detective neutral
+            detective @ suspicious "What a thick stack of papers."
+            detective @ talking "What does it say?"
+            detective @ angry "Move closer! I can't see!"
+            player "..."
+            detective @ surprise "Hold on...{w}this is..."
+            detective @ disgust "So many incriminating documents...{w}just how many crimes did the mayor commit?"
+            player "So many terrible crimes...{w}no wonder someone wanted to kill him."
+            detective @ judging "Let's not jump to conclusions."
+            detective @ talking "But you're right."
+            detective @ talking "Let's take these for now. The documents might help us find someone with a motive to kill the Mayor."
+            $ playerInventory.add(Clue("Suspicious Documents", "images/objects/clue_documents.png", "So many incriminating documents...just show many crimes did the mayor commit?", None))
+            hide detective neutral
+            show maid neutral
+            maid @ annoyed "..."
+            hide maid neutral
+        # === CASH ===
+        elif _return == "cash":
+            show detective neutral
+            detective @ angry "HEY!{w} STOP EYEING THE CASH!"
+            detective @ disgust "{=txt_small}We're in public!"
+            detective @ judging "Since the safe was unlocked but no one took the cash, this probably isn't some petty theft gone wrong."
+            hide detective neutral
+    # === FRONT HALL ===
     jump ending
     return

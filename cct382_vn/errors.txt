@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens/map.rpy", line 49: u'NullAction' is not a keyword argument or valid child for the imagebutton statement.
-    NullAction()
-              ^
+File "game/script.rpy", line 354: reached end of line when expecting ':'.
+    elif _return == "cash"
+                          ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Tue Dec 01 16:48:29 2020
+Tue Dec 01 20:43:43 2020
