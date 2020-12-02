@@ -20,6 +20,7 @@ screen ui_arrest():
     default lover_selected = False
     default secretary_selected = False
     default guard_selected = False
+    $ suspects_selected = []
 
     imagemap:
         # return/close map

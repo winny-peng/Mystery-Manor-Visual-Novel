@@ -137,6 +137,7 @@ label start:
     "Detective" "Now enough meddling and go talk to the lady on your right."
     "{i}Again, left with no other choice, you follow the detective's words{/i}"
         """
+
     # === TUTORIAL ===
     # The tutorial explains all the basic controls and available features the
     # player can use (e.g. click to interact, how to use inventory/map/journal)
@@ -147,6 +148,7 @@ label start:
     # can explore the game however they like.
 
     # === STUDY ===
+    # The dialogue for the study.
     default state_study = "initial"
     while game_room == "study":
         # display proper background depending on state of the room
@@ -165,12 +167,14 @@ label start:
             window show
             show maid neutral
             maid @ talking "Nabe, at your service."
-            show maid neutral at left
+            hide maid neutral
+            show maid neutral onlayer screens at left zorder 2
             window hide
             menu:
                 "Who are you and what's your role at the manor?":
-                    show maid neutral at center
                     window show
+                    hide maid neutral onlayer screens at left zorder 2
+                    show maid neutral at center
                     maid @ talking "My name’s Narberal Tamura, but you can call me Nabe."
                     maid @ annoyed "I used to live in an orphanage until Sir Henri hired me to be his maid."
                     maid @ talking "Since then, I’ve been serving Sir Henri for as long as I can remember."
@@ -178,10 +182,12 @@ label start:
                     maid @ talking "In return, Sir Henri provided me with a roof over my head. I’m very grateful for his charity..."
                 "What was your relationship with Sir Henri?":
                     window show
+                    hide maid neutral onlayer screens at left zorder 2
                     show maid neutral at center
                     maid @ annoyed"I was just Sir’s maid, nothing more."
                 "Where were you during the time of the murder?":
                     window show
+                    hide maid neutral onlayer screens at left zorder 2
                     show maid neutral at center
                     maid @ annoyed "I don’t know exactly when Sir Henri was murdered, I didn’t hear anything!"
                     maid @ thinking "Umm...{w}after serving Sir Henri and Jeanne, I left to clean the upstairs of the manor."
@@ -191,22 +197,26 @@ label start:
                     menu:
                         "Henri Auguste (Mayor)":
                             window show
+                            hide maid neutral onlayer screens at left zorder 2
                             show maid neutral at center
                             maid @ talking "Sir Henri was a great man, he provided me with a home during the darkest times of my life."
                             maid @ annoyed "I could never truly repay the debt I owed."
                         "Isabelle Auguste (Mayor's wife)":
                             window show
+                            hide maid neutral onlayer screens at left zorder 2
                             show maid neutral at center
                             maid @ talking "Lady Isabelle is a kind soul...{w}Sir recently married her, I think it's only been a few months."
                             maid @ annoyed "I can’t even begin to imagine how Lady Isabelle is feeling...{w}she needs time to grieve, it’s only natural."
                         "Fabien Auguste (Mayor's son)":
                             window show
+                            hide maid neutral onlayer screens at left zorder 2
                             show maid neutral at center
                             maid @ thinking "With all due respect, Mister Fabien seems very troubled...Sir Henri wasn’t very proud of him since he never likes to study."
                             maid @ annoyed "Mister’s room is usually locked, sometimes he’s not at the manor at all...{w}and his taste in clothing is very odd."
                             maid @ thinking "Mister Fabien is a complete mystery to me."
                         "Susanne Alberg (Mayor's secretary":
                             window show
+                            hide maid neutral onlayer screens at left zorder 2
                             show maid neutral at center
                             maid @ talking "Susanne has been around since before I was here..."
                             maid @ annoyed "She always questions how much work I do around the manor even though I work very hard!"
@@ -215,16 +225,19 @@ label start:
                     menu:
                         "Antique Dagger":
                             window show
+                            hide maid neutral onlayer screens at left zorder 2
                             show maid neutral at center
                             maid @ thinking "Sir Henri kept that dagger displayed on the bookshelf. He's very fond of it."
                             maid @ annoyed "I can't believe someone would use it to kill Sir Henri..."
                             maid @ thinking "Sir told me it’s an antique dagger dating back to the 13th century...{w}or was it the 14th?"
                         "Carpet Blood" if playerInventory.hasItem("Blood"):
                             window show
+                            hide maid neutral onlayer screens at left zorder 2
                             show maid neutral at center
                             maid @ annoyed "Sorry, I don't know anything about that..."
                         "Mayor's Will" if playerInventory.hasItem("Mayor's Will"):
                             window show
+                            hide maid neutral onlayer screens at left zorder 2
                             show maid neutral at center
                             maid @ talking "You want me to read this?"
                             maid @ thinking "Hmm..."
@@ -232,15 +245,18 @@ label start:
                             maid @ thinking "Why would he change the beneficiary back to Mister Fabien?"
                         "Key" if playerInventory.hasItem("Key"):
                             window show
+                            hide maid neutral onlayer screens at left zorder 2
                             show maid neutral at center
                             maid @ annoyed "Sorry, I don't know anything about that..."
                         "Suspicious Documents" if playerInventory.hasItem("Suspicious Documents"):
                             window show
+                            hide maid neutral onlayer screens at left zorder 2
                             show maid neutral at center
                             maid @ thinking "I don’t want to speak ill of Sir Henri, but he was disliked by many in town."
                             maid @ annoyed "I had no idea he kept all this hidden!"
                         "Cup" if playerInventory.hasItem("Cup"):
                             window show
+                            hide maid neutral onlayer screens at left zorder 2
                             show maid neutral at center
                             maid @ talking "This is Sir Henri’s personal cup. He uses it when he's in his study."
                 "Nevermind. I forgot what I was going to say.":

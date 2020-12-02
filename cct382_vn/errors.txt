@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 354: reached end of line when expecting ':'.
-    elif _return == "cash"
-                          ^
+File "game/script.rpy", line 168: end of line expected.
+    show maid neutral zorder 100, at left
+                                ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Tue Dec 01 20:43:43 2020
+Tue Dec 01 21:03:22 2020
