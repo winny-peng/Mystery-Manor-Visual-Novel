@@ -36,6 +36,8 @@ image bg tutorial = "images/backgrounds/tutorial.png"
 image bg study_initial = "images/backgrounds/study_initial.png"
 image bg study_trans_1 = "images/backgrounds/study_trans_1.png"
 image bg study_final = "images/backgrounds/study_final.png"
+# TODO FRONT HALL IS TEMPORARY
+image bg hall = "images/backgrounds/bg_frontHall.jpg"
 
 # Inventory
 default playerInventory = Inventory()
@@ -62,8 +64,6 @@ init -1 python:
 label start:
     # === INTRODUCTION ===
     # The game's introduction.
-    python:
-        """
     with flash
     scene bg manor_gate
     "{i}You see a sudden flash and it takes you awhile before your surroundings come into focus.{/i}"
@@ -136,12 +136,11 @@ label start:
     "{i}Out of the corner of your eyes, you see the sentry quietly leave and someone else entering the room.{/i}"
     "Detective" "Now enough meddling and go talk to the lady on your right."
     "{i}Again, left with no other choice, you follow the detective's words{/i}"
-        """
 
     # === TUTORIAL ===
     # The tutorial explains all the basic controls and available features the
     # player can use (e.g. click to interact, how to use inventory/map/journal)
-    # call tutorial from _call_tutorial
+    call tutorial from _call_tutorial
 
     # === GAME ===
     # The game loops from here. Until the player makes an arrest, the player
@@ -152,6 +151,6 @@ label start:
         if game_room == "study":
             call study
         # === FRONT HALL ===
-        elif game_room == "fronthall":
-            call fronthall
+        elif game_room == "hallway":
+            call hallway
     return

@@ -20,11 +20,11 @@ label ending:
         # This ending occurs if the player decides that everyone is the killer.
         elif len(suspects_selected) == 8:
             narrator("SO YOU THINK EVERYBODY IS THE KILLER?", interact=True)
-            narrator("EVEN THE MAYOR WAS INVOLVED IN HIS DEATH?", interact=True)
+            narrator("EVEN THE MAYOR WAS INVOLVED IN HIS OWN DEATH?", interact=True)
             narrator("COOL COOL COOL NO DOUBT NO DOUBT.", interact=True)
         # === GENERIC ENDING ===
         # This ending occurs if the player selects anything other than the
-        # special endings. 
+        # special endings.
         else:
             narrator("I DON'T THINK THIS IS CORRECT.", interact=True)
     return

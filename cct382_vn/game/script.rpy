@@ -140,7 +140,7 @@ label start:
     # === TUTORIAL ===
     # The tutorial explains all the basic controls and available features the
     # player can use (e.g. click to interact, how to use inventory/map/journal)
-    # call tutorial from _call_tutorial
+    call tutorial from _call_tutorial
 
     # === GAME ===
     # The game loops from here. Until the player makes an arrest, the player
@@ -149,8 +149,8 @@ label start:
     while True:
         # === STUDY ===
         if game_room == "study":
-            call study
+            call study from _call_study
         # === FRONT HALL ===
         elif game_room == "hallway":
-            call hallway
+            call hallway from _call_hallway
     return
