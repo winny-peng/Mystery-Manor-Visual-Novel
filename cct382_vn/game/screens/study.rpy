@@ -59,13 +59,19 @@ screen study(state):
         idle "images/objects/study_dagger.png"
         action Return("dagger")
     # === KEY ===
-    imagebutton:
-        focus_mask True
-        idle "images/objects/study_key.png"
-        action Return("key")
+    if not playerInventory.hasItem("Key"):
+        imagebutton:
+            focus_mask True
+            idle "images/objects/study_key.png"
+            action Return("key")
     # === WILL ===
     if not playerInventory.hasItem("Mayor's Will"):
         imagebutton:
             focus_mask True
             idle "images/objects/study_will.png"
             action Return("will")
+    # === DOOR - FRONTHALL ===
+    imagebutton:
+        focus_mask True
+        idle "images/objects/study_door_fronthall.png"
+        action Return("door_fronthall")

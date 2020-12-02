@@ -11,7 +11,7 @@ define kitchen_visited = False
 define bathroom_visited = False
 define sittingroom_visited = False
 define diningroom_visited = False
-define hallway = False
+define hallway_visited = False
 
 label map:
     hide screen ui_gamebuttons
