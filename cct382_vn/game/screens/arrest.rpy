@@ -20,11 +20,10 @@ screen ui_arrest():
     default lover_selected = False
     default secretary_selected = False
     default guard_selected = False
-    $ suspects_selected = []
 
     imagemap:
         # return/close map
-        hotspot (895, 0, 58, 55) action Return()
+        hotspot (895, 0, 58, 55) action SetVariable("suspects_selected", []), Return()
 
         # === ARREST BUTTON (CONFIRM SELECTION) ===
         hotspot (374, 545, 235, 49) action Jump("ending")
