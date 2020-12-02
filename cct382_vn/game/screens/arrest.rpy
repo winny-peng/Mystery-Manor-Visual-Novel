@@ -23,7 +23,7 @@ screen ui_arrest():
 
     imagemap:
         # return/close map
-        hotspot (895, 0, 58, 55) action SetVariable("suspects_selected", []), Return()
+        hotspot (895, 0, 58, 55) action SetVariable("suspects_selected", []), Play("sound", "audio/sfx/ui_click_close.wav"), Return()
 
         # === ARREST BUTTON (CONFIRM SELECTION) ===
         hotspot (374, 545, 235, 49) action Jump("ending")

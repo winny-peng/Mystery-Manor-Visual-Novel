@@ -71,6 +71,7 @@ screen ui_inventory():
         minimum(50, 50)
         maximum(50, 50)
         background("#000000")
+        activate_sound("audio/sfx/ui_click_close.wav")
         action Return()
 
     grid 8 3:

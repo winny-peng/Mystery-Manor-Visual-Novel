@@ -55,7 +55,7 @@ screen ui_journal():
 
     imagemap:
         # return/close map
-        hotspot (1060, 26, 73, 66) action Return()
+        hotspot (1060, 26, 73, 66) action Play("sound", "audio/sfx/ui_click_close.wav"), Return()
 
         # position
         xalign 0.5

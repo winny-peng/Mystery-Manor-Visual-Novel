@@ -19,7 +19,7 @@ label map:
 screen ui_map():
     imagemap:
         # return/close map
-        hotspot (900, 2, 24, 31) action Return()
+        hotspot (900, 2, 24, 31) action Play("sound", "audio/sfx/ui_click_close.wav"), Return()
 
         # position
         xalign 0.5

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scenes/ending.rpy", line 9: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation.
-    narrator "YOU HAVE HAVE ARRESTED THE MAID."
-    ^
+File "game/scenes/study.rpy", line 14: expected statement.
+    music_playing = True
+                  ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Wed Dec 02 00:58:47 2020
+Wed Dec 02 18:42:21 2020

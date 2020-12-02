@@ -5,8 +5,15 @@
 
 # === GLOBAL VARIABLES ===
 default state_study = "initial"
+define music_playing = False
 
 label study:
+
+    if (music_playing == False):
+        $ renpy.music.play("audio/bgm/study_placeholder_test.wav", channel="music", loop=True)
+        $ music_playing = True
+
+
     while game_room == "study":
         # display proper background depending on state of the room
         if state_study == "initial":
@@ -261,11 +268,13 @@ label study:
                 detective @ judging "If people foundo out, my reputation would be ruined."
                 player "..."
                 hide detective neutral
+                play sound "audio/sfx/ui_door.wav"
                 $ game_room = "hallway"
                 hide screen study
                 return
             # player using door regularly
             else:
+                play sound "audio/sfx/ui_door.wav"
                 $ game_room = "hallway"
                 hide screen study
                 return

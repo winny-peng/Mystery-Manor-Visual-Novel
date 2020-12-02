@@ -6,4 +6,4 @@ screen hallway():
     imagemap:
         ground "images/backgrounds/bg_frontHall.jpg"
         # focus_mask True
-        hotspot (503, 172, 232, 315) action Return("door_study")
+        hotspot (503, 172, 232, 315) action Play("sound", "audio/sfx/ui_door.wav"), Return("door_study")

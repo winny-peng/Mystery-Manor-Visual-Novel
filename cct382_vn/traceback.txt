@@ -2,7 +2,7 @@
 
 While running game code:
   File "game/script.rpy", line 152, in script call
-    call study
+    call study from _call_study
   File "game/scenes/study.rpy", line 20, in script call
     call screen study(state_study)
   File "game/screens/arrest.rpy", line 9, in script
@@ -16,49 +16,49 @@ While running game code:
   File "game/screens/arrest.rpy", line 24, in execute
     imagemap:
   File "game/screens/arrest.rpy", line 26, in execute
-    hotspot (895, 0, 58, 55) action SetVariabel("suspects_selected", []), Return()
+    hotspot (895, 0, 58, 55) action SetVariable("suspects_selected", []), play(sound, "audio/sfx/ui_click_close.wav"), Return()
   File "game/screens/arrest.rpy", line 26, in keywords
-    hotspot (895, 0, 58, 55) action SetVariabel("suspects_selected", []), Return()
-NameError: name 'SetVariabel' is not defined
+    hotspot (895, 0, 58, 55) action SetVariable("suspects_selected", []), play(sound, "audio/sfx/ui_click_close.wav"), Return()
+NameError: name 'sound' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "game/script.rpy", line 152, in script call
-    call study
+    call study from _call_study
   File "game/scenes/study.rpy", line 20, in script call
     call screen study(state_study)
   File "game/screens/arrest.rpy", line 9, in script
     call screen ui_arrest
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 1949, in execute
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1949, in execute
     self.call("execute")
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 1937, in call
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1937, in call
     return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\statements.py", line 277, in call
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\statements.py", line 277, in call
     return method(parsed, *args, **kwargs)
   File "renpy/common/000statements.rpy", line 531, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\exports.py", line 2905, in call_screen
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\exports.py", line 2905, in call_screen
     rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ui.py", line 297, in interact
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\ui.py", line 297, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in interact_core
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in interact_core
     root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
     d.visit_all(callback, seen)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
     d.visit_all(callback, seen)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
     d.visit_all(callback, seen)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 430, in visit_all
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 430, in visit_all
     callback(self)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in <lambda>
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in <lambda>
     root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 440, in per_interact
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 440, in per_interact
     self.update()
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 625, in update
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 625, in update
     self.screen.function(**self.scope)
   File "game/screens/arrest.rpy", line 13, in execute
     screen ui_arrest():
@@ -67,13 +67,13 @@ Full traceback:
   File "game/screens/arrest.rpy", line 24, in execute
     imagemap:
   File "game/screens/arrest.rpy", line 26, in execute
-    hotspot (895, 0, 58, 55) action SetVariabel("suspects_selected", []), Return()
+    hotspot (895, 0, 58, 55) action SetVariable("suspects_selected", []), play(sound, "audio/sfx/ui_click_close.wav"), Return()
   File "game/screens/arrest.rpy", line 26, in keywords
-    hotspot (895, 0, 58, 55) action SetVariabel("suspects_selected", []), Return()
+    hotspot (895, 0, 58, 55) action SetVariable("suspects_selected", []), play(sound, "audio/sfx/ui_click_close.wav"), Return()
   File "<screen language>", line 26, in <module>
-NameError: name 'SetVariabel' is not defined
+NameError: name 'sound' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 cct382_vn 1.0
-Wed Dec 02 01:11:18 2020
+Wed Dec 02 17:48:35 2020

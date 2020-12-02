@@ -8,6 +8,9 @@ screen ui_gamebuttons():
         yalign 1.0
         focus_mask True
         auto "images/ui/arrest_%s.png"
+        hover_sound "audio/sfx/ui_click.wav"
+        activate_sound "audio/sfx/ui_arrest.wav"
+
         action Call("arrest")
 
     # === MAP BUTTON ===
@@ -15,6 +18,8 @@ screen ui_gamebuttons():
         yalign 1.0
         focus_mask True
         auto "images/ui/map_%s.png"
+        hover_sound "audio/sfx/ui_click.wav"
+        activate_sound "audio/sfx/ui_map.wav"
         action Call("map")
 
     # === INVENTORY BUTTON ===
@@ -22,6 +27,8 @@ screen ui_gamebuttons():
         yalign 1.0
         focus_mask True
         auto "images/ui/inventory_%s.png"
+        hover_sound "audio/sfx/ui_click.wav"
+        activate_sound "audio/sfx/ui_inventory.wav"
         action Call("inventory")
 
     # === JOURNAL BUTTON ===
@@ -29,4 +36,6 @@ screen ui_gamebuttons():
         yalign 1.0
         focus_mask True
         auto "images/ui/journal_%s.png"
+        hover_sound "audio/sfx/ui_click.wav"
+        activate_sound "audio/sfx/ui_journal.wav"
         action Call("journal")
