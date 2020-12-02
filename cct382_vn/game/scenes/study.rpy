@@ -1,6 +1,8 @@
 # === STUDY ===
 # The dialogue for the study.
 
+# BUG ITEMS SHOW UP ON TOP OF CHARACTER SPRITES (e.g. key on top of spirit)
+
 # === GLOBAL VARIABLES ===
 default state_study = "initial"
 
@@ -259,9 +261,11 @@ label study:
                 detective @ judging "If people foundo out, my reputation would be ruined."
                 player "..."
                 hide detective neutral
-                $ game_room == "fronthall"
+                $ game_room = "fronthall"
+                # TODO MOVE THIS TO FRONT HALL
+                $ hallway_visited = True
                 return
             # player using door regularly
             else:
-                $ game_room == "fronthall"
+                $ game_room = "fronthall"
                 return
