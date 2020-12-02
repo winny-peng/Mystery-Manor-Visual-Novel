@@ -5,12 +5,9 @@
 # These variables keeps track of which rooms (inside the house), the player has
 # visited.
 
-define shed_visited = False
+# TODO ADD IMAGE FOR STUDY
+
 define study_visited = False
-define kitchen_visited = False
-define bathroom_visited = False
-define sittingroom_visited = False
-define diningroom_visited = False
 define hallway_visited = False
 
 label map:

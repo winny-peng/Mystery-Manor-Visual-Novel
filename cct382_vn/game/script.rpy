@@ -36,6 +36,8 @@ image bg tutorial = "images/backgrounds/tutorial.png"
 image bg study_initial = "images/backgrounds/study_initial.png"
 image bg study_trans_1 = "images/backgrounds/study_trans_1.png"
 image bg study_final = "images/backgrounds/study_final.png"
+# TODO FRONT HALL IS TEMPORARY
+image bg hall = "images/backgrounds/bg_frontHall.jpg"
 
 # Inventory
 default playerInventory = Inventory()
@@ -138,7 +140,7 @@ label start:
     # === TUTORIAL ===
     # The tutorial explains all the basic controls and available features the
     # player can use (e.g. click to interact, how to use inventory/map/journal)
-    call tutorial from _call_tutorial
+    # call tutorial from _call_tutorial
 
     # === GAME ===
     # The game loops from here. Until the player makes an arrest, the player
@@ -147,8 +149,8 @@ label start:
     while True:
         # === STUDY ===
         if game_room == "study":
-            call study from _call_study
+            call study
         # === FRONT HALL ===
-        elif game_room == "fronthall":
-            call fronthall from _call_fronthall
+        elif game_room == "hallway":
+            call hallway
     return

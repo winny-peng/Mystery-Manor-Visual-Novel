@@ -155,6 +155,7 @@ label tutorial:
             $ map_visited = True
     window show
     show screen ui_map
+    detective "..."
     detective "Oh."
     detective "I guess I accidentally spilled a bit of coffee over it."
     detective "Well I guess you can add the rooms in youself."

@@ -117,7 +117,7 @@ label study:
                             show maid neutral at center
                             maid @ talking "This is Sir Henri’s personal cup. He uses it when he's in his study."
                 "Nevermind. I forgot what I was going to say.":
-                    pass
+                    hide maid neutral onlayer screens at left zorder 2
         # === DEAD BODY ===
         elif _return == "body":
             player "So this is the dead body."
@@ -223,7 +223,7 @@ label study:
             detective @ judging "Let's not jump to conclusions."
             detective @ talking "But you're right."
             detective @ talking "Let's take these for now. The documents might help us find someone with a motive to kill the Mayor."
-            $ playerInventory.add(Clue("Suspicious Documents", "images/objects/clue_documents.png", "So many incriminating documents...just show many crimes did the mayor commit?", None))
+            $ playerInventory.add(Clue("Suspicious Documents", "images/objects/clue_documents.png", "So many incriminating documents...just how many crimes did the mayor commit?", None))
             hide detective neutral
             show maid neutral
             maid @ annoyed "..."
@@ -261,13 +261,11 @@ label study:
                 detective @ judging "If people foundo out, my reputation would be ruined."
                 player "..."
                 hide detective neutral
-                $ game_room = "fronthall"
-                # TODO MOVE THIS TO FRONT HALL
-                $ hallway_visited = True
+                $ game_room = "hallway"
                 hide screen study
                 return
             # player using door regularly
             else:
-                $ game_room = "fronthall"
+                $ game_room = "hallway"
                 hide screen study
                 return
