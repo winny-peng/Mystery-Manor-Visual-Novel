@@ -4,6 +4,8 @@
 
 # Clue Section.
 
+# TODO I DONT THINK THE TYPE ATTRIBUTE IS NECESSARY
+
 init python:
 
     class Clue:

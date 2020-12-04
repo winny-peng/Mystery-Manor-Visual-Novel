@@ -39,7 +39,7 @@ label study:
                     window show
                     hide maid neutral onlayer screens at left zorder 2
                     show maid neutral at center
-                    maid @ talking "My name’s Narberal Tamura, but you can call me Nabe."
+                    maid @ talking "My name is Narberal Tamura, but you can call me Nabe."
                     maid @ annoyed "I used to live in an orphanage until Sir Henri hired me to be his maid."
                     maid @ talking "Since then, I’ve been serving Sir Henri for as long as I can remember."
                     maid @ talking "I’m in charge of all the chores, from cleaning to cooking and serving food for the household."
@@ -54,7 +54,7 @@ label study:
                     hide maid neutral onlayer screens at left zorder 2
                     show maid neutral at center
                     maid @ annoyed "I don’t know exactly when Sir Henri was murdered, I didn’t hear anything!"
-                    maid @ thinking "Umm...{w}after serving Sir Henri and Jeanne, I left to clean the upstairs of the manor."
+                    maid @ thinking "Umm...{w}after serving Sir Henri and Jean, I left to clean the upstairs of the manor."
                     maid @ annoyed "W-when I walked in to his s-study, Sir was...{w}he was dead."
                     maid @ annoyed "If only I checked on him earlier...Sir might still be with us."
                 "Can you tell me about...":
@@ -75,8 +75,9 @@ label study:
                             window show
                             hide maid neutral onlayer screens at left zorder 2
                             show maid neutral at center
-                            maid @ thinking "With all due respect, Mister Fabien seems very troubled...Sir Henri wasn’t very proud of him since he never likes to study."
-                            maid @ annoyed "Mister’s room is usually locked, sometimes he’s not at the manor at all...{w}and his taste in clothing is very odd."
+                            maid @ thinking "With all due respect, Mister Fabien seems to be a very troubled soul...Sir Henri has never been very proud of him."
+                            maid @ annoyed "{=txt_small}Since there wasn’t anything to be proud of in the first place."
+                            maid @ annoyed "Mister Fabien's room is usually locked, sometimes he’s not at the manor at all...{w}and his taste in clothing is very odd."
                             maid @ thinking "Mister Fabien is a complete mystery to me."
                         "Susanne Alberg (Mayor's secretary":
                             window show
@@ -265,7 +266,7 @@ label study:
                 detective @ disgust "Oh good. I'm glad we didn't have to ask Nabe to unlock the door."
                 detective @ judging "That would be embarassing."
                 detective @ disgust "The best detective in town comes to solve a murder and he gets locked in."
-                detective @ judging "If people foundo out, my reputation would be ruined."
+                detective @ judging "If people found out, my reputation would be ruined."
                 player "..."
                 hide detective neutral
                 play sound "audio/sfx/ui_door.wav"

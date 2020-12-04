@@ -10,7 +10,6 @@ screen ui_gamebuttons():
         auto "images/ui/arrest_%s.png"
         hover_sound "audio/sfx/ui_click.wav"
         activate_sound "audio/sfx/ui_arrest.wav"
-
         action Call("arrest")
 
     # === MAP BUTTON ===

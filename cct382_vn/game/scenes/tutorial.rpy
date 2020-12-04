@@ -12,10 +12,6 @@ init:
     style txt_popup:
         size 60
 
-    # === EFFECTS ===
-    # Camera flash - quickly fades to white, then back to the scene.
-    define flash = Fade(0.1, 0.0, 3.0, color="#fff")
-
 label tutorial:
     # === VARIABLES ===
     default character_visited = False
@@ -65,7 +61,7 @@ label tutorial:
             $ journal_visited = True
     window show
     show screen ui_journal
-    detective "I already wrote down all the information for the household before this body switching shenanigans happened."
+    detective "I already wrote down all the basic information for the household before all of this body switching nonsense happened."
     detective "I'm sure you'll find my notes very handy since I'm VERY thorough."
     detective "Anyways, I haven't met all the suspects yet so there aren't any pictures for them."
     detective "Hopefully we can find all of them later during our investigation."
@@ -83,7 +79,7 @@ label tutorial:
         call screen tutorial_interactions("tutorial_object")
         if _return:
             $ object_visited = True
-    $ playerInventory.add(Clue("Dagger", "images/objects/clue_dagger.png", "Looks like a very old dagger, but long enough to pierce all the way through his body.", None))
+    $ playerInventory.add(Clue("Dagger", "images/objects/clue_dagger.png", "Looks like a very old dagger. It's long enough to pierce all the way through the Mayor's body.", None))
     window show
     show detective neutral
     detective @ talking "Looks like a very old dagger, but long enough to pierce all the way through his body."
@@ -120,7 +116,7 @@ label tutorial:
                 "Antique Dagger":
                     window show
                     show maid neutral at center
-                    maid @ thinking "Sir Henri kept that dagger displayed on the bookshelf. He's very fond of it."
+                    maid @ thinking "Sir Henri kept that dagger displayed on the bookshelf. He was very fond of it."
                     maid @ annoyed "I can't believe someone would use it to kill Sir Henri..."
                     maid @ thinking "Sir told me it’s an antique dagger dating back to the 13th century...{w}or was it the 14th?"
     hide maid neutral
@@ -165,8 +161,8 @@ label tutorial:
     hide screen ui_map
     # === TUTORIAL - ARREST ===
     show detective neutral
-    detective @ talking "Once you think we found the suspect, you can arrest them at anytime!"
-    detective @ surprise "Although I don't suggest you arrest anyone randomly though."
+    detective @ talking "Once you think we've found the suspect, you can arrest them at anytime!"
+    detective @ surprise "I don't suggest you arrest anyone randomly though."
     detective @ judging "Once you make an arrest, there's no turning back. So choose wisely!"
     # === SCRIPT ===
     detective @ suspicious "Welp. That's about it! Everything's pretty easy right? I'm sure you'll get the hang of it."

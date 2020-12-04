@@ -39,6 +39,10 @@ image bg study_final = "images/backgrounds/study_final.png"
 # TODO FRONT HALL IS TEMPORARY
 image bg hall = "images/backgrounds/bg_frontHall.jpg"
 
+# === EFFECTS ===
+# Camera flash - quickly fades to white, then back to the scene.
+define flash = Fade(0.1, 0.0, 3.0, color="#fff")
+
 # Inventory
 default playerInventory = Inventory()
 default itemDescription = None
@@ -106,7 +110,7 @@ label start:
     "{i}The tiny ghost detective takes a deep breath as if to calm himself.{/i}"
     show detective neutral
     detective @ talking "It seems I can hear your - I mean MY inner thoughts."
-    detective @ disgust "I don’t know who you are or why you're in MY body but the last I remember controlling my body, I was getting out of my car."
+    detective @ disgust "I don’t know who you are or why you're in MY body, but the last thing I remember, when I was still in control of my body, was getting out of my car."
     detective @ talking "Anyways I got - I mean WE got more important matters to attend to and you have to do it in my place I suppose."
     detective @ talking "Follow that man into the manor.{w} Quick, he's staring."
     "{i}With no other choice, you enter the manor.{/i}"
@@ -133,9 +137,9 @@ label start:
     player "Well actually I-"
     detective @ angry "NOPE! You are NOT answering that! You called me an old man so that makes you a kid in my eyes."
     detective @ disgust "{=txt_small}I'm not even that old anyways."
-    "{i}Out of the corner of your eyes, you see the sentry quietly leave and someone else entering the room.{/i}"
+    "{i}Out of the corner of your eye, you see the sentry quietly leave as someone else enters the room.{/i}"
     "Detective" "Now enough meddling and go talk to the lady on your right."
-    "{i}Again, left with no other choice, you follow the detective's words{/i}"
+    "{i}Again, left with no other choice, you follow the detective's words.{/i}"
 
     # === TUTORIAL ===
     # The tutorial explains all the basic controls and available features the

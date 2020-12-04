@@ -10,7 +10,7 @@ label hallway:
         if not hallway_visited:
             show detective neutral
             detective @ suspicious "Hmm..."
-            detective @ talking "Ok let's explore the rest of the house and look for more clues."
+            detective @ talking "Alright. Let's explore the rest of the house and look for more clues."
             hide detective neutral
             # TODO REMOVE?
             narrator "HELLO TESTER! THANK YOU SO MUCH FOR HELPING US TEST OUR GAME!"
