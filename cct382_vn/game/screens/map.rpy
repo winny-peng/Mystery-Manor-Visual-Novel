@@ -1,11 +1,10 @@
 # === MAP ===
-# This is the code for the map of the mansion.
+# This is the code for the map of the mansion. After a player has visited a
+# room, it will show up on the map.
 
 # === ROOM VARIABLES ===
 # These variables keeps track of which rooms (inside the house), the player has
 # visited.
-
-# TODO ADD IMAGE FOR STUDY
 
 define study_visited = False
 define hallway_visited = False
@@ -17,15 +16,14 @@ label map:
     return
 
 screen ui_map():
+    # === MAP BACKGROUND ===
     imagemap:
-        # return/close map
-        hotspot (900, 2, 24, 31) action Play("sound", "audio/sfx/ui_click_close.wav"), Return()
+        # === RETURN/CLOSE BUTTON ===
+        hotspot (559, 0, 26, 33) action Play("sound", "audio/sfx/ui_click_close.wav"), Return()
 
-        # position
+        # === BACKGROUND IMAGE ===
         xalign 0.5
         yalign 0.5
-
-        # image
         ground "images/ui/map.png"
 
     # === ROOMS ===
@@ -33,11 +31,20 @@ screen ui_map():
     # players hover over each room, the selectedr room will be highlighted
     # and displays its name.
 
-    # STUDY
+    # === STUDY ===
     if study_visited:
         imagebutton:
             xalign 0.5
             yalign 0.5
             auto "images/ui/map_study_%s.png"
+            focus_mask True
+            action NullAction()
+
+    # === HALLWAY ===
+    if hallway_visited:
+        imagebutton:
+            xalign 0.5
+            yalign 0.5
+            auto "images/ui/map_hallway_%s.png"
             focus_mask True
             action NullAction()
