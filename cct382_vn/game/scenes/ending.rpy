@@ -12,7 +12,7 @@ label ending:
             narrator("DETECTIVE WATSON IS ASHAMED OF YOU.", interact=True)
         # === SUICIDE ENDING ===
         # This ending occurs if the player decides that the Mayor committed suicide.
-        elif len(suspects_selected) == 1 and suspects_selected[0] == "maid":
+        elif len(suspects_selected) == 1 and suspects_selected[0] == "mayor":
             narrator("INTERESTING.", interact=True)
             narrator("SO YOU BELIEVE THE MAYOR COMMITTED SUICIDE?", interact=True)
             narrator("COOL COOL COOL NO DOUBT NO DOUBT.", interact=True)
