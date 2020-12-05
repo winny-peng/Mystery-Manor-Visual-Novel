@@ -4,8 +4,6 @@
 
 # Clue Section.
 
-# TODO I DONT THINK THE TYPE ATTRIBUTE IS NECESSARY
-
 init python:
 
     class Clue:
@@ -16,14 +14,12 @@ init python:
         # Name: Name of the clue
         # Image: Path to the image of the clue
         # Description: Short description of the clue
-        # Type: The type of the clue (Is it interactable?)
 
         """
-        def __init__(self, name, image, description, type):
+        def __init__(self, name, image, description):
             self.name = name;
             self.image = image;
             self.description = description;
-            self.type = type;
 
     class Inventory:
         """
@@ -35,7 +31,6 @@ init python:
         """
         def __init__(self):
             self.itemList = [];
-
 
         # Adds a given Clue object to the Player Inventory.
         def add(self, Clue):
@@ -54,10 +49,6 @@ init python:
                 if item.name == clue_name:
                     flag = True;
             return flag;
-
-
-
-
 
 label inventory:
     hide screen ui_gamebuttons

@@ -14,6 +14,7 @@ label study:
         $ music_playing = True
 
     while game_room == "study":
+        show screen ui_gamebuttons
         # display proper background depending on state of the room
         if state_study == "initial":
             scene bg study_initial
@@ -144,7 +145,7 @@ label study:
                 detective @ suspicious "Hmm...good catch."
                 detective @ judging "But why is the blood here if the body is all the way there?"
                 detective @ talking "Let's take a picture and add that to our clues."
-                $ playerInventory.add(Clue("Blood", "images/objects/clue_blood.png", "Why is the mayor’s body so far away from the blood pool?", None))
+                $ playerInventory.add(Clue("Blood", "images/objects/clue_blood.png", "Why is the mayor’s body so far away from the blood pool?"))
             else:
                 show detective neutral
                 detective @ judging "Stop staring at the blood so much."
@@ -158,7 +159,7 @@ label study:
                 player "I-I wasn't going to drink from that!"
                 detective @ judging "That's what they all say."
                 detective @ talking "It seems like a normal cup but let's keep a note of it anyways."
-                $ playerInventory.add(Clue("Cup", "images/objects/clue_cup.png", "A regular cup. Nothing fancy about it.", None))
+                $ playerInventory.add(Clue("Cup", "images/objects/clue_cup.png", "A regular cup. Nothing fancy about it."))
             else:
                 detective "I TOLD YOU. DON'T DRINK FROM THAT CUP."
             hide detective neutral
@@ -174,7 +175,7 @@ label study:
             detective @ suspicious "This looks important."
             detective @ talking "Let's take it."
             hide detective neutral
-            $ playerInventory.add(Clue("Key", "images/objects/clue_key.png", "A key... could I use it to open something?", None))
+            $ playerInventory.add(Clue("Key", "images/objects/clue_key.png", "A key... could I use it to open something?"))
         # === WILL ===
         elif _return == "will":
             player "Cool. I can use this as scrap paper to jot down notes!"
@@ -184,7 +185,7 @@ label study:
             detective @ judging "Hmm...{w}The ink seems fresh..."
             player "Maybe the Mayor wrote it before he was murdered?"
             detective @ disgust "Hmm...why don't you put it away before you destroy it by accident."
-            $ playerInventory.add(Clue("Mayor's Will", "images/objects/clue_will.png", "The ink seems fresh… did the Mayor write it before he was murdered?", None))
+            $ playerInventory.add(Clue("Mayor's Will", "images/objects/clue_will.png", "The ink seems fresh… did the Mayor write it before he was murdered?"))
         # === PAINTING ===
         elif _return == "painting_initial":
             player "This painting looks kind cool."
@@ -234,7 +235,7 @@ label study:
             detective @ judging "Let's not jump to conclusions."
             detective @ talking "But you're right."
             detective @ talking "Let's take these for now. The documents might help us find someone with a motive to kill the Mayor."
-            $ playerInventory.add(Clue("Suspicious Documents", "images/objects/clue_documents.png", "So many incriminating documents...just how many crimes did the mayor commit?", None))
+            $ playerInventory.add(Clue("Suspicious Documents", "images/objects/clue_documents.png", "So many incriminating documents...just how many crimes did the mayor commit?"))
             hide detective neutral
             show maid neutral
             maid @ annoyed "..."

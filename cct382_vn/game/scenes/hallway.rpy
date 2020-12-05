@@ -3,8 +3,8 @@
 
 label hallway:
     while game_room == "hallway":
+        show screen ui_gamebuttons
         scene bg hall
-
         # === FIRST VISIT TO HALL SCRIPT ===
         if not hallway_visited:
             show detective neutral
@@ -20,7 +20,6 @@ label hallway:
             narrator "HAVE FUN!"
             $ hallway_visited = True
         window hide
-        show screen ui_gamebuttons
         call screen hallway()
 
         # === DOOR - STUDY ===

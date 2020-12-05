@@ -159,7 +159,6 @@ label start:
     # The game loops from here. Until the player makes an arrest, the player
     # can explore the game however they like.
 
-    show screen ui_gamebuttons
     while True:
         # === STUDY ===
         if game_room == "study":
