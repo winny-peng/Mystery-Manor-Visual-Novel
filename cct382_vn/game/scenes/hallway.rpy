@@ -3,7 +3,6 @@
 
 label hallway:
     while game_room == "hallway":
-        show screen ui_gamebuttons
         scene bg hall
 
         # === FIRST VISIT TO HALL SCRIPT ===

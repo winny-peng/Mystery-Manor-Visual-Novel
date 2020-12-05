@@ -4,6 +4,7 @@
 # which object the player clicked on.
 
 screen study(state):
+    layer "master"
     # === PAINTING ===
     if state == "initial":
         imagebutton:

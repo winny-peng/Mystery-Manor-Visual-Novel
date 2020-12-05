@@ -9,9 +9,9 @@
 # Players may no longer use the scroll to access previous dialogue.
 define config.rollback_enabled = False
 
-# Character expression change transitions
-define config.say_attribute_transition = Dissolve(.2, alpha=True)
+# Character expression change transitions.
 
+define config.say_attribute_transition = Dissolve(.2, alpha=True)
 
 ## Basics ######################################################################
 

@@ -8,11 +8,9 @@ default state_study = "initial"
 define music_playing = False
 
 label study:
-
     if (music_playing == False):
         $ renpy.music.play("audio/bgm/study_placeholder_test.wav", channel="music", loop=True)
         $ music_playing = True
-
 
     while game_room == "study":
         # display proper background depending on state of the room
@@ -23,7 +21,6 @@ label study:
         else:
             scene bg study_final
         window hide
-        show screen ui_gamebuttons
         call screen study(state_study)
         show screen study(state_study)
         # === MAID ===

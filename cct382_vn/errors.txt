@@ -2,9 +2,65 @@
 errors listed below, and try again.
 
 
-File "game/scenes/study.rpy", line 14: expected statement.
-    music_playing = True
-                  ^
+File "game/scenes/study.rpy", line 33: multiple onlayer clauses are prohibited.
+    show maid neutral onlayer layer_characters onlayer layer_characters at left
+                                                      ^
+
+File "game/scenes/study.rpy", line 38: multiple onlayer clauses are prohibited.
+    hide maid neutral onlayer layer_characters onlayer layer_characters at left
+                                                      ^
+
+File "game/scenes/study.rpy", line 47: multiple onlayer clauses are prohibited.
+    hide maid neutral onlayer layer_characters onlayer layer_characters at left
+                                                      ^
+
+File "game/scenes/study.rpy", line 52: multiple onlayer clauses are prohibited.
+    hide maid neutral onlayer layer_characters onlayer layer_characters at left
+                                                      ^
+
+File "game/scenes/study.rpy", line 62: multiple onlayer clauses are prohibited.
+    hide maid neutral onlayer layer_characters onlayer layer_characters at left
+                                                      ^
+
+File "game/scenes/study.rpy", line 68: multiple onlayer clauses are prohibited.
+    hide maid neutral onlayer layer_characters onlayer layer_characters at left
+                                                      ^
+
+File "game/scenes/study.rpy", line 74: multiple onlayer clauses are prohibited.
+    hide maid neutral onlayer layer_characters onlayer layer_characters at left
+                                                      ^
+
+File "game/scenes/study.rpy", line 82: multiple onlayer clauses are prohibited.
+    hide maid neutral onlayer layer_characters onlayer layer_characters at left
+                                                      ^
+
+File "game/scenes/study.rpy", line 91: multiple onlayer clauses are prohibited.
+    hide maid neutral onlayer layer_characters onlayer layer_characters at left
+                                                      ^
+
+File "game/scenes/study.rpy", line 98: multiple onlayer clauses are prohibited.
+    hide maid neutral onlayer layer_characters onlayer layer_characters at left
+                                                      ^
+
+File "game/scenes/study.rpy", line 103: multiple onlayer clauses are prohibited.
+    hide maid neutral onlayer layer_characters onlayer layer_characters at left
+                                                      ^
+
+File "game/scenes/study.rpy", line 111: multiple onlayer clauses are prohibited.
+    hide maid neutral onlayer layer_characters onlayer layer_characters at left
+                                                      ^
+
+File "game/scenes/study.rpy", line 116: multiple onlayer clauses are prohibited.
+    hide maid neutral onlayer layer_characters onlayer layer_characters at left
+                                                      ^
+
+File "game/scenes/study.rpy", line 122: multiple onlayer clauses are prohibited.
+    hide maid neutral onlayer layer_characters onlayer layer_characters at left
+                                                      ^
+
+File "game/scenes/study.rpy", line 126: multiple onlayer clauses are prohibited.
+    hide maid neutral onlayer layer_characters onlayer layer_characters at left
+                                                      ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Wed Dec 02 18:42:21 2020
+Fri Dec 04 19:49:25 2020

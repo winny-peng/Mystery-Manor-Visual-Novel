@@ -5,6 +5,7 @@ screen ui_gamebuttons():
     zorder 100
     # === ARREST BUTTON ===
     imagebutton:
+        xalign 0.0
         yalign 1.0
         focus_mask True
         auto "images/ui/arrest_%s.png"
