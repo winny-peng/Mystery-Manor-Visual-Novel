@@ -3,14 +3,14 @@
 # information and their testimonies.
 
 # === GLOBAL VARIABLES ===
-default suspect_maid = Suspect("maid", "images/ui/pp_unknown_%s.jpg", "This is the maid")
-default suspect_mayor = Suspect("mayor", "images/ui/pp_unknown_%s.jpg", "This is the dead mayor")
-default suspect_brother = Suspect("brother", "images/ui/pp_unknown_%s.jpg", "This is the bro")
-default suspect_wife = Suspect("wife", "images/ui/pp_unknown_%s.jpg", "This is the wifey")
-default suspect_son = Suspect("son", "images/ui/pp_unknown_%s.jpg", "This is the kid")
-default suspect_lover = Suspect("lover", "images/ui/pp_unknown_%s.jpg", "This is the lover")
-default suspect_secretary = Suspect("secretary", "images/ui/pp_unknown_%s.jpg", "This is the secretary")
-default suspect_guard = Suspect("guard", "images/ui/pp_unknown_%s.jpg", "This is the guard")
+default suspect_maid = Suspect("Narberal Tamura", "images/ui/pp_unknown_%s.jpg", "This is the maid")
+default suspect_mayor = Suspect("Henri Auguste", "images/ui/pp_unknown_%s.jpg", "This is the dead mayor")
+default suspect_brother = Suspect("Jean Auguste", "images/ui/pp_unknown_%s.jpg", "This is the bro")
+default suspect_wife = Suspect("Isabelle Auguste", "images/ui/pp_unknown_%s.jpg", "This is the wifey")
+default suspect_son = Suspect("Fabien Auguste", "images/ui/pp_unknown_%s.jpg", "This is the kid")
+default suspect_lover = Suspect("Alec", "images/ui/pp_unknown_%s.jpg", "This is the lover")
+default suspect_secretary = Suspect("Susanne Alberg", "images/ui/pp_unknown_%s.jpg", "This is the secretary")
+default suspect_sentry = Suspect("???", "images/ui/pp_unknown_%s.jpg", "This is the sentry.")
 
 # === SUSPECT CLASS ===
 init -1 python:
@@ -50,28 +50,33 @@ label journal:
     return
 
 screen ui_journal():
-    # === VARIABLES ===
+    # === VARIABLES  BACKGROUND ===
     default suspect_current = suspect_maid
 
+    # === JOURNAL ===
     imagemap:
-        # return/close map
+        # === RETURN/CLOSE BUTTON ===
         hotspot (1060, 26, 73, 66) action Play("sound", "audio/sfx/ui_click_close.wav"), Return()
 
-        # position
+        # === BACKGROUND IMAGE ===
         xalign 0.5
         yalign 0.5
-
-        # image
         ground "images/ui/journal_suspects.png"
 
-        # === SUSPECT INFORMATION ===
-        text suspect_current.name color "#000" xpos 861 ypos 111
-        text suspect_current.description color "#000" xpos 700 ypos 200
+    # === JOURNAL INFORMATION ===
+    vbox:
+        area (687, 64, 355, 609)
+        box_wrap True
+        # === SUSPECT NAME ===
+        text suspect_current.name color "#000"
 
-        # === TESTIMONY INFORMATION ===
+        # === SUSPECT DESCRIPTION ===
+        text suspect_current.description color "#000"
+
+        # === TESTIMONIES ===
         for testimony in suspect_current.testimonies:
             if suspect_current.testimonies[testimony] == True:
-                text testimony color "#000" xpos 700 ypos 300
+                text testimony color "#000"
 
     # === SUSPECT NAVIGATION ===
     # 1
@@ -107,8 +112,8 @@ screen ui_journal():
     # 7
     imagebutton:
         pos (273, 535)
-        auto suspect_guard.img
-        action SetScreenVariable("suspect_current", suspect_guard)
+        auto suspect_sentry.img
+        action SetScreenVariable("suspect_current", suspect_sentry)
     # 8
     imagebutton:
         pos (451, 534)

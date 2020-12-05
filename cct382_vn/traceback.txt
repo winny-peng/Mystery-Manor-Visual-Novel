@@ -1,24 +1,68 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 157, in script call
-    call study from _call_study
-  File "game/scenes/study.rpy", line 34, in script
-    menu:
-TypeError: list indices must be integers, not unicode
+  File "game/script.rpy", line 158, in script call
+    call tutorial from _call_tutorial
+  File "game/scenes/tutorial.rpy", line 58, in script
+    detective "Woot! This is great! Now we can remember everyone's names AND faces."
+  File "game/screens/journal.rpy", line 52, in execute
+    screen ui_journal():
+  File "game/screens/journal.rpy", line 52, in execute
+    screen ui_journal():
+  File "game/screens/journal.rpy", line 79, in execute
+    imagebutton:
+Exception: Imagebutton does not have a idle image. (auto=u'images/ui/pp_Narberal Tamura_%s.jpg').
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 157, in script call
-    call study from _call_study
-  File "game/scenes/study.rpy", line 34, in script
-    menu:
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 1631, in execute
-    next_node(self.items[choice][2][0])
-TypeError: list indices must be integers, not unicode
+  File "game/script.rpy", line 158, in script call
+    call tutorial from _call_tutorial
+  File "game/scenes/tutorial.rpy", line 58, in script
+    detective "Woot! This is great! Now we can remember everyone's names AND faces."
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 708, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\exports.py", line 1345, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\character.py", line 1142, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\character.py", line 842, in do_display
+    **display_args)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\character.py", line 591, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ui.py", line 297, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 430, in visit_all
+    callback(self)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 440, in per_interact
+    self.update()
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 625, in update
+    self.screen.function(**self.scope)
+  File "game/screens/journal.rpy", line 52, in execute
+    screen ui_journal():
+  File "game/screens/journal.rpy", line 52, in execute
+    screen ui_journal():
+  File "game/screens/journal.rpy", line 79, in execute
+    imagebutton:
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ui.py", line 946, in _imagebutton
+    idle = choice(idle, idle_image, "idle", required=True)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ui.py", line 940, in choice
+    raise Exception("Imagebutton does not have a %s image. (auto=%r)." % (name, auto))
+Exception: Imagebutton does not have a idle image. (auto=u'images/ui/pp_Narberal Tamura_%s.jpg').
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 cct382_vn 1.0
-Fri Dec 04 20:18:38 2020
+Fri Dec 04 22:53:13 2020

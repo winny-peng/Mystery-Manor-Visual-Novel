@@ -76,6 +76,8 @@ init -1 python:
 label start:
     # === INTRODUCTION ===
     # The game's introduction.
+    python:
+        """
     with flash
     scene bg manor_gate
     "{i}You see a sudden flash and it takes you awhile before your surroundings come into focus.{/i}"
@@ -148,6 +150,7 @@ label start:
     "{i}Out of the corner of your eye, you see the sentry quietly leave as someone else enters the room.{/i}"
     "Detective" "Now enough meddling and go talk to the lady on your right."
     "{i}Again, left with no other choice, you follow the detective's words.{/i}"
+        """
 
     # === TUTORIAL ===
     # The tutorial explains all the basic controls and available features the
