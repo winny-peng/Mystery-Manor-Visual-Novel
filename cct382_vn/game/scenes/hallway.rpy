@@ -28,4 +28,8 @@ label hallway:
             $ game_room = "study"
             hide screen hallway
             return
+
+        # === DOOR - OTHER ROOMS ===
+        else:
+            narrator "Sorry! This room is under construction! Please be patient!"
     return

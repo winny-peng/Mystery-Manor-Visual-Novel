@@ -36,8 +36,7 @@ image bg tutorial = "images/backgrounds/tutorial.png"
 image bg study_initial = "images/backgrounds/study_initial.png"
 image bg study_trans_1 = "images/backgrounds/study_trans_1.png"
 image bg study_final = "images/backgrounds/study_final.png"
-# TODO FRONT HALL IS TEMPORARY
-image bg hall = "images/backgrounds/bg_frontHall.jpg"
+image bg hall = "images/backgrounds/hallway_initial.png"
 
 # === TEXT STYLING ===
 style txt_thoughts:
@@ -155,7 +154,7 @@ label start:
     # === TUTORIAL ===
     # The tutorial explains all the basic controls and available features the
     # player can use (e.g. click to interact, how to use inventory/map/journal)
-    call tutorial from _call_tutorial
+    # call tutorial from _call_tutorial
 
     # === GAME ===
     # The game loops from here. Until the player makes an arrest, the player

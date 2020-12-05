@@ -4,8 +4,6 @@
 ## them. Lines beginning with a single '#' mark are commented-out code, and you
 ## may want to uncomment them when appropriate.
 
-# ===== CUSTOM CHANGES =====
-
 # Players may no longer use the scroll to access previous dialogue.
 define config.rollback_enabled = False
 
@@ -20,7 +18,7 @@ define config.say_attribute_transition = Dissolve(.2, alpha=True)
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("cct382_vn")
+define config.name = _("Mystery Manor")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -45,7 +43,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "cct382_vn"
+define build.name = "Mystery Manor"
 
 
 ## Sounds and music ############################################################
@@ -150,7 +148,7 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-define config.save_directory = "cct382_vn-1605040336"
+define config.save_directory = "Mystery Manor-1605040336"
 
 
 ## Icon ########################################################################
