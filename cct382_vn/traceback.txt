@@ -5,23 +5,17 @@ While running game code:
     call study from _call_study
   File "game/scenes/study.rpy", line 26, in script call
     call screen study(state_study, "on")
-  File "game/screens/arrest.rpy", line 9, in script
-    call screen ui_arrest
+  File "game/screens/journal.rpy", line 46, in script
+    call screen ui_journal
   File "renpy/common/000statements.rpy", line 531, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/screens/arrest.rpy", line 13, in execute
-    screen ui_arrest():
-  File "game/screens/arrest.rpy", line 13, in execute
-    screen ui_arrest():
-  File "game/screens/arrest.rpy", line 103, in execute
+  File "game/screens/journal.rpy", line 50, in execute
+    screen ui_journal():
+  File "game/screens/journal.rpy", line 50, in execute
+    screen ui_journal():
+  File "game/screens/journal.rpy", line 81, in execute
     imagebutton:
-  File "game/screens/arrest.rpy", line 103, in keywords
-    imagebutton:
-  File "game/screens/arrest.rpy", line 105, in keywords
-    if not guard_selected:
-  File "game/screens/arrest.rpy", line 105, in keywords
-    if not guard_selected:
-NameError: name 'suspect_guard' is not defined
+Exception: Imagebutton does not have a idle image. (auto=u'images/ui/pp_Happy Watson_%s.jpg').
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -30,8 +24,8 @@ Full traceback:
     call study from _call_study
   File "game/scenes/study.rpy", line 26, in script call
     call screen study(state_study, "on")
-  File "game/screens/arrest.rpy", line 9, in script
-    call screen ui_arrest
+  File "game/screens/journal.rpy", line 46, in script
+    call screen ui_journal
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 1949, in execute
     self.call("execute")
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 1937, in call
@@ -62,22 +56,19 @@ Full traceback:
     self.update()
   File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\display\screen.py", line 625, in update
     self.screen.function(**self.scope)
-  File "game/screens/arrest.rpy", line 13, in execute
-    screen ui_arrest():
-  File "game/screens/arrest.rpy", line 13, in execute
-    screen ui_arrest():
-  File "game/screens/arrest.rpy", line 103, in execute
+  File "game/screens/journal.rpy", line 50, in execute
+    screen ui_journal():
+  File "game/screens/journal.rpy", line 50, in execute
+    screen ui_journal():
+  File "game/screens/journal.rpy", line 81, in execute
     imagebutton:
-  File "game/screens/arrest.rpy", line 103, in keywords
-    imagebutton:
-  File "game/screens/arrest.rpy", line 105, in keywords
-    if not guard_selected:
-  File "game/screens/arrest.rpy", line 105, in keywords
-    if not guard_selected:
-  File "<screen language>", line 106, in <module>
-NameError: name 'suspect_guard' is not defined
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ui.py", line 946, in _imagebutton
+    idle = choice(idle, idle_image, "idle", required=True)
+  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ui.py", line 940, in choice
+    raise Exception("Imagebutton does not have a %s image. (auto=%r)." % (name, auto))
+Exception: Imagebutton does not have a idle image. (auto=u'images/ui/pp_Happy Watson_%s.jpg').
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 Mystery Manor 1.0
-Sat Dec 05 01:12:57 2020
+Sat Dec 05 01:47:56 2020

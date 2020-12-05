@@ -3,14 +3,14 @@
 # information and their testimonies.
 
 # === GLOBAL VARIABLES ===
-default suspect_maid = Suspect("Narberal Tamura", "images/ui/pp_unknown_%s.jpg", "This is the maid")
-default suspect_mayor = Suspect("Henri Auguste", "images/ui/pp_unknown_%s.jpg", "This is the dead mayor")
-default suspect_brother = Suspect("Jean Auguste", "images/ui/pp_unknown_%s.jpg", "This is the bro")
-default suspect_wife = Suspect("Isabelle Auguste", "images/ui/pp_unknown_%s.jpg", "This is the wifey")
-default suspect_son = Suspect("Fabien Auguste", "images/ui/pp_unknown_%s.jpg", "This is the kid")
-default suspect_lover = Suspect("Alec", "images/ui/pp_unknown_%s.jpg", "This is the lover")
-default suspect_secretary = Suspect("Susanne Alberg", "images/ui/pp_unknown_%s.jpg", "This is the secretary")
-default suspect_sentry = Suspect("???", "images/ui/pp_unknown_%s.jpg", "This is the sentry.")
+default suspect_maid = Suspect("Narberal Tamura", "images/ui/pp_unknown_%s.png", "Stealing stuff from the mayor, has feelings for the mayor’s brother, friends with the wife.")
+default suspect_mayor = Suspect("Henri Auguste", "images/ui/pp_Henri Auguste_%s.png", "Hated by all, dead.")
+default suspect_brother = Suspect("Jean Auguste", "images/ui/pp_unknown_%s.png", "Wants to be mayor, aware of maid’s feelings, uses them as a means to an end.")
+default suspect_wife = Suspect("Isabelle Auguste", "images/ui/pp_unknown_%s.png", "Second wife; in a relationship with her secret lover, trying to get along with the son, friends with the maid.")
+default suspect_son = Suspect("Fabien Auguste", "images/ui/pp_unknown_%s.png", "Delinquent, druggie, failure in life. doesn’t get along with the mayor, doesn’t like the wife.")
+default suspect_lover = Suspect("Alec", "images/ui/pp_unknown_%s.png", "In a relationship with the mayor's wife.")
+default suspect_secretary = Suspect("Susanne Alberg", "images/ui/pp_unknown_%s.png", "Discovers the mayor’s body. Also the Mayor's secretary.")
+default suspect_detective = Suspect("Happy Watson", "images/ui/pp_Happy Watson_%s.png", "Intelligent and logical. The World's Best Detective. This is me.")
 
 # === SUSPECT CLASS ===
 init -1 python:
@@ -38,8 +38,8 @@ init -1 python:
             """
             "Visiting" the suspect updates their profile picture.
             """
-            self.img = "images/ui/pp_" + self.name + "_%s.jpg"
-            self.img_arrested = "images/ui/pp_" + self.name + "_selected_idle.jpg"
+            self.img = "images/ui/pp_" + self.name + "_%s.png"
+            self.img_arrested = "images/ui/pp_" + self.name + "_selected_idle.png"
 
 label journal:
     hide screen ui_gamebuttons
@@ -49,71 +49,74 @@ label journal:
 
 screen ui_journal():
     # === VARIABLES  BACKGROUND ===
-    default suspect_current = suspect_maid
+    default suspect_current = suspect_detective
 
     # === JOURNAL ===
     imagemap:
         # === RETURN/CLOSE BUTTON ===
-        hotspot (1060, 26, 73, 66) action Play("sound", "audio/sfx/ui_click_close.wav"), Return()
+        hotspot (1055, 45, 39, 40) action Play("sound", "audio/sfx/ui_click_close.wav"), Return()
 
         # === BACKGROUND IMAGE ===
         xalign 0.5
         yalign 0.5
-        ground "images/ui/journal_suspects.png"
+        ground "images/ui/journal.png"
 
-    # === JOURNAL INFORMATION ===
+    # === SUSPECT NAME === xalign 0.5
+    text suspect_current.name color "#000" pos(840, 100) xalign 0.5
+
+    # === SUSPECT DESCRIPTION ===
     vbox:
-        area (687, 64, 355, 609)
+        area (715, 190, 275, 210)
         box_wrap True
-        # === SUSPECT NAME ===
-        text suspect_current.name color "#000"
-
-        # === SUSPECT DESCRIPTION ===
         text suspect_current.description color "#000"
 
-        # === TESTIMONIES ===
+    # === TESTIMONIES ===
+    vbox:
+        area (715, 380, 270, 275)
+        box_wrap True
+        text "Testimonies:" color "#000"
         for testimony in suspect_current.testimonies:
             if suspect_current.testimonies[testimony] == True:
                 text testimony color "#000"
 
     # === SUSPECT NAVIGATION ===
-    # 1
+    # HAPPY WATSON
     imagebutton:
-        pos (275, 32)
-        auto suspect_maid.img
-        action SetScreenVariable("suspect_current", suspect_maid)
-    # 2
+        pos (280, 50)
+        auto suspect_detective.img
+        action SetScreenVariable("suspect_current", suspect_detective)
+    # Henri Auguste
     imagebutton:
-        pos (451, 34)
+        pos (455, 50)
         auto suspect_mayor.img
         action SetScreenVariable("suspect_current", suspect_mayor)
-    # 3
+    # Narberal Tamura
     imagebutton:
-        pos (272, 203)
+        pos (280, 210)
+        auto suspect_maid.img
+        action SetScreenVariable("suspect_current", suspect_maid)
+    # Jean Auguste
+    imagebutton:
+        pos (280, 530)
         auto suspect_brother.img
         action SetScreenVariable("suspect_current", suspect_brother)
-    # 4
+    # Isabelle Auguste
     imagebutton:
-        pos (454, 203)
+        pos (455, 210)
         auto suspect_wife.img
         action SetScreenVariable("suspect_current", suspect_wife)
-    # 5
+    # Fabien Auguste
     imagebutton:
-        pos (272, 372)
+        pos (280, 370)
         auto suspect_son.img
         action SetScreenVariable("suspect_current", suspect_son)
-    # 6
+    # Alec
     imagebutton:
-        pos (451, 369)
+        pos (455, 370)
         auto suspect_lover.img
         action SetScreenVariable("suspect_current", suspect_lover)
-    # 7
+    # Susanne Alberg
     imagebutton:
-        pos (273, 535)
-        auto suspect_sentry.img
-        action SetScreenVariable("suspect_current", suspect_sentry)
-    # 8
-    imagebutton:
-        pos (451, 534)
+        pos (450, 530)
         auto suspect_secretary.img
         action SetScreenVariable("suspect_current", suspect_secretary)
