@@ -67,7 +67,7 @@ label tutorial:
         call screen tutorial_interactions("tutorial_object")
         if _return:
             $ object_visited = True
-    $ playerInventory.add(Clue("Dagger", "images/objects/clue_dagger.png", "Looks like a very old dagger. It's long enough to pierce all the way through the Mayor's body.", None))
+    $ playerInventory.add(Clue("Dagger", "images/objects/clue_dagger.png", "Looks like a very old dagger. It's long enough to pierce all the way through the Mayor's body."))
     window show
     show detective neutral
     detective @ talking "Looks like a very old dagger, but long enough to pierce all the way through his body."
@@ -107,6 +107,7 @@ label tutorial:
                     maid @ thinking "Sir Henri kept that dagger displayed on the bookshelf. He was very fond of it."
                     maid @ annoyed "I can't believe someone would use it to kill Sir Henri..."
                     maid @ thinking "Sir told me it’s an antique dagger dating back to the 13th century...{w}or was it the 14th?"
+                    $ playerInventory.update("Dagger", "An antique dagger. It's long enough to pierce all the way through the Mayor's body.")
     hide maid neutral
     show detective neutral
     detective @ suspicious "So it dates back to the middle ages? It must be a knightly dagger from the looks of it..."

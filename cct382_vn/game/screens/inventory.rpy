@@ -50,6 +50,16 @@ init python:
                     flag = True;
             return flag;
 
+        # === UPDATE ITEM DESCRIPTION ===
+        def update(self, clue, new_description):
+            """
+            Updates the description of <clue> with <new_description>.
+            """
+            for item in self.itemList:
+                if item.name == clue:
+                    item.description = new_description
+                    break
+
 label inventory:
     hide screen ui_gamebuttons
     call screen ui_inventory
@@ -57,7 +67,6 @@ label inventory:
     return
 
 screen ui_inventory():
-
     button:
         xalign(1.0)
         yalign(0.0)

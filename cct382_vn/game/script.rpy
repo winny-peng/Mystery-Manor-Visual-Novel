@@ -7,10 +7,10 @@
 default game_room = "study"
 
 # === CHARACTERS ===
-define player = Character("ME")
-define maid = Character("Maid", image = "maid")
-define detective = Character("Detective", image = "detective")
-define sentry = Character("Sentry", image = "sentry")
+define player = Character("ME", who_color = "#ffffff")
+define maid = Character("Maid", image = "maid", who_color = "#f1dec5")
+define detective = Character("Detective", image = "detective", who_color = "#3482a8")
+define sentry = Character("Sentry", image = "sentry", who_color = "#c77306")
 
 # === CHARACTERS IMAGES ===
 # MAID
@@ -42,7 +42,7 @@ image bg hall = "images/backgrounds/hallway_initial.png"
 style txt_thoughts:
     color "#0099cc"
 style txt_small:
-    size 12
+    size 13
 style txt_popup:
     size 60
 

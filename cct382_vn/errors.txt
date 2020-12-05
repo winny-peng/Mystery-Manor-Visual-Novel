@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scenes/study.rpy", line 30: end of line expected.
-    hide screen ui_buttons()
-                          ^
+File "game/scenes/study.rpy", line 265: expected statement.
+    playerInventory.update("Key", "The key to the study. I wonder who lost it?")
+                                                                                ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sat Dec 05 00:21:07 2020
+Sat Dec 05 00:33:44 2020

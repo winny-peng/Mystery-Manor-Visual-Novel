@@ -276,6 +276,7 @@ label study:
                 play sound "audio/sfx/ui_door.wav"
                 $ game_room = "hallway"
                 hide screen study
+                $ playerInventory.update("Key", "The key to the study. I wonder who lost it?")
                 return
             # player using door regularly
             else:

@@ -19,7 +19,7 @@ screen ui_arrest():
     default son_selected = False
     default lover_selected = False
     default secretary_selected = False
-    default guard_selected = False
+    default sentry_selected = False
 
     imagemap:
         # return/close map
@@ -102,9 +102,9 @@ screen ui_arrest():
     # 8
     imagebutton:
         pos (830, 366)
-        if not guard_selected:
-            auto suspect_guard.img
-            action SetScreenVariable("guard_selected", True), AddToSet(suspects_selected, "guard")
+        if not sentry_selected:
+            auto suspect_sentry.img
+            action SetScreenVariable("sentry_selected", True), AddToSet(suspects_selected, "sentry")
         else:
-            idle suspect_guard.img_arrested
-            action SetScreenVariable("guard_selected", False), RemoveFromSet(suspects_selected, "guard")
+            idle suspect_sentry.img_arrested
+            action SetScreenVariable("sentry_selected", False), RemoveFromSet(suspects_selected, "sentry")

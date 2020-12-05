@@ -27,4 +27,15 @@ label ending:
         # special endings.
         else:
             narrator("I DON'T THINK THIS IS CORRECT.", interact=True)
+
+    # === CREDITS ===
+    image credits:
+        Text("Mystery Manor \n \nArt: Hallie Scott \nNarrative Design: Mirza Musa \nCoding: Winny Peng & Jui Song \nMusic/SFX: Jiu Song")
+        anchor (0.5, 0.0)
+        pos (0.5, 1.0)
+        linear 6.0 ypos 0.0 yanchor 1.0
+    scene black
+    show credits
+    $ renpy.pause(6.0, hard=True)
+    hide credits
     return

@@ -24,10 +24,7 @@ init -1 python:
         # img_arrested: path to suspect's arrested profile picture
         # name: suspect's name
         # description: suspect's description
-
-        === Representation Invariants ===
         """
-        # === Private Attributes ===
 
         def __init__(self, name, img, description):
             self.name = name
@@ -36,6 +33,7 @@ init -1 python:
             self.description = description
             self.testimonies = {}
 
+        # === RECORD INITAL MEETING ===
         def visit(self):
             """
             "Visiting" the suspect updates their profile picture.
