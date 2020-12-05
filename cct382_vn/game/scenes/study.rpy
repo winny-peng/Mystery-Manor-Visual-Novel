@@ -5,6 +5,7 @@
 
 # === GLOBAL VARIABLES ===
 default state_study = "initial"
+default state_study_screen = "on"
 define music_playing = False
 
 label study:
@@ -21,10 +22,11 @@ label study:
         else:
             scene bg study_final
         window hide
-        call screen study(state_study)
-        show screen study(state_study)
+        call screen study(state_study, "on")
+        show screen study(state_study, "on")
         # === MAID ===
         if _return == "maid":
+            show screen study(state_study, "off")
             window show
             show maid neutral
             maid @ talking "Nabe, at your service."

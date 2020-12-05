@@ -3,76 +3,115 @@
 # managed through here. The screen returns a string that lets the game know
 # which object the player clicked on.
 
-screen study(state):
+screen study(state_objects, state_screen):
     layer "master"
     # === PAINTING ===
-    if state == "initial":
+    if state_objects == "initial":
         imagebutton:
             focus_mask True
             idle "images/objects/study_painting_initial.png"
-            action Return("painting_initial")
+            if state_screen == "off":
+                action NullAction()
+            else:
+                action Return("painting_initial")
     else:
         imagebutton:
             focus_mask True
             idle "images/objects/study_painting_final.png"
-            action Return("painting_final")
+            if state_screen == "off":
+                action NullAction()
+            else:
+                action Return("painting_final")
     # === SAFE ===
-    if state == "transition_1":
+    if state_objects == "transition_1":
         imagebutton:
             focus_mask True
             idle "images/objects/study_safe.png"
-            action Return("safe")
+            if state_screen == "off":
+                action NullAction()
+            else:
+                action Return("safe")
     # === DOCUMENTS ===
-    if state == "final":
+    if state_objects == "final":
         if not playerInventory.hasItem("Suspicious Documents"):
             imagebutton:
                 focus_mask True
                 idle "images/objects/study_documents.png"
-                action Return("documents")
+                if state_screen == "off":
+                    action NullAction()
+                else:
+                    action Return("documents")
     # === CASH ===
         imagebutton:
             focus_mask True
             idle "images/objects/study_cash.png"
-            action Return("cash")
+            if state_screen == "off":
+                action NullAction()
+            else:
+                action Return("cash")
     # === MAID ===
     imagebutton:
         focus_mask True
         idle "images/objects/study_maid.png"
-        action Return("maid")
+        if state_screen == "off":
+            action NullAction()
+        else:
+            action Return("maid")
     # === DEAD BODY ===
     imagebutton:
         focus_mask True
         idle "images/objects/study_body.png"
-        action Return("body")
+        if state_screen == "off":
+            action NullAction()
+        else:
+            action Return("body")
     # === BLOOD ===
     imagebutton:
         focus_mask True
         idle "images/objects/study_blood.png"
-        action Return("blood")
+        if state_screen == "off":
+            action NullAction()
+        else:
+            action Return("blood")
     # === CUP ===
     imagebutton:
         focus_mask True
         idle "images/objects/study_cup.png"
-        action Return("cup")
+        if state_screen == "off":
+            action NullAction()
+        else:
+            action Return("cup")
     # === DAGGER ===
     imagebutton:
         focus_mask True
         idle "images/objects/study_dagger.png"
-        action Return("dagger")
+        if state_screen == "off":
+            action NullAction()
+        else:
+            action Return("dagger")
     # === KEY ===
     if not playerInventory.hasItem("Key"):
         imagebutton:
             focus_mask True
             idle "images/objects/study_key.png"
-            action Return("key")
+            if state_screen == "off":
+                action NullAction()
+            else:
+                action Return("key")
     # === WILL ===
     if not playerInventory.hasItem("Mayor's Will"):
         imagebutton:
             focus_mask True
             idle "images/objects/study_will.png"
-            action Return("will")
+            if state_screen == "off":
+                action NullAction()
+            else:
+                action Return("will")
     # === DOOR - FRONTHALL ===
     imagebutton:
         focus_mask True
         idle "images/objects/study_door_fronthall.png"
-        action Return("door_fronthall")
+        if state_screen == "off":
+            action NullAction()
+        else:
+            action Return("door_fronthall")

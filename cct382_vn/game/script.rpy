@@ -123,14 +123,13 @@ label start:
     detective @ talking "Anyways I got - I mean WE got more important matters to attend to and you have to do it in my place I suppose."
     detective @ talking "Follow that man into the manor.{w} Quick, he's staring."
     "{i}With no other choice, you enter the manor.{/i}"
-    # TODO SCENE CHANGE
+    scene bg hall
     "{i}Upon entering the manor, you feel submerged in a feeling of dread.{/i}"
     player "{=txt_thoughts}(I’m starting to...{w}feel light-headed...{w}something isn't right about this place.)"
     detective @ talking "Hmmm?{p}Ahh...{w}I haven’t felt like that in ages. You'll get used to it."
     detective @ judging "Hmm...{w}how do I explain this...{p}You see, my perception skills have always been better than the average Joe."
     player "Wh-?"
     "{i}Before you can press further, the guard escorts you through the front hall, passing by what seems to be a sitting room to the left and a dining room to the right...{/i}"
-    # TODO SCENE CHANGE
     "{i}The guard turns to the left, stopping in front of a closed door.{/i}"
     sentry "We've arrived, Detective Watson."
     "{i}You can feel it. The source of that looming feeling of dread is definitely on the other side.{/i}"
