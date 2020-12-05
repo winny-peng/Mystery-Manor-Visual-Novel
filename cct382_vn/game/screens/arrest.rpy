@@ -36,75 +36,75 @@ screen ui_arrest():
         ground "images/ui/arrest.jpg"
 
     # === SUSPECTS ===
-    # 1
+    # Happy Watson
     imagebutton:
-        pos (188, 132)
-        if not maid_selected:
-            auto suspect_maid.img
-            action SetScreenVariable("maid_selected", True), AddToSet(suspects_selected, "maid")
-        else:
-            idle suspect_maid.img_arrested
-            action SetScreenVariable("maid_selected", False), RemoveFromSet(suspects_selected, "maid")
-    # 2
-    imagebutton:
-        pos (422, 144)
-        if not mayor_selected:
-            auto suspect_mayor.img
-            action SetScreenVariable("mayor_selected", True), AddToSet(suspects_selected, "mayor")
-        else:
-            idle suspect_mayor.img_arrested
-            action SetScreenVariable("mayor_selected", False), RemoveFromSet(suspects_selected, "mayor")
-    # 3
-    imagebutton:
-        pos (698, 155)
-        if not brother_selected:
-            auto suspect_brother.img
-            action SetScreenVariable("brother_selected", True), AddToSet(suspects_selected, "brother")
-        else:
-            idle suspect_brother.img_arrested
-            action SetScreenVariable("brother_selected", False), RemoveFromSet(suspects_selected, "brother")
-    # 4
-    imagebutton:
-        pos (870, 163)
-        if not wife_selected:
-            auto suspect_wife.img
-            action SetScreenVariable("wife_selected", True), AddToSet(suspects_selected, "wife")
-        else:
-            idle suspect_wife.img_arrested
-            action SetScreenVariable("wife_selected", False), RemoveFromSet(suspects_selected, "wife")
-    # 5
-    imagebutton:
-        pos (188, 335)
-        if not son_selected:
-            auto suspect_son.img
-            action SetScreenVariable("son_selected", True), AddToSet(suspects_selected, "son")
-        else:
-            idle suspect_son.img_arrested
-            action SetScreenVariable("son_selected", False), RemoveFromSet(suspects_selected, "son")
-    # 6
-    imagebutton:
-        pos (405, 335)
-        if not lover_selected:
-            auto suspect_lover.img
-            action SetScreenVariable("lover_selected", True), AddToSet(suspects_selected, "lover")
-        else:
-            idle suspect_lover.img_arrested
-            action SetScreenVariable("lover_selected", False), RemoveFromSet(suspects_selected, "lover")
-    # 7
-    imagebutton:
-        pos (625, 343)
-        if not secretary_selected:
-            auto suspect_secretary.img
-            action SetScreenVariable("secretary_selected", True), AddToSet(suspects_selected, "secretary")
-        else:
-            idle suspect_secretary.img_arrested
-            action SetScreenVariable("secretary_selected", False), RemoveFromSet(suspects_selected, "secretary")
-    # 8
-    imagebutton:
-        pos (830, 366)
+        pos (200, 175)
         if not detective_selected:
             auto suspect_detective.img
             action SetScreenVariable("detective_selected", True), AddToSet(suspects_selected, "detective")
         else:
             idle suspect_detective.img_arrested
             action SetScreenVariable("detective_selected", False), RemoveFromSet(suspects_selected, "detective")
+    # Henri Auguste
+    imagebutton:
+        pos (450, 175)
+        if not mayor_selected:
+            auto suspect_mayor.img
+            action SetScreenVariable("mayor_selected", True), AddToSet(suspects_selected, "mayor")
+        else:
+            idle suspect_mayor.img_arrested
+            action SetScreenVariable("mayor_selected", False), RemoveFromSet(suspects_selected, "mayor")
+    # Narberal Tamura
+    imagebutton:
+        pos (700, 175)
+        if not maid_selected:
+            auto suspect_maid.img
+            action SetScreenVariable("maid_selected", True), AddToSet(suspects_selected, "maid")
+        else:
+            idle suspect_maid.img_arrested
+            action SetScreenVariable("maid_selected", False), RemoveFromSet(suspects_selected, "maid")
+    # Isabelle Auguste
+    imagebutton:
+        pos (950, 175)
+        if not wife_selected:
+            auto suspect_wife.img
+            action SetScreenVariable("wife_selected", True), AddToSet(suspects_selected, "wife")
+        else:
+            idle suspect_wife.img_arrested
+            action SetScreenVariable("wife_selected", False), RemoveFromSet(suspects_selected, "wife")
+    # Fabien Auguste
+    imagebutton:
+        pos (200, 400)
+        if not son_selected:
+            auto suspect_son.img
+            action SetScreenVariable("son_selected", True), AddToSet(suspects_selected, "son")
+        else:
+            idle suspect_son.img_arrested
+            action SetScreenVariable("son_selected", False), RemoveFromSet(suspects_selected, "son")
+    # Alec
+    imagebutton:
+        pos (450, 400)
+        if not lover_selected:
+            auto suspect_lover.img
+            action SetScreenVariable("lover_selected", True), AddToSet(suspects_selected, "lover")
+        else:
+            idle suspect_lover.img_arrested
+            action SetScreenVariable("lover_selected", False), RemoveFromSet(suspects_selected, "lover")
+    # Jean Auguste
+    imagebutton:
+        pos (700, 400)
+        if not brother_selected:
+            auto suspect_brother.img
+            action SetScreenVariable("brother_selected", True), AddToSet(suspects_selected, "brother")
+        else:
+            idle suspect_brother.img_arrested
+            action SetScreenVariable("brother_selected", False), RemoveFromSet(suspects_selected, "brother")
+    # Susanne Alberg
+    imagebutton:
+        pos (950, 400)
+        if not secretary_selected:
+            auto suspect_secretary.img
+            action SetScreenVariable("secretary_selected", True), AddToSet(suspects_selected, "secretary")
+        else:
+            idle suspect_secretary.img_arrested
+            action SetScreenVariable("secretary_selected", False), RemoveFromSet(suspects_selected, "secretary")

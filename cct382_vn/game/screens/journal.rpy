@@ -50,7 +50,7 @@ label journal:
 screen ui_journal():
     # === VARIABLES ===
     default suspect_current = suspect_maid
-    
+
     # === JOURNAL ===
     imagemap:
         # === RETURN/CLOSE BUTTON ===
@@ -81,7 +81,7 @@ screen ui_journal():
                 text testimony color "#000"
 
     # === SUSPECT NAVIGATION ===
-    # HAPPY WATSON
+    # Happy Watson
     imagebutton:
         pos (280, 50)
         auto suspect_detective.img

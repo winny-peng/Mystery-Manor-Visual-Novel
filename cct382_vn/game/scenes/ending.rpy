@@ -10,6 +10,12 @@ label ending:
             narrator("YOU HAVE HAVE ARRESTED THE MAID.", interact=True)
             narrator("YOU SENT AN INNOCENT GIRL TO JAIL.", interact=True)
             narrator("DETECTIVE WATSON IS ASHAMED OF YOU.", interact=True)
+        # === DETECTIVE ENDING ===
+        # This ending occurs if the player decides that the detective is the
+        # killer.
+        if len(suspects_selected) == 1 and suspects_selected[0] == "detective":
+            narrator("...", interact=True)
+            narrator("People think you're crazy for arresting yourself and the real Detective Watson is ashamed of you.", interact=True)
         # === SUICIDE ENDING ===
         # This ending occurs if the player decides that the Mayor committed suicide.
         elif len(suspects_selected) == 1 and suspects_selected[0] == "mayor":
