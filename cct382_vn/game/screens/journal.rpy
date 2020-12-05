@@ -3,14 +3,14 @@
 # information and their testimonies.
 
 # === GLOBAL VARIABLES ===
-default suspect_maid = Suspect("Narberal Tamura", "images/ui/pp_unknown_%s.png", "Stealing stuff from the mayor, has feelings for the mayor’s brother, friends with the wife.")
-default suspect_mayor = Suspect("Henri Auguste", "images/ui/pp_Henri Auguste_%s.png", "Hated by all, dead.")
-default suspect_brother = Suspect("Jean Auguste", "images/ui/pp_unknown_%s.png", "Wants to be mayor, aware of maid’s feelings, uses them as a means to an end.")
-default suspect_wife = Suspect("Isabelle Auguste", "images/ui/pp_unknown_%s.png", "Second wife; in a relationship with her secret lover, trying to get along with the son, friends with the maid.")
-default suspect_son = Suspect("Fabien Auguste", "images/ui/pp_unknown_%s.png", "Delinquent, druggie, failure in life. doesn’t get along with the mayor, doesn’t like the wife.")
-default suspect_lover = Suspect("Alec", "images/ui/pp_unknown_%s.png", "In a relationship with the mayor's wife.")
-default suspect_secretary = Suspect("Susanne Alberg", "images/ui/pp_unknown_%s.png", "Discovers the mayor’s body. Also the Mayor's secretary.")
-default suspect_detective = Suspect("Happy Watson", "images/ui/pp_Happy Watson_%s.png", "Intelligent and logical. The World's Best Detective. This is me.")
+default suspect_maid = Suspect("Narberal Tamura", "images/ui/pp_unknown_%s.jpg", "Stealing stuff from the mayor, has feelings for the mayor’s brother, friends with the wife.")
+default suspect_mayor = Suspect("Henri Auguste", "images/ui/pp_Henri Auguste_%s.jpg", "Hated by all, dead.")
+default suspect_brother = Suspect("Jean Auguste", "images/ui/pp_unknown_%s.jpg", "Wants to be mayor, aware of maid’s feelings, uses them as a means to an end.")
+default suspect_wife = Suspect("Isabelle Auguste", "images/ui/pp_unknown_%s.jpg", "Second wife; in a relationship with her secret lover, trying to get along with the son, friends with the maid.")
+default suspect_son = Suspect("Fabien Auguste", "images/ui/pp_unknown_%s.jpg", "Delinquent, druggie, failure in life. doesn’t get along with the mayor, doesn’t like the wife.")
+default suspect_lover = Suspect("Alec", "images/ui/pp_unknown_%s.jpg", "In a relationship with the mayor's wife.")
+default suspect_secretary = Suspect("Susanne Alberg", "images/ui/pp_unknown_%s.jpg", "Discovers the mayor’s body. Also the Mayor's secretary.")
+default suspect_detective = Suspect("Happy Watson", "images/ui/pp_Happy Watson_%s.jpg", "Intelligent and logical. The World's Best Detective. This is me.")
 
 # === SUSPECT CLASS ===
 init -1 python:
@@ -38,8 +38,8 @@ init -1 python:
             """
             "Visiting" the suspect updates their profile picture.
             """
-            self.img = "images/ui/pp_" + self.name + "_%s.png"
-            self.img_arrested = "images/ui/pp_" + self.name + "_selected_idle.png"
+            self.img = "images/ui/pp_" + self.name + "_%s.jpg"
+            self.img_arrested = "images/ui/pp_" + self.name + "_selected_idle.jpg"
 
 label journal:
     hide screen ui_gamebuttons
@@ -48,9 +48,9 @@ label journal:
     return
 
 screen ui_journal():
-    # === VARIABLES  BACKGROUND ===
-    default suspect_current = suspect_detective
-
+    # === VARIABLES ===
+    default suspect_current = suspect_maid
+    
     # === JOURNAL ===
     imagemap:
         # === RETURN/CLOSE BUTTON ===
@@ -61,7 +61,7 @@ screen ui_journal():
         yalign 0.5
         ground "images/ui/journal.png"
 
-    # === SUSPECT NAME === xalign 0.5
+    # === SUSPECT NAME ===
     text suspect_current.name color "#000" pos(840, 100) xalign 0.5
 
     # === SUSPECT DESCRIPTION ===
@@ -72,9 +72,10 @@ screen ui_journal():
 
     # === TESTIMONIES ===
     vbox:
-        area (715, 380, 270, 275)
+        text "Testimonies:" color "#000" pos(715, 365) xalign
+    vbox:
+        area (715, 400, 270, 275)
         box_wrap True
-        text "Testimonies:" color "#000"
         for testimony in suspect_current.testimonies:
             if suspect_current.testimonies[testimony] == True:
                 text testimony color "#000"

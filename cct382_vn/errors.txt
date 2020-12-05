@@ -2,11 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/screens/journal.rpy", line 7: EOL while scanning string literal
-(Perhaps you left out a " at the end of the first line.)
-    Suspect("Henri Auguste", "images/ui/pp_Henri Auguste_%s.png", "Gender: Male\nAge: 60s\nPhysical Appearance: Grey hair, brown eyes.\nPersonality: Demanding, cruel, mean.\nOther Details: Hated by all, dead.
-                                                                                                                                                                                                                ^
-    
+File "game/scenes/tutorial.rpy", line 60: end of line expected.
+    hide screen ui_journal("tutorial")
+                          ^
+
+File "game/scenes/tutorial.rpy", line 130: end of line expected.
+    hide screen ui_journal("tutorial")
+                          ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sat Dec 05 02:14:26 2020
+Sat Dec 05 12:28:57 2020
