@@ -39,6 +39,14 @@ image bg study_final = "images/backgrounds/study_final.png"
 # TODO FRONT HALL IS TEMPORARY
 image bg hall = "images/backgrounds/bg_frontHall.jpg"
 
+# === TEXT STYLING ===
+style txt_thoughts:
+    color "#0099cc"
+style txt_small:
+    size 12
+style txt_popup:
+    size 60
+
 # === EFFECTS ===
 # Camera flash - quickly fades to white, then back to the scene.
 define flash = Fade(0.1, 0.0, 3.0, color="#fff")
@@ -144,7 +152,7 @@ label start:
     # === TUTORIAL ===
     # The tutorial explains all the basic controls and available features the
     # player can use (e.g. click to interact, how to use inventory/map/journal)
-    # call tutorial from _call_tutorial
+    call tutorial from _call_tutorial
 
     # === GAME ===
     # The game loops from here. Until the player makes an arrest, the player

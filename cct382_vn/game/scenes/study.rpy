@@ -83,6 +83,8 @@ label study:
                             maid @ talking "Susanne has been around since before I was here..."
                             maid @ annoyed "She always questions how much work I do around the manor even though I work very hard!"
                             maid @ thinking "I feel like she’s jealous of me..."
+                        "Nevermind. I forgot what I was going to say.":
+                            hide maid neutral onlayer screens at left zorder 2
                 "Do you know anything about this?":
                     menu:
                         "Antique Dagger":
@@ -121,6 +123,8 @@ label study:
                             hide maid neutral onlayer screens at left zorder 2
                             show maid neutral at center
                             maid @ talking "This is Sir Henri’s personal cup. He uses it when he's in his study."
+                        "Nevermind. I forgot what I was going to say.":
+                            hide maid neutral onlayer screens at left zorder 2
                 "Nevermind. I forgot what I was going to say.":
                     hide maid neutral onlayer screens at left zorder 2
         # === DEAD BODY ===

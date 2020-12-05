@@ -15,6 +15,7 @@ screen ui_gamebuttons():
 
     # === MAP BUTTON ===
     imagebutton:
+        xalign 1.0
         yalign 1.0
         focus_mask True
         auto "images/ui/map_%s.png"
@@ -24,6 +25,7 @@ screen ui_gamebuttons():
 
     # === INVENTORY BUTTON ===
     imagebutton:
+        xalign 1.0
         yalign 1.0
         focus_mask True
         auto "images/ui/inventory_%s.png"
@@ -33,6 +35,7 @@ screen ui_gamebuttons():
 
     # === JOURNAL BUTTON ===
     imagebutton:
+        xalign 1.0
         yalign 1.0
         focus_mask True
         auto "images/ui/journal_%s.png"

@@ -1,16 +1,4 @@
-# This is the introduction scene.
-
-init:
-    define guard = Character("Guard")
-    image guard = "images/characters/guard_neutral.png"
-
-    # === TEXT STYLING ===
-    style txt_thoughts:
-        color "#0099cc"
-    style txt_small:
-        size 12
-    style txt_popup:
-        size 60
+# This is the code for the tutorial.
 
 label tutorial:
     # === VARIABLES ===
@@ -185,29 +173,35 @@ screen tutorial_interactions(tutorial):
             action Return(True)
 
     # === TUTORIAL - JOURNAL ===
-    if tutorial == "tutorial_journal":
+    elif tutorial == "tutorial_journal":
         imagebutton:
+            xalign 1.0
+            yalign 1.0
             focus_mask True
-            idle "images/ui/ui_journal_button.png"
+            auto "images/ui/journal_%s.png"
             action Return(True)
 
     # === TUTORIAL - OBJECT INTERACTION ===
-    if tutorial == "tutorial_object":
+    elif tutorial == "tutorial_object":
         imagebutton:
             focus_mask True
             idle "images/objects/study_dagger.png"
             action Return(True)
 
     # === TUTORIAL - INVENTORY ===
-    if tutorial == "tutorial_inventory":
+    elif tutorial == "tutorial_inventory":
         imagebutton:
+            xalign 1.0
+            yalign 1.0
             focus_mask True
-            idle "images/ui/ui_inventory_button.png"
+            auto"images/ui/inventory_%s.png"
             action Return(True)
 
     # === TUTORIAL - MAP ===
-    if tutorial == "tutorial_map":
+    elif tutorial == "tutorial_map":
         imagebutton:
+            xalign 1.0
+            yalign 1.0
             focus_mask True
-            idle "images/ui/ui_map_button.png"
+            auto "images/ui/map_%s.png"
             action Return(True)
