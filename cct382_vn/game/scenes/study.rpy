@@ -1,8 +1,6 @@
 # === STUDY ===
 # The dialogue for the study.
 
-# BUG ITEMS SHOW UP ON TOP OF CHARACTER SPRITES (e.g. key on top of spirit)
-
 # === GLOBAL VARIABLES ===
 default state_study = "initial"
 default state_study_screen = "on"

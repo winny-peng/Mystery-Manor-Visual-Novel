@@ -36,12 +36,38 @@ label ending:
 
     # === CREDITS ===
     image credits:
-        Text("Mystery Manor \n \nArt: Hallie Scott \nNarrative Design: Mirza Musa \nCoding: Winny Peng & Jui Song \nMusic/SFX: Jiu Song")
+        Text("""
+                                MANOR MYSTERY
+
+                               Story & Narrative
+
+        Concept Design: Mirza Musa, Hallie Scott, Winny Peng, Jiu Song
+        Narrative Design: Mirza Musa, Hallie Scott
+        Character Design: Mirza Musa, Hallie Scott
+
+                                  Graphics
+
+        Concept Art: Mirza Musa, Hallie Scott
+        Final Art Assets: Hallie Schott
+        Placeholder Assets: Winny Peng, Jiu Song
+
+                                   Audio
+
+        Background Music: Jiu Song
+        SFX: Jiu Song
+
+                                Programming
+
+        Coding: Winny Peng, Jiu Song
+
+
+                            Thank you for playing!
+        """)
         anchor (0.5, 0.0)
         pos (0.5, 1.0)
-        linear 6.0 ypos 0.0 yanchor 1.0
+        linear 30.0 ypos 0.0 yanchor 1.0
     scene black
     show credits
-    $ renpy.pause(6.0, hard=True)
+    $ renpy.pause(30.0, hard=True)
     hide credits
     return

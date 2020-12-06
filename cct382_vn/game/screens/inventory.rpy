@@ -72,7 +72,7 @@ screen ui_inventory():
         yalign(0.0)
         minimum(50, 50)
         maximum(50, 50)
-        background("#000000")
+        background("#ff0000")
         activate_sound("audio/sfx/ui_click_close.wav")
         action Return()
 
