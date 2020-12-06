@@ -46,6 +46,9 @@ style txt_small:
 style txt_popup:
     size 60
 
+# === MUSIC ===
+define music_playing = False
+
 # === EFFECTS ===
 # Camera flash - quickly fades to white, then back to the scene.
 define flash = Fade(0.1, 0.0, 3.0, color="#fff")
@@ -77,7 +80,8 @@ label start:
     # The game's introduction.
     with flash
     scene bg manor_gate
-    "{i}You see a sudden flash and it takes you awhile before your surroundings come into focus.{/i}"
+    $ renpy.music.play("audio/bgm/bgm_outside.wav", channel="music", loop=True)
+    "{i}You see a sudden flash and it takes you a while before your surroundings come into focus.{/i}"
     player "{=txt_thoughts}(...)"
     "{i}You see a tall, dark gate, and behind it, a grand, white manor.{/i}"
     player "{=txt_thoughts}(What the...{w}where am I?)"
@@ -132,6 +136,7 @@ label start:
     sentry "We've arrived, Detective Watson."
     "{i}You can feel it. The source of that looming feeling of dread is definitely on the other side.{/i}"
     scene bg tutorial
+    stop music fadeout 1.0
     "{i}Your new reality hits you like a wrecking ball.{/i}"
     player "(H-hey old man...who did you say again...?)"
     show detective neutral
