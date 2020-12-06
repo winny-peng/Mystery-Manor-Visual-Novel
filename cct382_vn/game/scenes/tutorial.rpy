@@ -7,9 +7,15 @@ label tutorial:
     default journal_visited = False
     default map_visited = False
     default inventory_visited = False
+    define music_playing = False
 
     # === SCRIPT ===
     scene bg tutorial
+
+    if (music_playing == False):
+        $ renpy.music.play("audio/bgm/bgm_study.wav", channel="music", loop=True)
+        $ music_playing = True
+
     "Pay attention. You are thrust into the role of a detective and you have no experience whatsoever."
     "Luckily, Detective Watson is going to quickly show you the ropes."
     "Follow his instructions by clicking on the objects and people to interact with them."
@@ -49,6 +55,7 @@ label tutorial:
             $ journal_visited = True
     window show
     show screen ui_journal
+    play sound "audio/sfx/ui_journal.wav"
     detective "I already wrote down all the basic information for the household before all of this body switching nonsense happened."
     detective "I'm sure you'll find my notes very handy since I'm VERY thorough."
     detective "Anyways, I haven't met all the suspects yet so there aren't any pictures for them."
@@ -68,6 +75,7 @@ label tutorial:
         if _return:
             $ object_visited = True
     $ playerInventory.add(Clue("Dagger", "images/objects/clue_dagger.png", "Looks like a very old dagger. It's long enough to pierce all the way through the Mayor's body."))
+    play sound "audio/sfx/ui_clue_pickup.ogg"
     window show
     show detective neutral
     detective @ talking "Looks like a very old dagger, but long enough to pierce all the way through his body."
@@ -83,6 +91,7 @@ label tutorial:
         if _return:
             $ inventory_visited = True
     show screen ui_inventory
+    play sound "audio/sfx/ui_inventory.wav"
     detective "Ah perfect! Our first clue!"
     detective "If we ever forget what clues we've found, we can always check back here."
     hide screen ui_inventory
@@ -124,6 +133,7 @@ label tutorial:
             $ journal_visited = True
     window show
     show screen ui_journal
+    play sound "audio/sfx/ui_journal.wav"
     detective "Let's write down her testimony so we don't forget."
     $ suspect_maid.testimonies["Sir Henri kept that dagger displayed on the bookshelf. He's very fond of it."] = True
     detective "Ah that's better."
@@ -140,6 +150,7 @@ label tutorial:
             $ map_visited = True
     window show
     show screen ui_map
+    play sound "audio/sfx/ui_map.wav"
     detective "..."
     detective "Oh."
     detective "I guess I accidentally spilled a bit of coffee over it."

@@ -1,30 +1,52 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 153, in script call
-    call tutorial from _call_tutorial
-  File "game/scenes/tutorial.rpy", line 126, in script
-    $ ui_journal.SetScreenVariable("suspect_current", suspect_maid)
-  File "game/scenes/tutorial.rpy", line 126, in <module>
-    $ ui_journal.SetScreenVariable("suspect_current", suspect_maid)
-NameError: name 'ui_journal' is not defined
+  File "game/script.rpy", line 162, in script call
+    call study from _call_study
+  File "game/scenes/study.rpy", line 26, in script
+    call screen study(state_study, "on")
+  File "renpy/common/000statements.rpy", line 531, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+IOError: Couldn't find file 'ui_clue_pickup.ogg'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 153, in script call
-    call tutorial from _call_tutorial
-  File "game/scenes/tutorial.rpy", line 126, in script
-    $ ui_journal.SetScreenVariable("suspect_current", suspect_maid)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\False\Desktop\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/scenes/tutorial.rpy", line 126, in <module>
-    $ ui_journal.SetScreenVariable("suspect_current", suspect_maid)
-NameError: name 'ui_journal' is not defined
+  File "game/script.rpy", line 162, in script call
+    call study from _call_study
+  File "game/scenes/study.rpy", line 26, in script
+    call screen study(state_study, "on")
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1949, in execute
+    self.call("execute")
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1937, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\statements.py", line 277, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 531, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\exports.py", line 2905, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\ui.py", line 297, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 3380, in interact_core
+    renpy.audio.audio.periodic()
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\audio\audio.py", line 1060, in periodic
+    six.reraise(exc[0], exc[1], exc[2])
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\audio\audio.py", line 1038, in periodic_thread_main
+    periodic_pass()
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\audio\audio.py", line 979, in periodic_pass
+    c.periodic()
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\audio\audio.py", line 457, in periodic
+    topf = load(self.file_prefix + filename + self.file_suffix)
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\audio\audio.py", line 73, in load
+    rv = renpy.loader.load(fn)
+  File "D:\Users\brian\Renpy\renpy-7.3.5-sdk\renpy\loader.py", line 576, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'ui_clue_pickup.ogg'.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 Mystery Manor 1.0
-Sat Dec 05 12:33:23 2020
+Sun Dec 06 15:43:12 2020

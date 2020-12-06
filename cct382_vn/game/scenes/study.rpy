@@ -10,7 +10,7 @@ define music_playing = False
 
 label study:
     if (music_playing == False):
-        $ renpy.music.play("audio/bgm/study_placeholder_test.wav", channel="music", loop=True)
+        $ renpy.music.play("audio/bgm/bgm_study.wav", channel="music", loop=True)
         $ music_playing = True
 
     while game_room == "study":
@@ -160,6 +160,7 @@ label study:
                 detective @ judging "That's what they all say."
                 detective @ talking "It seems like a normal cup but let's keep a note of it anyways."
                 $ playerInventory.add(Clue("Cup", "images/objects/clue_cup.png", "A regular cup. Nothing fancy about it."))
+                play sound "audio/sfx/ui_clue_pickup.ogg"
             else:
                 detective "I TOLD YOU. DON'T DRINK FROM THAT CUP."
             hide detective neutral
@@ -176,6 +177,7 @@ label study:
             detective @ talking "Let's take it."
             hide detective neutral
             $ playerInventory.add(Clue("Key", "images/objects/clue_key.png", "A key... could I use it to open something?"))
+            play sound "audio/sfx/ui_clue_pickup.ogg"
         # === WILL ===
         elif _return == "will":
             player "Cool. I can use this as scrap paper to jot down notes!"
@@ -186,6 +188,7 @@ label study:
             player "Maybe the Mayor wrote it before he was murdered?"
             detective @ disgust "Hmm...why don't you put it away before you destroy it by accident."
             $ playerInventory.add(Clue("Mayor's Will", "images/objects/clue_will.png", "The ink seems fresh… did the Mayor write it before he was murdered?"))
+            play sound "audio/sfx/ui_clue_pickup.ogg"
         # === PAINTING ===
         elif _return == "painting_initial":
             player "This painting looks kind cool."
@@ -236,6 +239,7 @@ label study:
             detective @ talking "But you're right."
             detective @ talking "Let's take these for now. The documents might help us find someone with a motive to kill the Mayor."
             $ playerInventory.add(Clue("Suspicious Documents", "images/objects/clue_documents.png", "So many incriminating documents...just how many crimes did the mayor commit?"))
+            play sound "audio/sfx/ui_clue_pickup.ogg"
             hide detective neutral
             show maid neutral
             maid @ annoyed "..."
